@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VenuesRouteImport } from './routes/venues'
+import { Route as TicketsRouteImport } from './routes/tickets'
+import { Route as SpeakersRouteImport } from './routes/speakers'
+import { Route as PartnersRouteImport } from './routes/partners'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as ExhibitRouteImport } from './routes/exhibit'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as AgendaRouteImport } from './routes/agenda'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VenuesRoute = VenuesRouteImport.update({
+  id: '/venues',
+  path: '/venues',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TicketsRoute = TicketsRouteImport.update({
+  id: '/tickets',
+  path: '/tickets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SpeakersRoute = SpeakersRouteImport.update({
+  id: '/speakers',
+  path: '/speakers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnersRoute = PartnersRouteImport.update({
+  id: '/partners',
+  path: '/partners',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExhibitRoute = ExhibitRouteImport.update({
+  id: '/exhibit',
+  path: '/exhibit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AgendaRoute = AgendaRouteImport.update({
+  id: '/agenda',
+  path: '/agenda',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/agenda': typeof AgendaRoute
+  '/contact': typeof ContactRoute
+  '/exhibit': typeof ExhibitRoute
+  '/gallery': typeof GalleryRoute
+  '/partners': typeof PartnersRoute
+  '/speakers': typeof SpeakersRoute
+  '/tickets': typeof TicketsRoute
+  '/venues': typeof VenuesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/agenda': typeof AgendaRoute
+  '/contact': typeof ContactRoute
+  '/exhibit': typeof ExhibitRoute
+  '/gallery': typeof GalleryRoute
+  '/partners': typeof PartnersRoute
+  '/speakers': typeof SpeakersRoute
+  '/tickets': typeof TicketsRoute
+  '/venues': typeof VenuesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/agenda': typeof AgendaRoute
+  '/contact': typeof ContactRoute
+  '/exhibit': typeof ExhibitRoute
+  '/gallery': typeof GalleryRoute
+  '/partners': typeof PartnersRoute
+  '/speakers': typeof SpeakersRoute
+  '/tickets': typeof TicketsRoute
+  '/venues': typeof VenuesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/agenda'
+    | '/contact'
+    | '/exhibit'
+    | '/gallery'
+    | '/partners'
+    | '/speakers'
+    | '/tickets'
+    | '/venues'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/agenda'
+    | '/contact'
+    | '/exhibit'
+    | '/gallery'
+    | '/partners'
+    | '/speakers'
+    | '/tickets'
+    | '/venues'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/agenda'
+    | '/contact'
+    | '/exhibit'
+    | '/gallery'
+    | '/partners'
+    | '/speakers'
+    | '/tickets'
+    | '/venues'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AgendaRoute: typeof AgendaRoute
+  ContactRoute: typeof ContactRoute
+  ExhibitRoute: typeof ExhibitRoute
+  GalleryRoute: typeof GalleryRoute
+  PartnersRoute: typeof PartnersRoute
+  SpeakersRoute: typeof SpeakersRoute
+  TicketsRoute: typeof TicketsRoute
+  VenuesRoute: typeof VenuesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/venues': {
+      id: '/venues'
+      path: '/venues'
+      fullPath: '/venues'
+      preLoaderRoute: typeof VenuesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tickets': {
+      id: '/tickets'
+      path: '/tickets'
+      fullPath: '/tickets'
+      preLoaderRoute: typeof TicketsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/speakers': {
+      id: '/speakers'
+      path: '/speakers'
+      fullPath: '/speakers'
+      preLoaderRoute: typeof SpeakersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partners': {
+      id: '/partners'
+      path: '/partners'
+      fullPath: '/partners'
+      preLoaderRoute: typeof PartnersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/exhibit': {
+      id: '/exhibit'
+      path: '/exhibit'
+      fullPath: '/exhibit'
+      preLoaderRoute: typeof ExhibitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/agenda': {
+      id: '/agenda'
+      path: '/agenda'
+      fullPath: '/agenda'
+      preLoaderRoute: typeof AgendaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,7 +237,26 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AgendaRoute: AgendaRoute,
+  ContactRoute: ContactRoute,
+  ExhibitRoute: ExhibitRoute,
+  GalleryRoute: GalleryRoute,
+  PartnersRoute: PartnersRoute,
+  SpeakersRoute: SpeakersRoute,
+  TicketsRoute: TicketsRoute,
+  VenuesRoute: VenuesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
