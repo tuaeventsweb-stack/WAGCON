@@ -103,21 +103,18 @@ export function PassPill({
 export function Card({
   children,
   className,
-  accent = "green",
   hoverable = true,
 }: {
   children: ReactNode;
   className?: string;
-  accent?: AccentColor;
   hoverable?: boolean;
 }) {
-  const a = accentMap[accent];
   return (
     <div
       className={cn(
         "rounded-xl border bg-wagcon-bg3 p-7 transition-colors duration-200",
         "border-[rgba(255,255,255,0.08)]",
-        hoverable && `hover:${a.border}`,
+        hoverable && "hover:border-wagcon-green-border",
         className,
       )}
     >
