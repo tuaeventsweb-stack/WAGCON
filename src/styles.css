@@ -5,17 +5,9 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system definition.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ * WAGCON 2027 design tokens — reskin of ABDS system.
+ * Dark green-tinted palette. Bright green primary, purple + amber accents.
+ * All colors use hex / rgba per spec doc (Part One).
  */
 
 @theme inline {
@@ -24,8 +16,31 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
   --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  /* WAGCON brand color utilities (bg-wagcon-bg, text-wagcon-green, etc.) */
+  --color-wagcon-bg: var(--bg);
+  --color-wagcon-bg2: var(--bg2);
+  --color-wagcon-bg3: var(--bg3);
+  --color-wagcon-green: var(--gold);
+  --color-wagcon-green-dim: var(--gold-dim);
+  --color-wagcon-green-border: var(--gold-border);
+  --color-wagcon-purple: var(--blue);
+  --color-wagcon-purple-dim: var(--blue-dim);
+  --color-wagcon-purple-border: var(--blue-border);
+  --color-wagcon-amber: var(--purple);
+  --color-wagcon-amber-dim: var(--purple-dim);
+  --color-wagcon-amber-border: var(--purple-border);
+  --color-wagcon-grey: var(--green);
+  --color-wagcon-grey-dim: var(--green-dim);
+  --color-wagcon-grey-border: var(--green-border);
+  --color-wagcon-white: var(--white);
+  --color-wagcon-muted: var(--muted);
+  --color-wagcon-border: var(--border);
+
+  /* shadcn semantic tokens mapped to WAGCON palette */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -36,109 +51,122 @@
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
+  --color-muted: var(--muted-shadcn);
   --color-muted-foreground: var(--muted-foreground);
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
+  --color-border: var(--border-shadcn);
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+
+  /* WAGCON tokens */
+  --bg:    #060A06;
+  --bg2:   #090E09;
+  --bg3:   #0D140D;
+
+  --gold:        #22C55E;
+  --gold-dim:    rgba(34, 197, 94, 0.12);
+  --gold-border: rgba(34, 197, 94, 0.30);
+
+  --blue:        #A855F7;
+  --blue-dim:    rgba(168, 85, 247, 0.12);
+  --blue-border: rgba(168, 85, 247, 0.35);
+
+  --purple:        #F59E0B;
+  --purple-dim:    rgba(245, 158, 11, 0.12);
+  --purple-border: rgba(245, 158, 11, 0.35);
+
+  --green:        #9CA3AF;
+  --green-dim:    rgba(156, 163, 175, 0.12);
+  --green-border: rgba(156, 163, 175, 0.30);
+
+  --white: #F0FFF0;
+  --muted: #6B8C6B;
+  --border: rgba(255, 255, 255, 0.08);
+
+  --font-display: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* shadcn semantic — derived from WAGCON */
+  --background: #060A06;
+  --foreground: #F0FFF0;
+  --card: #0D140D;
+  --card-foreground: #F0FFF0;
+  --popover: #0D140D;
+  --popover-foreground: #F0FFF0;
+  --primary: #22C55E;
+  --primary-foreground: #060A06;
+  --secondary: #0D140D;
+  --secondary-foreground: #F0FFF0;
+  --muted-shadcn: #090E09;
+  --muted-foreground: #6B8C6B;
+  --accent: rgba(34, 197, 94, 0.12);
+  --accent-foreground: #22C55E;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
+  --destructive-foreground: #F0FFF0;
+  --border-shadcn: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #22C55E;
 }
 
 .dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  /* WAGCON is dark by default; keep dark class as alias */
 }
 
 @layer base {
   * {
-    border-color: var(--color-border);
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--bg);
+    color: var(--white);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
   }
+
+  ::selection {
+    background: var(--gold-dim);
+    color: var(--gold);
+  }
+}
+
+/* Hero grid + glow overlays */
+@utility wagcon-hero-grid {
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+@utility wagcon-hero-glow {
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.18) 0%, transparent 70%);
+}
+
+/* Infinite logo ticker */
+@keyframes wagcon-scroll-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes wagcon-scroll-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+.wagcon-ticker-left  { animation: wagcon-scroll-left 40s linear infinite; }
+.wagcon-ticker-right { animation: wagcon-scroll-right 40s linear infinite; }
+.wagcon-ticker-pause:hover .wagcon-ticker-left,
+.wagcon-ticker-pause:hover .wagcon-ticker-right {
+  animation-play-state: paused;
 }
