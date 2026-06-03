@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Nav } from "@/components/wagcon/Nav";
 import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent, BtnPrimary, BtnSecondary } from "@/components/wagcon/ui/primitives";
+import { Eyebrow, SectionTitle, BtnPrimary } from "@/components/wagcon/ui/primitives";
 
 export function StubPage({
   eyebrow,
