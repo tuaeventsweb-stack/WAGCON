@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/wagcon/Nav";
+import { TopBar } from "@/components/wagcon/TopBar";
 import { Footer } from "@/components/wagcon/Footer";
 import {
   Hero,
