@@ -5,9 +5,8 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * WAGCON 2027 design tokens — reskin of ABDS system.
- * Dark green-tinted palette. Bright green primary, purple + amber accents.
- * All colors use hex / rgba per spec doc (Part One).
+ * WAGCON 2027 — ported from ABDS layout system, WAGCON palette.
+ * Raleway (headings) · Open Sans (body) · Montserrat (buttons/eyebrows).
  */
 
 @theme inline {
@@ -18,9 +17,11 @@
   --radius-2xl: calc(var(--radius) + 8px);
 
   --font-display: var(--font-display);
+  --font-heading: var(--font-heading);
   --font-body: var(--font-body);
+  --font-button: var(--font-button);
 
-  /* WAGCON brand color utilities (bg-wagcon-bg, text-wagcon-green, etc.) */
+  /* WAGCON tokens */
   --color-wagcon-bg: var(--bg);
   --color-wagcon-bg2: var(--bg2);
   --color-wagcon-bg3: var(--bg3);
@@ -40,7 +41,12 @@
   --color-wagcon-muted: var(--muted);
   --color-wagcon-border: var(--border);
 
-  /* shadcn semantic tokens mapped to WAGCON palette */
+  /* Pass tier colors (mapped to WAGCON palette) */
+  --color-pass-green: var(--gold);
+  --color-pass-blue: var(--blue);
+  --color-pass-gold: var(--purple);
+
+  /* shadcn semantic mapped to WAGCON */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -64,9 +70,8 @@
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.5rem;
 
-  /* WAGCON tokens */
   --bg:    #060A06;
   --bg2:   #090E09;
   --bg3:   #0D140D;
@@ -91,10 +96,11 @@
   --muted: #6B8C6B;
   --border: rgba(255, 255, 255, 0.08);
 
-  --font-display: "Syne", sans-serif;
-  --font-body: "DM Sans", sans-serif;
+  --font-display: "Raleway", sans-serif;
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --font-button: "Montserrat", sans-serif;
 
-  /* shadcn semantic — derived from WAGCON */
   --background: #060A06;
   --foreground: #F0FFF0;
   --card: #0D140D;
@@ -116,10 +122,6 @@
   --ring: #22C55E;
 }
 
-.dark {
-  /* WAGCON is dark by default; keep dark class as alias */
-}
-
 @layer base {
   * {
     border-color: var(--border);
@@ -133,7 +135,15 @@
     background-color: var(--bg);
     color: var(--white);
     font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    overflow-wrap: break-word;
   }
 
   ::selection {
@@ -142,31 +152,45 @@
   }
 }
 
-/* Hero grid + glow overlays */
+/* Font utility classes */
+@utility font-heading { font-family: var(--font-heading); }
+@utility font-body    { font-family: var(--font-body); }
+@utility font-button  { font-family: var(--font-button); }
+
+/* Gradient text — WAGCON green to amber */
+@utility gradient-text {
+  background: linear-gradient(135deg, #22C55E, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hero overlays */
 @utility wagcon-hero-grid {
   background-image:
-    linear-gradient(rgba(34, 197, 94, 0.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 197, 94, 0.04) 1px, transparent 1px);
+    linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
 @utility wagcon-hero-glow {
-  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.18) 0%, transparent 70%);
+  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.22) 0%, transparent 70%);
 }
 
-/* Infinite logo ticker */
-@keyframes wagcon-scroll-left {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
-@keyframes wagcon-scroll-right {
-  from { transform: translateX(-50%); }
-  to   { transform: translateX(0); }
+@utility grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
 }
 
-.wagcon-ticker-left  { animation: wagcon-scroll-left 40s linear infinite; }
-.wagcon-ticker-right { animation: wagcon-scroll-right 40s linear infinite; }
-.wagcon-ticker-pause:hover .wagcon-ticker-left,
-.wagcon-ticker-pause:hover .wagcon-ticker-right {
-  animation-play-state: paused;
+/* Marquee logo tickers */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
+@keyframes marquee2 {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee  { animation: marquee 40s linear infinite; }
+.animate-marquee2 { animation: marquee2 40s linear infinite; }
+.marquee-pause:hover .animate-marquee,
+.marquee-pause:hover .animate-marquee2 { animation-play-state: paused; }
