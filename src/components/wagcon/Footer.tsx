@@ -1,118 +1,115 @@
 import { Link } from "@tanstack/react-router";
-import { Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
-import { WagconLogo } from "./Nav";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Gamepad2, Mail, MapPin } from "lucide-react";
+
+const groups = [
+  {
+    title: "Event",
+    links: [
+      { label: "About WAGCON",      to: "/about" },
+      { label: "Agenda",            to: "/agenda" },
+      { label: "Speakers",          to: "/speakers" },
+      { label: "Venues",            to: "/venues" },
+      { label: "Gallery",           to: "/gallery" },
+    ],
+  },
+  {
+    title: "Participate",
+    links: [
+      { label: "Get Your Pass",     to: "/tickets" },
+      { label: "Exhibit / Sponsor", to: "/exhibit" },
+      { label: "Apply to Speak",    to: "/contact" },
+      { label: "Partners",          to: "/partners" },
+    ],
+  },
+  {
+    title: "Connect",
+    links: [
+      { label: "Contact",           to: "/contact" },
+      { label: "Press & Media",     to: "/contact" },
+      { label: "Sponsorship Deck",  to: "/exhibit" },
+    ],
+  },
+];
+
+const socials = [
+  { Icon: Facebook,  href: "https://facebook.com/WAGCONofficial" },
+  { Icon: Twitter,   href: "https://twitter.com/WAGCONofficial" },
+  { Icon: Instagram, href: "https://instagram.com/WAGCONofficial" },
+  { Icon: Linkedin,  href: "https://linkedin.com/company/wagcon" },
+  { Icon: Youtube,   href: "https://youtube.com/@WAGCONofficial" },
+];
 
 export function Footer() {
   return (
-    <footer
-      className="border-t border-[rgba(255,255,255,0.08)] pt-16 pb-8"
-      style={{ background: "#040508" }}
-    >
-      <div className="mx-auto max-w-7xl px-6 md:px-10">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-[2fr_1fr_1fr_1fr]">
+    <footer className="border-t border-white/5 bg-background">
+      <div className="max-w-7xl mx-auto px-4 py-16">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr] mb-12">
           <div>
-            <WagconLogo withSub />
-            <p className="mt-5 max-w-sm text-sm leading-relaxed text-wagcon-muted">
-              West Africa's Premier Gaming Convention.
-              <br />
-              Organized by T.U.A Events.
+            <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
+              <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
+                <Gamepad2 size={20} strokeWidth={2.5} />
+              </span>
+              <span className="font-heading text-xl font-black tracking-tight text-foreground">
+                WAGCON<span className="text-primary">.</span>
+              </span>
+            </Link>
+            <p className="font-button text-xs uppercase tracking-[0.3em] text-primary font-bold mb-3">
+              28 – 31 April 2027
             </p>
-            <p className="mt-3 text-sm text-wagcon-white/70">
-              28 – 31 April 2027 &nbsp;|&nbsp; Three Venues · Victoria Island, Lagos, Nigeria
+            <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm">
+              West Africa Gaming Convention — four days, three venues, one industry coming
+              together in Lagos to build the continent's gaming future.
             </p>
-            <div className="mt-5 flex gap-2">
-              {[Twitter, Instagram, Linkedin, Youtube].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-wagcon-bg3 text-wagcon-white/70 transition-colors hover:border hover:border-wagcon-green-border hover:text-wagcon-green"
-                >
-                  <Icon size={16} />
-                </a>
-              ))}
+            <div className="mt-6 space-y-2 text-xs text-muted-foreground">
+              <a href="mailto:hello@wagcon.africa" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail size={13} /> hello@wagcon.africa
+              </a>
+              <p className="flex items-center gap-2">
+                <MapPin size={13} /> Victoria Island, Lagos, Nigeria
+              </p>
             </div>
           </div>
 
-          <FooterCol
-            title="Quick Links"
-            links={[
-              ["/venues", "Venues"],
-              ["/agenda", "Agenda"],
-              ["/speakers", "Speakers"],
-              ["/tickets", "Tickets"],
-            ]}
-          />
-          <FooterCol
-            title="Resources"
-            links={[
-              ["/exhibit", "Exhibit & Sponsor"],
-              ["/partners", "Partners"],
-              ["/gallery", "Gallery"],
-              ["/about", "About"],
-            ]}
-          />
-          <FooterCol
-            title="Contact"
-            links={[
-              ["/contact", "Contact Us"],
-              ["mailto:hello@wagcon.ng", "hello@wagcon.ng"],
-              ["mailto:exhibit@wagcon.ng", "exhibit@wagcon.ng"],
-            ]}
-          />
+          {groups.map((g) => (
+            <div key={g.title}>
+              <h4 className="font-button text-[11px] uppercase tracking-[0.2em] font-bold text-foreground mb-5">
+                {g.title}
+              </h4>
+              <ul className="space-y-3">
+                {g.links.map((l) => (
+                  <li key={l.label}>
+                    <Link
+                      to={l.to}
+                      className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {l.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-[rgba(255,255,255,0.08)] pt-6 text-center md:flex-row">
-          <p className="text-xs text-wagcon-muted">
-            © 2026 WAGCON / T.U.A Events. All rights reserved.
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-border/30">
+          <p className="font-button text-[11px] uppercase tracking-widest text-muted-foreground">
+            © 2027 WAGCON · A T.U.A Events Production
           </p>
-          <p className="text-xs text-wagcon-muted">
-            Lagos, Nigeria · @WAGCONofficial
-          </p>
+          <div className="flex items-center gap-4">
+            {socials.map(({ Icon, href }) => (
+              <a
+                key={href}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                <Icon size={16} />
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </footer>
-  );
-}
-
-function FooterCol({
-  title,
-  links,
-}: {
-  title: string;
-  links: Array<[string, string]>;
-}) {
-  return (
-    <div>
-      <h4
-        className="mb-4 text-[11px] font-bold uppercase text-wagcon-green"
-        style={{ letterSpacing: "0.14em", fontFamily: "var(--font-body)" }}
-      >
-        {title}
-      </h4>
-      <ul className="space-y-2.5">
-        {links.map(([href, label]) => {
-          const isExternal = href.startsWith("mailto:") || href.startsWith("http");
-          return (
-            <li key={href}>
-              {isExternal ? (
-                <a
-                  href={href}
-                  className="text-sm text-wagcon-white/70 transition-colors hover:text-wagcon-green"
-                >
-                  {label}
-                </a>
-              ) : (
-                <Link
-                  to={href}
-                  className="text-sm text-wagcon-white/70 transition-colors hover:text-wagcon-green"
-                >
-                  {label}
-                </Link>
-              )}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
   );
 }
