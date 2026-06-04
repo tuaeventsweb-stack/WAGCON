@@ -1,88 +1,93 @@
-import { Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+import { Menu, X, Ticket, ArrowRight, Gamepad2 } from "lucide-react";
 
-const navLinks = [
-  { to: "/venues", label: "Venues" },
-  { to: "/agenda", label: "Agenda" },
-  { to: "/speakers", label: "Speakers" },
-  { to: "/exhibit", label: "Exhibit" },
-  { to: "/tickets", label: "Tickets" },
-  { to: "/partners", label: "Partners" },
-  { to: "/about", label: "About" },
-] as const;
-
-export function WagconLogo({ withSub = false }: { withSub?: boolean }) {
-  return (
-    <Link to="/" className="flex items-center gap-2.5">
-      <div
-        className="flex h-8 w-8 items-center justify-center rounded-md bg-wagcon-green text-wagcon-bg"
-        style={{ fontFamily: "var(--font-display)", fontWeight: 800, fontSize: 16 }}
-      >
-        W
-      </div>
-      <div className="flex flex-col leading-none">
-        <span
-          className="text-[18px] md:text-[20px]"
-          style={{ fontFamily: "var(--font-display)", fontWeight: 800 }}
-        >
-          <span className="text-wagcon-green">WAG</span>
-          <span className="text-wagcon-white">CON</span>{" "}
-          <span className="text-wagcon-green">2027</span>
-        </span>
-        {withSub && (
-          <span className="mt-1 text-[11px] text-wagcon-muted">
-            West Africa Gaming Convention
-          </span>
-        )}
-      </div>
-    </Link>
-  );
-}
+const NAV_LINKS = [
+  { label: "Home",     href: "/" },
+  { label: "Agenda",   href: "/agenda" },
+  { label: "Speakers", href: "/speakers" },
+  { label: "Exhibit",  href: "/exhibit" },
+  { label: "Tickets",  href: "/tickets" },
+  { label: "Partners", href: "/partners" },
+  { label: "Gallery",  href: "/gallery" },
+  { label: "About",    href: "/about" },
+];
 
 export function Nav() {
   const [open, setOpen] = useState(false);
-  return (
-    <header
-      className="sticky top-0 z-50 border-b border-[rgba(255,255,255,0.08)] backdrop-blur-xl"
-      style={{ background: "rgba(6,10,6,0.85)" }}
-    >
-      <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-6 md:px-10">
-        <WagconLogo />
 
-        <nav className="hidden items-center gap-7 lg:flex">
-          {navLinks.map((l) => (
+  return (
+    <nav className="sticky top-0 z-50 w-full backdrop-blur-xl bg-background/60 border-b border-border/30">
+      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+        <Link to="/" className="flex items-center gap-2.5">
+          <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
+            <Gamepad2 size={20} strokeWidth={2.5} />
+          </span>
+          <span className="font-heading text-xl font-black tracking-tight text-foreground">
+            WAGCON<span className="text-primary">.</span>
+          </span>
+        </Link>
+
+        {/* Desktop */}
+        <div className="hidden lg:flex items-center gap-8">
+          <div className="relative group">
+            <button className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors flex items-center gap-1">
+              Venues <span className="text-[10px]">▼</span>
+            </button>
+            <div className="absolute top-full left-0 w-80 bg-card border border-border/50 shadow-2xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <Link to="/venues" className="block px-4 py-3 hover:bg-white/5 transition-colors">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-pass-gold" />
+                  <span className="font-heading text-sm font-bold text-pass-gold">The Guild</span>
+                </div>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Gaming Leaders Networking Dinner · 28 April · Four Points by Sheraton, Victoria Island, Lagos</p>
+              </Link>
+              <Link to="/venues" className="block px-4 py-3 hover:bg-white/5 transition-colors">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-pass-green" />
+                  <span className="font-heading text-sm font-bold text-pass-green">The Arena</span>
+                </div>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Convention & Exhibitions · 29–30 April · Lagos Oriental Hotel, Victoria Island, Lagos</p>
+              </Link>
+              <Link to="/venues" className="block px-4 py-3 hover:bg-white/5 transition-colors">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-2 h-2 rounded-full bg-pass-blue" />
+                  <span className="font-heading text-sm font-bold text-pass-blue">The Respawn</span>
+                </div>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Industry After Party · 31 April · Fahrenheit, Victoria Island, Lagos</p>
+              </Link>
+            </div>
+          </div>
+
+          {NAV_LINKS.map((link) => (
             <Link
-              key={l.to}
-              to={l.to}
-              className="text-[13.5px] font-medium text-wagcon-white/80 transition-colors hover:text-wagcon-green"
-              activeProps={{ className: "text-wagcon-green" }}
+              key={link.label}
+              to={link.href}
+              className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors"
             >
-              {l.label}
+              {link.label}
             </Link>
           ))}
-        </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            to="/tickets"
-            className="rounded-md bg-wagcon-green px-4 py-2 text-[12.5px] font-bold uppercase text-wagcon-bg transition-colors hover:bg-[#3DD680]"
-            style={{ letterSpacing: "0.04em" }}
-          >
-            🎮 Get Tickets
-          </Link>
-          <Link
-            to="/exhibit"
-            className="rounded-md border border-[rgba(255,255,255,0.12)] px-4 py-2 text-[12.5px] font-bold uppercase text-wagcon-white transition-colors hover:border-wagcon-green hover:text-wagcon-green"
-            style={{ letterSpacing: "0.04em" }}
-          >
-            Exhibit Now →
-          </Link>
+          <div className="flex items-center gap-3 ml-4">
+            <Link
+              to="/tickets"
+              className="font-button text-[10px] uppercase tracking-wider font-bold bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/85 transition-all active:scale-[0.97] flex items-center gap-1.5"
+            >
+              <Ticket size={12} /> Tickets
+            </Link>
+            <Link
+              to="/exhibit"
+              className="font-button text-[10px] uppercase tracking-wider font-bold border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-primary-foreground transition-all active:scale-[0.97] flex items-center gap-1.5"
+            >
+              Exhibit <ArrowRight size={12} />
+            </Link>
+          </div>
         </div>
 
         <button
-          className="lg:hidden text-wagcon-white"
           onClick={() => setOpen(!open)}
+          className="lg:hidden text-foreground p-2 active:scale-95"
           aria-label="Toggle menu"
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -90,39 +95,50 @@ export function Nav() {
       </div>
 
       {open && (
-        <div className="border-t border-[rgba(255,255,255,0.08)] bg-wagcon-bg lg:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
-            {navLinks.map((l) => (
-              <Link
-                key={l.to}
-                to={l.to}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2.5 text-sm text-wagcon-white/80 hover:bg-wagcon-bg3 hover:text-wagcon-green"
-              >
-                {l.label}
+        <div className="lg:hidden border-t border-border/30 bg-background/95 backdrop-blur-xl">
+          <div className="flex flex-col px-4 py-4 gap-2">
+            <p className="font-button text-[10px] uppercase tracking-widest text-muted-foreground px-2 mt-2">Venues</p>
+            {[
+              ["The Guild",   "text-pass-gold",  "bg-pass-gold"],
+              ["The Arena",   "text-pass-green", "bg-pass-green"],
+              ["The Respawn", "text-pass-blue",  "bg-pass-blue"],
+            ].map(([name, txt, dot]) => (
+              <Link key={name} to="/venues" onClick={() => setOpen(false)} className="flex items-center gap-3 px-2 py-2 bg-white/5">
+                <span className={`w-1.5 h-1.5 rounded-full ${dot}`} />
+                <span className={`font-button text-xs uppercase ${txt}`}>{name}</span>
               </Link>
             ))}
-            <div className="mt-3 flex flex-col gap-2">
+
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                onClick={() => setOpen(false)}
+                className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary py-2 transition-colors px-2"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            <div className="grid grid-cols-2 gap-3 mt-4">
               <Link
                 to="/tickets"
                 onClick={() => setOpen(false)}
-                className="rounded-md bg-wagcon-green px-4 py-3 text-center text-[12.5px] font-bold uppercase text-wagcon-bg"
-                style={{ letterSpacing: "0.04em" }}
+                className="font-button text-xs uppercase tracking-wider font-bold bg-primary text-primary-foreground px-4 py-3 flex items-center justify-center gap-1.5"
               >
-                🎮 Get Tickets
+                <Ticket size={14} /> Tickets
               </Link>
               <Link
                 to="/exhibit"
                 onClick={() => setOpen(false)}
-                className="rounded-md border border-[rgba(255,255,255,0.12)] px-4 py-3 text-center text-[12.5px] font-bold uppercase text-wagcon-white"
-                style={{ letterSpacing: "0.04em" }}
+                className="font-button text-xs uppercase tracking-wider font-bold border border-primary text-primary px-4 py-3 flex items-center justify-center gap-1.5"
               >
-                Exhibit Now →
+                Exhibit <ArrowRight size={14} />
               </Link>
             </div>
           </div>
         </div>
       )}
-    </header>
+    </nav>
   );
 }
