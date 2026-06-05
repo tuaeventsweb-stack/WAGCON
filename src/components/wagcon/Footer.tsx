@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Facebook, Twitter, Instagram, Linkedin, Youtube, Gamepad2, Mail, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube, Gamepad2, Mail, MapPin, Phone, User } from "lucide-react";
 
 const groups = [
   {
@@ -29,6 +29,12 @@ const groups = [
       { label: "Sponsorship Deck",  to: "/exhibit" },
     ],
   },
+];
+
+const contacts = [
+  { name: "Tunde Adekunle", role: "Sponsorship & Exhibition", phone: "+234 901 234 5678", email: "tunde@wagcon.africa" },
+  { name: "Amara Nwosu",    role: "Speakers & Programme",     phone: "+234 802 345 6789", email: "amara@wagcon.africa" },
+  { name: "Kofi Mensah",    role: "Delegates & Tickets",      phone: "+234 703 456 7890", email: "kofi@wagcon.africa"  },
 ];
 
 const socials = [
@@ -87,6 +93,30 @@ export function Footer() {
                   </li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-12 pt-12 border-t border-border/30">
+          {contacts.map((c) => (
+            <div key={c.name} className="border border-border/40 p-5 bg-black">
+              <div className="flex items-center gap-3 mb-3">
+                <span className="flex h-10 w-10 items-center justify-center bg-primary/10 border border-primary/30 text-primary">
+                  <User size={18} />
+                </span>
+                <div>
+                  <p className="font-heading text-sm font-bold text-foreground leading-tight">{c.name}</p>
+                  <p className="font-button text-[10px] uppercase tracking-widest text-primary mt-0.5">{c.role}</p>
+                </div>
+              </div>
+              <div className="space-y-1.5 text-xs">
+                <a href={`tel:${c.phone.replace(/\s/g, "")}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+                  <Phone size={12} /> {c.phone}
+                </a>
+                <a href={`mailto:${c.email}`} className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors break-all">
+                  <Mail size={12} /> {c.email}
+                </a>
+              </div>
             </div>
           ))}
         </div>
