@@ -4,7 +4,16 @@
 //     componentTagger (dev-only), VITE_* env injection, @ path alias, React/TanStack dedupe,
 //     error logger plugins, and sandbox detection (port/host/strictPort).
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
+//
+// DEPLOYMENT: Set NITRO_PRESET in your host's environment variables to target a platform:
+//   - Vercel:   NITRO_PRESET=vercel
+//   - Netlify:  NITRO_PRESET=netlify
+//   - Default:  cloudflare (Lovable sandbox / Cloudflare Workers)
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+
+// Allow the Nitro preset to be overridden at build time via env variable.
+// This lets you deploy to Vercel or Netlify without touching source code.
+const nitroPreset = (process.env.NITRO_PRESET as string | undefined) ?? undefined;
 
 export default defineConfig({
   tanstackStart: {
@@ -12,4 +21,5 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  ...(nitroPreset ? { nitro: { preset: nitroPreset } } : {}),
 });
