@@ -73,7 +73,7 @@ export function Hero() {
           WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
         </p>
 
-        <h1 className="font-heading text-5xl sm:text-7xl md:text-8xl font-black leading-[0.9] tracking-tighter text-foreground mb-8">
+        <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-8">
           West Africa's Gaming<br />
           Industry Levels Up<br />
           <span className="gradient-text">in Lagos.</span>
@@ -95,7 +95,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
           <Link
             to="/tickets"
-            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5 shadow-[0_0_50px_rgba(34,197,94,0.35)]"
+            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
           >
             <Ticket size={18} /> Get Your Pass
           </Link>
@@ -216,7 +216,7 @@ export function About() {
 
             <Link
               to="/tickets"
-              className="inline-flex items-center gap-2 font-button text-sm uppercase tracking-widest font-black bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all shadow-[0_0_40px_rgba(34,197,94,0.25)]"
+              className="inline-flex items-center gap-2 font-button text-sm uppercase tracking-widest font-black bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all"
             >
               <Ticket size={16} /> Get Your Pass
             </Link>
