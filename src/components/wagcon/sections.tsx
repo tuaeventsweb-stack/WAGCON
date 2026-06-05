@@ -65,9 +65,7 @@ export function Hero() {
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 wagcon-hero-grid" />
-        <div className="absolute inset-0 wagcon-hero-glow" />
-        <div className="absolute inset-0 grain opacity-30 mix-blend-overlay" />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-background" />
+        <div className="absolute inset-0 grain opacity-20 mix-blend-overlay" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
@@ -75,7 +73,7 @@ export function Hero() {
           WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
         </p>
 
-        <h1 className="font-heading text-5xl sm:text-7xl md:text-8xl font-black leading-[0.9] tracking-tighter text-foreground mb-8">
+        <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-8">
           West Africa's Gaming<br />
           Industry Levels Up<br />
           <span className="gradient-text">in Lagos.</span>
@@ -97,7 +95,7 @@ export function Hero() {
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
           <Link
             to="/tickets"
-            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5 shadow-[0_0_50px_rgba(34,197,94,0.35)]"
+            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
           >
             <Ticket size={18} /> Get Your Pass
           </Link>
@@ -218,7 +216,7 @@ export function About() {
 
             <Link
               to="/tickets"
-              className="inline-flex items-center gap-2 font-button text-sm uppercase tracking-widest font-black bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all shadow-[0_0_40px_rgba(34,197,94,0.25)]"
+              className="inline-flex items-center gap-2 font-button text-sm uppercase tracking-widest font-black bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all"
             >
               <Ticket size={16} /> Get Your Pass
             </Link>
@@ -238,7 +236,7 @@ export function About() {
                 </p>
               </div>
             </div>
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 blur-3xl rounded-full" />
+            
           </div>
         </div>
       </div>
@@ -297,7 +295,7 @@ function VenueCard({ v }: { v: typeof venues[number] }) {
       <div className="absolute inset-0">
         <div className="absolute inset-0 wagcon-hero-grid opacity-60" />
         <div className="absolute inset-0 wagcon-hero-glow opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+        
       </div>
 
       <div className="absolute top-7 right-7 z-10">
@@ -530,7 +528,7 @@ export function Speakers() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <InitialAvatar name={s.name} size={96} />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <h3 className="font-heading text-sm md:text-base font-bold text-foreground leading-tight">{s.name}</h3>
               <p className="text-xs text-muted-foreground mt-0.5 font-body">{s.role}</p>
