@@ -65,9 +65,7 @@ export function Hero() {
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 wagcon-hero-grid" />
-        <div className="absolute inset-0 wagcon-hero-glow" />
-        <div className="absolute inset-0 grain opacity-30 mix-blend-overlay" />
-        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-background" />
+        <div className="absolute inset-0 grain opacity-20 mix-blend-overlay" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
@@ -238,7 +236,7 @@ export function About() {
                 </p>
               </div>
             </div>
-            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 blur-3xl rounded-full" />
+            
           </div>
         </div>
       </div>
@@ -297,7 +295,7 @@ function VenueCard({ v }: { v: typeof venues[number] }) {
       <div className="absolute inset-0">
         <div className="absolute inset-0 wagcon-hero-grid opacity-60" />
         <div className="absolute inset-0 wagcon-hero-glow opacity-50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent" />
+        
       </div>
 
       <div className="absolute top-7 right-7 z-10">
@@ -530,7 +528,7 @@ export function Speakers() {
                 <div className="absolute inset-0 flex items-center justify-center">
                   <InitialAvatar name={s.name} size={96} />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
               <h3 className="font-heading text-sm md:text-base font-bold text-foreground leading-tight">{s.name}</h3>
               <p className="text-xs text-muted-foreground mt-0.5 font-body">{s.role}</p>
