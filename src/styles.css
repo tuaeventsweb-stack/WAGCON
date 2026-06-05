@@ -72,28 +72,28 @@
 :root {
   --radius: 0.5rem;
 
-  --bg:    #060A06;
-  --bg2:   #090E09;
-  --bg3:   #0D140D;
+  --bg:    #000000;
+  --bg2:   #000000;
+  --bg3:   #000000;
 
   --gold:        #22C55E;
-  --gold-dim:    rgba(34, 197, 94, 0.12);
+  --gold-dim:    rgba(34, 197, 94, 0.10);
   --gold-border: rgba(34, 197, 94, 0.30);
 
   --blue:        #A855F7;
-  --blue-dim:    rgba(168, 85, 247, 0.12);
+  --blue-dim:    rgba(168, 85, 247, 0.10);
   --blue-border: rgba(168, 85, 247, 0.35);
 
   --purple:        #F59E0B;
-  --purple-dim:    rgba(245, 158, 11, 0.12);
+  --purple-dim:    rgba(245, 158, 11, 0.10);
   --purple-border: rgba(245, 158, 11, 0.35);
 
   --green:        #9CA3AF;
-  --green-dim:    rgba(156, 163, 175, 0.12);
+  --green-dim:    rgba(156, 163, 175, 0.10);
   --green-border: rgba(156, 163, 175, 0.30);
 
   --white: #F0FFF0;
-  --muted: #6B8C6B;
+  --muted: #8A9C8A;
   --border: rgba(255, 255, 255, 0.08);
 
   --font-display: "Raleway", sans-serif;
@@ -101,18 +101,18 @@
   --font-body: "Open Sans", sans-serif;
   --font-button: "Montserrat", sans-serif;
 
-  --background: #060A06;
+  --background: #000000;
   --foreground: #F0FFF0;
-  --card: #0D140D;
+  --card: #000000;
   --card-foreground: #F0FFF0;
-  --popover: #0D140D;
+  --popover: #000000;
   --popover-foreground: #F0FFF0;
   --primary: #22C55E;
-  --primary-foreground: #060A06;
-  --secondary: #0D140D;
+  --primary-foreground: #000000;
+  --secondary: #000000;
   --secondary-foreground: #F0FFF0;
-  --muted-shadcn: #090E09;
-  --muted-foreground: #6B8C6B;
+  --muted-shadcn: #000000;
+  --muted-foreground: #8A9C8A;
   --accent: rgba(34, 197, 94, 0.12);
   --accent-foreground: #22C55E;
   --destructive: oklch(0.577 0.245 27.325);
@@ -157,24 +157,22 @@
 @utility font-body    { font-family: var(--font-body); }
 @utility font-button  { font-family: var(--font-button); }
 
-/* Gradient text — WAGCON green to amber */
+/* Solid accent text (no gradient) */
 @utility gradient-text {
-  background: linear-gradient(135deg, #22C55E, #F59E0B);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: var(--gold);
 }
 
-/* Hero overlays */
+/* Hero grid — subtle solid lines, no fills */
 @utility wagcon-hero-grid {
   background-image:
-    linear-gradient(rgba(34, 197, 94, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 197, 94, 0.05) 1px, transparent 1px);
+    linear-gradient(rgba(34, 197, 94, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.06) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
+/* No glow — pure black */
 @utility wagcon-hero-glow {
-  background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.22) 0%, transparent 70%);
+  background: transparent;
 }
 
 @utility grain {
