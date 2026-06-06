@@ -5,8 +5,8 @@ export function TopBar() {
     <div className="w-full bg-background/80 border-b border-border/50 text-muted-foreground text-xs md:text-sm">
       <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         <div className="hidden md:flex items-center gap-4">
-          <a href="tel:+2349012345678" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
-            <Phone size={13} /> +234 901 234 5678
+          <a href="tel:+2349154611827" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+            <Phone size={13} /> +234 915 461 1827
           </a>
           <a href="mailto:hello@wagcon.africa" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
             <Mail size={13} /> hello@wagcon.africa

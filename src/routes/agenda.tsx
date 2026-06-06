@@ -8,7 +8,7 @@ export const Route = createFileRoute("/agenda")({
       { title: "Agenda — WAGCON 2027" },
       { name: "description", content: "Three days, two venues. Every session, every stage, every tournament bracket." },
       { property: "og:title", content: "Agenda — WAGCON 2027" },
-      { property: "og:description", content: "The complete WAGCON 2027 programme, 28–30 April." },
+      { property: "og:description", content: "The complete WAGCON 2027 programme, 29 April – 1 May." },
       { property: "og:url", content: "/agenda" },
     ],
     links: [{ rel: "canonical", href: "/agenda" }],

@@ -8,7 +8,7 @@ export const Route = createFileRoute("/venues")({
       { title: "Venues — WAGCON 2027" },
       { name: "description", content: "Two Lagos venues across three days: The Arena at Lagos Oriental Hotel and After Party at Fahrenheit." },
       { property: "og:title", content: "Venues — WAGCON 2027" },
-      { property: "og:description", content: "Lagos Oriental Hotel · Fahrenheit · 28–30 April 2027" },
+      { property: "og:description", content: "Lagos Oriental Hotel · Fahrenheit · 29 April – 1 May 2027" },
       { property: "og:url", content: "/venues" },
     ],
     links: [{ rel: "canonical", href: "/venues" }],

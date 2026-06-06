@@ -34,14 +34,14 @@ export function Nav() {
                   <span className="w-2 h-2 rounded-full bg-pass-green" />
                   <span className="font-heading text-sm font-bold text-pass-green">The Arena</span>
                 </div>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Conference & Exhibition · Days 1 & 2 · 28–29 April · Lagos Oriental Hotel, Victoria Island</p>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Conference & Exhibition · Days 1 & 2 · 29–30 April · Lagos Oriental Hotel, Victoria Island</p>
               </Link>
               <Link to="/venues" className="block px-4 py-3 hover:bg-white/5 transition-colors">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="w-2 h-2 rounded-full bg-pass-blue" />
                   <span className="font-heading text-sm font-bold text-pass-blue">After Party · Fahrenheit</span>
                 </div>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Industry After Party · Day 3 · 30 April · Fahrenheit, Victoria Island, Lagos</p>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Industry After Party · Day 3 · 1 May · Fahrenheit, Victoria Island, Lagos</p>
               </Link>
             </div>
           </div>

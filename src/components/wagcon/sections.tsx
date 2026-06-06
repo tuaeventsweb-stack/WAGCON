@@ -33,7 +33,7 @@ function InitialAvatar({ name, size = 56 }: { name: string; size?: number }) {
 /* ─────────────────────────────────────────────────────────────
  * 1. HERO with countdown
  * ───────────────────────────────────────────────────────────── */
-const TARGET_DATE = new Date("2027-04-28T09:00:00+01:00");
+const TARGET_DATE = new Date("2027-04-29T09:00:00+01:00");
 function getTimeLeft() {
   const diff = Math.max(0, TARGET_DATE.getTime() - Date.now());
   return {
@@ -70,7 +70,7 @@ export function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
         <p className="font-button text-xs sm:text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6">
-          WEST AFRICA GAMING CONVENTION  ·  28 – 30 APRIL 2027
+          WEST AFRICA GAMING CONVENTION  ·  29 APRIL – 1 MAY 2027
         </p>
 
         <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-8">
@@ -83,13 +83,19 @@ export function Hero() {
           VICTORIA ISLAND, LAGOS, NIGERIA
         </p>
 
-        <p className="font-button text-sm sm:text-base uppercase tracking-widest text-white/60 mb-6">
-          Conference & Exhibition  ·  After Party  ·  Co-located with ABDS
+        <p className="font-button text-sm sm:text-base uppercase tracking-widest text-primary font-bold mb-3">
+          Africa's Largest Gaming & Esports Event
+        </p>
+
+        <p className="font-button text-xs sm:text-sm uppercase tracking-widest text-white/60 mb-6">
+          Conference & Exhibition  ·  After Party  ·  Co-located with{" "}
+          <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>
         </p>
 
         <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-body leading-[1.8] mb-12 px-4">
           Three days. Two venues. The only gaming convention built for West Africa's
-          fastest-growing digital industry. Co-located with ABDS.
+          fastest-growing digital industry. Co-located with{" "}
+          <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -196,16 +202,14 @@ export function About() {
             </h2>
             <div className="space-y-6 text-xl text-muted-foreground font-body leading-relaxed mb-10">
               <p>
-                WAGCON — West Africa Gaming Convention — is the annual gathering where Africa's
-                game developers, esports teams, publishers, investors, and gaming innovators
-                converge in Lagos to build the continent's digital entertainment future.
+                WAGCON — West Africa Gaming Convention is Africa's flagship gaming, esports, and interactive entertainment industry event, bringing together game developers, esports organizations, publishers, gaming operators, investors, technology providers, content creators, regulators, and industry innovators to shape the future of the continent's digital entertainment ecosystem.
               </p>
               <p>
-                Branded as <span className="font-bold text-white">West Africa's Gaming Week</span>,
-                the event spans three days across two Lagos venues — the only event on the continent
-                that takes the business of gaming as seriously as the games themselves.
-                Co-located with{" "}
-                <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS</a>.
+                Positioned as <span className="font-bold text-white">West Africa Gaming Week</span>, WAGCON unfolds over three days across premier venues in Lagos, Nigeria, co-located with{" "}
+                <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS</a>, serving as a platform for industry collaboration, investment, innovation, talent development, and market expansion. The event features conferences, exhibitions, esports tournaments, networking sessions, product showcases, and thought-leadership discussions spanning video gaming, esports, interactive entertainment, gaming technologies, and the broader gaming economy.
+              </p>
+              <p>
+                As the region's most comprehensive gathering for the gaming industry, WAGCON uniquely bridges the worlds of interactive entertainment, competitive gaming, digital engagement, and gaming commerce—creating opportunities for businesses, investors, creators, and communities to connect, collaborate, and drive the next phase of growth across Africa's rapidly evolving digital entertainment landscape.
               </p>
             </div>
 
@@ -252,7 +256,7 @@ export function About() {
 const venues = [
   {
     id: "arena",
-    tag: "DAYS 1 & 2 · 28–29 APRIL 2027 · 9AM – 6PM",
+    tag: "DAYS 1 & 2 · 29–30 APRIL 2027 · 9AM – 6PM",
     brand: "THE ARENA",
     name: "Lagos Oriental Hotel — Victoria Island, Lagos",
     Icon: Gamepad2,
@@ -265,7 +269,7 @@ const venues = [
   },
   {
     id: "afterparty",
-    tag: "DAY 3 · 30 APRIL 2027 · 7PM – LATE",
+    tag: "DAY 3 · 1 MAY 2027 · 7PM – LATE",
     brand: "AFTER PARTY",
     name: "Fahrenheit — Victoria Island, Lagos",
     Icon: Mic,
@@ -339,7 +343,8 @@ export function Venues() {
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl font-body leading-relaxed">
             From the continent's most immersive gaming convention and exhibition floor
-            to the after party that closes the week. Co-located with ABDS.
+            to the after party that closes the week. Co-located with{" "}
+            <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
           </p>
         </div>
 
@@ -350,9 +355,9 @@ export function Venues() {
         {/* Timeline */}
         <div className="w-full grid grid-cols-1 md:grid-cols-3 border-t border-white/10 mt-12">
           {[
-            ["DAY 1 · 28 APRIL",  "THE ARENA",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
-            ["DAY 2 · 29 APRIL",  "THE ARENA",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
-            ["DAY 3 · 30 APRIL",  "AFTER PARTY",   "Fahrenheit · Industry After Party · 7PM–Late",        "pass-blue"],
+            ["DAY 1 · 29 APRIL",  "THE ARENA",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
+            ["DAY 2 · 30 APRIL",  "THE ARENA",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
+            ["DAY 3 · 1 MAY",      "AFTER PARTY",   "Fahrenheit · Industry After Party · 7PM–Late",        "pass-blue"],
           ].map(([day, name, desc, color], i, arr) => (
             <div
               key={i}
@@ -720,9 +725,12 @@ export function LogoWall() {
         <h2 className="font-heading text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
           Want to sponsor, exhibit,<br />or speak at WAGCON 2027?
         </h2>
-        <p className="text-lg text-white/60 font-body max-w-2xl mx-auto mb-12">
-          Put your brand in front of West Africa's top gaming decision-makers. Sponsorship
-          and exhibition packages are now open.
+        <p className="text-xl text-primary font-bold font-body max-w-2xl mx-auto mb-4">
+          To sponsor and exhibit at the event, get in touch.
+        </p>
+        <p className="text-base text-white/60 font-body max-w-2xl mx-auto mb-12">
+          Put your brand in front of West Africa's top gaming decision-makers. WAGCON 2027 is powered by T.U.A Events and co-located with{" "}
+          <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link to="/exhibit" className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all flex items-center justify-center gap-2.5">
@@ -891,7 +899,7 @@ const tiers: Tier[] = [
       [true,  "WAGCON Networking App"],
       [false, "Bootcamp & Conference Sessions"],
       [false, "Esports Tournament seating"],
-      [false, "After Party (30 April)"],
+      [false, "After Party (1 May)"],
     ],
     ideal: "Local enthusiasts, students, and community members exploring the convention floor.",
     cta: "REGISTER FREE",

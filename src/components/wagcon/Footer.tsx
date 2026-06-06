@@ -31,7 +31,7 @@ const groups = [
 ];
 
 const contacts = [
-  { name: "Jidenna Iwuno",    role: "Sponsorship & Partnerships", phone: "+234 915 461 1827", email: "jidennaiwin0@tuaevents.org" },
+  { name: "Jidenna Iwuno",    role: "Sponsorship & Partnerships", phone: "+234 915 461 1827", email: "jidennaiwino@tuaevents.org" },
   { name: "Queeneth Clinton", role: "Delegate & Tickets",         phone: "+234 915 461 1827", email: "queeneth@tuaevents.org" },
   { name: "David Ogbor",      role: "Exhibition & Operations",    phone: "+234 915 461 1827", email: "info@tuaevents.org" },
 ];
@@ -54,7 +54,7 @@ export function Footer() {
               <img src="/wagcon-logo.png" alt="WAGCON" className="h-10 w-auto" />
             </Link>
             <p className="font-button text-xs uppercase tracking-[0.3em] text-primary font-bold mb-3">
-              28 – 30 April 2027
+              29 April – 1 May 2027
             </p>
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm">
               West Africa Gaming Convention — three days, two venues, one industry coming
@@ -117,7 +117,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 pt-8 border-t border-border/30">
           <p className="font-button text-[11px] uppercase tracking-widest text-muted-foreground">
-            © 2027 WAGCON · A T.U.A Events Production
+            © 2027 WAGCON · A T.U.A Events Production · To sponsor and exhibit at the event, get in touch
           </p>
           <div className="flex items-center gap-4">
             {socials.map(({ Icon, href }) => (
