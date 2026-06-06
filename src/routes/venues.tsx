@@ -6,18 +6,18 @@ export const Route = createFileRoute("/venues")({
   head: () => ({
     meta: [
       { title: "Venues — WAGCON 2027" },
-      { name: "description", content: "Three Lagos venues across four days: The Guild, The Arena, and The Respawn." },
+      { name: "description", content: "Two Lagos venues across three days: The Arena at Lagos Oriental Hotel and After Party at Fahrenheit." },
       { property: "og:title", content: "Venues — WAGCON 2027" },
-      { property: "og:description", content: "Four Points by Sheraton · Lagos Oriental Hotel · Fahrenheit" },
+      { property: "og:description", content: "Lagos Oriental Hotel · Fahrenheit · 28–30 April 2027" },
       { property: "og:url", content: "/venues" },
     ],
     links: [{ rel: "canonical", href: "/venues" }],
   }),
   component: () => (
     <StubPage
-      eyebrow="THE THREE VENUES"
-      title={<>Four Days. <Accent>Three Venues</Accent>. One Lagos.</>}
-      description="The Guild at Four Points by Sheraton · The Arena at Lagos Oriental Hotel · The Respawn at Fahrenheit. Detailed venue pages launching soon."
+      eyebrow="THE TWO VENUES"
+      title={<>Three Days. <Accent>Two Venues</Accent>. One Lagos.</>}
+      description="The Arena at Lagos Oriental Hotel · After Party at Fahrenheit. Detailed venue pages launching soon."
     />
   ),
 });

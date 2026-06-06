@@ -7,17 +7,14 @@ import {
   StatsBar,
   About,
   Venues,
-  Lookback,
   EventEssentials,
   Speakers,
   ContentTracks,
   AudienceInsights,
   WhoYouWillMeet,
   LogoWall,
-  Testimonials,
   WhyExhibit,
   WhyWestAfrica,
-  PartnersPreview,
   PassTiers,
   FinalCTA,
 } from "@/components/wagcon/sections";
@@ -26,9 +23,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "WAGCON 2027 — West Africa Gaming Convention · Lagos" },
-      { name: "description", content: "Four days. Three venues. The only gaming convention built for West Africa's fastest-growing digital industry. 28–31 April 2027, Lagos." },
+      { name: "description", content: "Three days. Two venues. The only gaming convention built for West Africa's fastest-growing digital industry. 28–30 April 2027, Lagos. Co-located with ABDS." },
       { property: "og:title", content: "WAGCON 2027 — West Africa Gaming Convention" },
-      { property: "og:description", content: "Lagos · 28–31 April 2027 · The Guild · The Arena · The Respawn" },
+      { property: "og:description", content: "Lagos · 28–30 April 2027 · The Arena · After Party at Fahrenheit" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -45,17 +42,14 @@ function Index() {
         <StatsBar />
         <About />
         <Venues />
-        <Lookback />
         <EventEssentials />
         <Speakers />
         <ContentTracks />
         <AudienceInsights />
         <WhoYouWillMeet />
         <LogoWall />
-        <Testimonials />
         <WhyExhibit />
         <WhyWestAfrica />
-        <PartnersPreview />
         <PassTiers />
         <FinalCTA />
       </main>

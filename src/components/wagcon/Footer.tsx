@@ -9,7 +9,6 @@ const groups = [
       { label: "Agenda",            to: "/agenda" },
       { label: "Speakers",          to: "/speakers" },
       { label: "Venues",            to: "/venues" },
-      { label: "Gallery",           to: "/gallery" },
     ],
   },
   {
@@ -32,9 +31,9 @@ const groups = [
 ];
 
 const contacts = [
-  { name: "Tunde Adekunle", role: "Sponsorship & Exhibition", phone: "+234 901 234 5678", email: "tunde@wagcon.africa" },
-  { name: "Amara Nwosu",    role: "Speakers & Programme",     phone: "+234 802 345 6789", email: "amara@wagcon.africa" },
-  { name: "Kofi Mensah",    role: "Delegates & Tickets",      phone: "+234 703 456 7890", email: "kofi@wagcon.africa"  },
+  { name: "Jidenna Iwuno",    role: "Sponsorship & Partnerships", phone: "+234 915 461 1827", email: "jidennaiwin0@tuaevents.org" },
+  { name: "Queeneth Clinton", role: "Delegate & Tickets",         phone: "+234 915 461 1827", email: "queeneth@tuaevents.org" },
+  { name: "David Ogbor",      role: "Exhibition & Operations",    phone: "+234 915 461 1827", email: "info@tuaevents.org" },
 ];
 
 const socials = [
@@ -52,18 +51,13 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr] mb-12">
           <div>
             <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
-              <span className="flex h-10 w-10 items-center justify-center rounded-md bg-primary text-primary-foreground">
-                <Gamepad2 size={20} strokeWidth={2.5} />
-              </span>
-              <span className="font-heading text-xl font-black tracking-tight text-foreground">
-                WAGCON<span className="text-primary">.</span>
-              </span>
+              <img src="/wagcon-logo.png" alt="WAGCON" className="h-10 w-auto" />
             </Link>
             <p className="font-button text-xs uppercase tracking-[0.3em] text-primary font-bold mb-3">
-              28 – 31 April 2027
+              28 – 30 April 2027
             </p>
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm">
-              West Africa Gaming Convention — four days, three venues, one industry coming
+              West Africa Gaming Convention — three days, two venues, one industry coming
               together in Lagos to build the continent's gaming future.
             </p>
             <div className="mt-6 space-y-2 text-xs text-muted-foreground">

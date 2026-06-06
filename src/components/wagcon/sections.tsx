@@ -70,7 +70,7 @@ export function Hero() {
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
         <p className="font-button text-xs sm:text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6">
-          WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
+          WEST AFRICA GAMING CONVENTION  ·  28 – 30 APRIL 2027
         </p>
 
         <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-8">
@@ -84,12 +84,12 @@ export function Hero() {
         </p>
 
         <p className="font-button text-sm sm:text-base uppercase tracking-widest text-white/60 mb-6">
-          The Guild  ·  The Arena  ·  The Respawn
+          Conference & Exhibition  ·  After Party  ·  Co-located with ABDS
         </p>
 
         <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-body leading-[1.8] mb-12 px-4">
-          Four days. Three venues. The only gaming convention built for West Africa's
-          fastest-growing digital industry.
+          Three days. Two venues. The only gaming convention built for West Africa's
+          fastest-growing digital industry. Co-located with ABDS.
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
@@ -122,12 +122,12 @@ export function Hero() {
  * 2. STATS BAR
  * ───────────────────────────────────────────────────────────── */
 const stats = [
-  { value: 2400, label: "REGISTERED DELEGATES",         suffix: "+" },
-  { value: 80,   label: "WORLD-CLASS SPEAKERS",         suffix: "+" },
-  { value: 120,  label: "EXHIBITING BRANDS & STUDIOS",  suffix: "+" },
-  { value: 25,   label: "COUNTRIES REPRESENTED",        suffix: "+" },
-  { value: 3,    label: "VENUES ACROSS LAGOS",          suffix: "" },
-  { value: 4,    label: "DAYS OF PROGRAMMING",          suffix: "" },
+  { value: 2400, label: "EXPECTED DELEGATES",            suffix: "+" },
+  { value: 80,   label: "WORLD-CLASS SPEAKERS",          suffix: "+" },
+  { value: 120,  label: "EXHIBITING BRANDS & STUDIOS",   suffix: "+" },
+  { value: 25,   label: "COUNTRIES REPRESENTED",         suffix: "+" },
+  { value: 2,    label: "VENUES ACROSS LAGOS",           suffix: "" },
+  { value: 3,    label: "DAYS OF PROGRAMMING",           suffix: "" },
 ];
 
 function StatItem({ value, label, suffix }: { value: number; label: string; suffix: string }) {
@@ -170,7 +170,7 @@ export function StatsBar() {
       <div className="max-w-7xl mx-auto">
         <div className="py-4 px-6 border-b border-border/30">
           <p className="font-button text-xs sm:text-sm uppercase tracking-[0.3em] text-center font-bold text-white/90">
-            <span className="text-primary font-black">WAGCON 2026</span> — BY THE NUMBERS
+            <span className="text-primary font-black">WAGCON 2027</span> — THE OPPORTUNITY
           </p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
@@ -202,8 +202,10 @@ export function About() {
               </p>
               <p>
                 Branded as <span className="font-bold text-white">West Africa's Gaming Week</span>,
-                the event spans four days across landmark Lagos venues — the only event on the continent
+                the event spans three days across two Lagos venues — the only event on the continent
                 that takes the business of gaming as seriously as the games themselves.
+                Co-located with{" "}
+                <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS</a>.
               </p>
             </div>
 
@@ -249,25 +251,12 @@ export function About() {
  * ───────────────────────────────────────────────────────────── */
 const venues = [
   {
-    id: "guild",
-    tag: "DAY 1 · 28 APRIL 2027 · EVENING",
-    brand: "THE GUILD",
-    name: "Four Points by Sheraton — Victoria Island, Lagos",
-    Icon: Crown,
-    description: "You don't join a guild. You earn your invitation. The Gaming Leaders Networking Dinner opens WAGCON 2027 — an exclusive private evening for West Africa's most senior game studio founders, esports executives, publishers, and gaming investors.",
-    pass: "Champion Pass — Invitation Required",
-    passColor: "text-pass-gold",
-    PassIcon: Crown,
-    cta: "Request Invitation",
-    href: "/tickets",
-  },
-  {
     id: "arena",
-    tag: "DAYS 2 & 3 · 29–30 APRIL 2027 · 9AM – 6PM",
+    tag: "DAYS 1 & 2 · 28–29 APRIL 2027 · 9AM – 6PM",
     brand: "THE ARENA",
     name: "Lagos Oriental Hotel — Victoria Island, Lagos",
     Icon: Gamepad2,
-    description: "Two full days of bootcamp sessions, keynotes, panels, exhibition floor, live esports tournament, indie developer showcase, gaming demo zone, and startup pitch stage. West Africa's most immersive gaming convention experience, at full scale.",
+    description: "Two full days of conference sessions, keynotes, panels, exhibition floor, live esports tournament, indie developer showcase, gaming demo zone, and startup pitch stage. West Africa's most immersive gaming convention experience, at full scale.",
     pass: "Player & Champion — Full access · Spectator — Expo + Demo only",
     passColor: "text-pass-green",
     PassIcon: Gamepad2,
@@ -275,12 +264,12 @@ const venues = [
     href: "/tickets",
   },
   {
-    id: "respawn",
-    tag: "DAY 4 · 1 MAY 2027 · 7PM – LATE",
-    brand: "THE RESPAWN",
+    id: "afterparty",
+    tag: "DAY 3 · 30 APRIL 2027 · 7PM – LATE",
+    brand: "AFTER PARTY",
     name: "Fahrenheit — Victoria Island, Lagos",
     Icon: Mic,
-    description: "Game over? Not even close. WAGCON's official industry after party at Fahrenheit, VI closes the week the right way — curated networking, open bar, and the conversations that only happen when the convention floor has closed.",
+    description: "Game over? Not even close. The official WAGCON × ABDS industry after party at Fahrenheit, VI closes the week the right way — curated networking, open bar, and the conversations that only happen when the convention floor has closed.",
     pass: "Player & Champion — Included · Spectator — Upgrade required",
     passColor: "text-pass-blue",
     PassIcon: Mic,
@@ -345,26 +334,25 @@ export function Venues() {
         <div className="mb-16">
           <Eyebrow>THE WAGCON 2027 EXPERIENCE</Eyebrow>
           <h2 className="font-heading text-5xl md:text-7xl font-black text-foreground mb-6 tracking-tighter leading-[0.9]">
-            Four Days. Three Venues.<br />
+            Three Days. Two Venues.<br />
             Level Up in Every Mode.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl font-body leading-relaxed">
-            From an exclusive dinner for West Africa's gaming leaders to the continent's
-            most immersive gaming convention floor — and the after party that closes the week.
+            From the continent's most immersive gaming convention and exhibition floor
+            to the after party that closes the week. Co-located with ABDS.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {venues.map((v) => <VenueCard key={v.id} v={v} />)}
         </div>
 
         {/* Timeline */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 border-t border-white/10 mt-12">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 border-t border-white/10 mt-12">
           {[
-            ["DAY 1 · 28 APRIL",  "THE GUILD",   "Four Points · Gaming Leaders Dinner · Evening",         "pass-gold"],
-            ["DAY 2 · 29 APRIL",  "THE ARENA",   "Lagos Oriental · Bootcamp & Expo · 9AM–6PM",            "pass-green"],
-            ["DAY 3 · 30 APRIL",  "THE ARENA",   "Lagos Oriental · Conference & Finals · 9AM–6PM",        "pass-green"],
-            ["DAY 4 · 1 MAY",     "THE RESPAWN", "Fahrenheit · Industry After Party · 7PM–Late",          "pass-blue"],
+            ["DAY 1 · 28 APRIL",  "THE ARENA",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
+            ["DAY 2 · 29 APRIL",  "THE ARENA",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
+            ["DAY 3 · 30 APRIL",  "AFTER PARTY",   "Fahrenheit · Industry After Party · 7PM–Late",        "pass-blue"],
           ].map(([day, name, desc, color], i, arr) => (
             <div
               key={i}
@@ -385,61 +373,15 @@ export function Venues() {
  * 5. LOOKBACK / GALLERY CTA
  * ───────────────────────────────────────────────────────────── */
 export function Lookback() {
-  return (
-    <section className="py-24 bg-card/10 border-y border-white/5">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="mb-12 text-center">
-          <Eyebrow>WAGCON 2026 — HIGHLIGHTS</Eyebrow>
-          <h2 className="font-heading text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter leading-[0.9]">
-            See what happened when<br />
-            the industry came to play.
-          </h2>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          <div className="relative aspect-video overflow-hidden border border-white/10 bg-card/40 group cursor-pointer">
-            <div className="absolute inset-0 wagcon-hero-grid opacity-40" />
-            <div className="absolute inset-0 wagcon-hero-glow" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-primary-foreground transition-transform group-hover:scale-110">
-                <PlayCircle size={56} strokeWidth={1.2} />
-              </div>
-            </div>
-            <div className="absolute bottom-4 left-4 right-4 font-button text-[10px] uppercase tracking-widest text-white/60">
-              WAGCON 2026 · LAGOS · 2,400+ ATTENDEES · 80+ SPEAKERS · 120+ EXHIBITING BRANDS
-            </div>
-          </div>
-
-          <div className="flex flex-col">
-            <div className="grid flex-1 grid-cols-2 gap-3">
-              {[Trophy, Users, Mic, Gamepad2].map((Icon, i) => (
-                <div key={i} className="relative flex aspect-square items-center justify-center overflow-hidden border border-white/10 bg-card/40">
-                  <div className="absolute inset-0 wagcon-hero-grid opacity-50" />
-                  <Icon className="relative text-primary/60" size={48} strokeWidth={1.5} />
-                </div>
-              ))}
-            </div>
-            <Link
-              to="/gallery"
-              className="mt-5 inline-flex items-center justify-center gap-2 font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all"
-            >
-              View Full Event Gallery <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  return null;
 }
 
 /* ─────────────────────────────────────────────────────────────
  * 6. EVENT ESSENTIALS — 4 downloads
  * ───────────────────────────────────────────────────────────── */
 const downloads = [
-  { Icon: FileText,   title: "Sponsorship & Exhibitor Brochure", description: "Booth packages, sponsorship tiers, and visibility options across all three WAGCON venues.", href: "#" },
-  { Icon: User,       title: "Sample Delegate Profile",           description: "Who fills the room — studios, publishers, developers, investors, and creators.",            href: "#" },
-  { Icon: Calendar,   title: "2027 Convention Agenda",            description: "Four days, three venues — every session, every stage, every tournament bracket.",            href: "/agenda" },
-  { Icon: BarChart3,  title: "WAGCON 2026 Post-Event Report",     description: "The numbers, the highlights, and what the room said after. Proof from the 2026 edition.",   href: "#" },
+  { Icon: FileText,   title: "Sponsorship & Exhibitor Brochure", description: "Booth packages, sponsorship tiers, and visibility options across WAGCON venues.",            href: "#" },
+  { Icon: Calendar,   title: "2027 Convention Agenda",            description: "Three days, two venues — every session, every stage, every tournament bracket.",            href: "/agenda" },
 ];
 
 export function EventEssentials() {
@@ -453,7 +395,7 @@ export function EventEssentials() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {downloads.map((item, i) => (
             <div key={i} className="bg-card border border-white/10 p-8 flex flex-col hover:border-primary/50 transition-all group">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
@@ -478,18 +420,10 @@ export function EventEssentials() {
  * 7. SPEAKERS
  * ───────────────────────────────────────────────────────────── */
 const confirmedSpeakers = [
-  { name: "Olamide Akinwale",      role: "Founder",                     company: "Maliyo Games" },
-  { name: "Hugo Obi",              role: "CEO",                         company: "Maliyo Studios" },
-  { name: "Adia Sowho",            role: "MD",                          company: "Mara Phones Gaming" },
-  { name: "Iyinoluwa Aboyeji",     role: "Founding Partner",            company: "Future Africa" },
-  { name: "Ada Nduka Oyom",        role: "Founder",                     company: "She Code Africa" },
-  { name: "Chika Stacy Orie",      role: "Esports Lead",                company: "ESL Africa" },
-  { name: "Bayo Adekanmbi",        role: "CEO",                         company: "Data Science Nigeria" },
-  { name: "Funke Opeke",           role: "Founder",                     company: "MainOne" },
-  { name: "Olumide Adeyemi",       role: "Director, Gaming Partnerships", company: "MTN Nigeria" },
-  { name: "Aisha Bello",           role: "Head of Developer Relations", company: "Google Africa" },
-  { name: "Tunde Okafor",          role: "Studio Director",             company: "Kucho Studios" },
-  { name: "Chinaza Eze",           role: "Esports Operations Lead",     company: "GAMR Africa" },
+  { name: "Speaker TBA",  role: "To be announced",  company: "" },
+  { name: "Speaker TBA",  role: "To be announced",  company: "" },
+  { name: "Speaker TBA",  role: "To be announced",  company: "" },
+  { name: "Speaker TBA",  role: "To be announced",  company: "" },
 ];
 
 export function Speakers() {
@@ -511,12 +445,12 @@ export function Speakers() {
             WAGCON 2027 Speakers.
           </h2>
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">
-            The founders, executives, esports leaders, and policy voices shaping West Africa's
-            gaming industry — on one stage.
+            Speakers to be announced. The founders, executives, esports leaders, and policy voices
+            shaping West Africa's gaming industry — on one stage.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
           {confirmedSpeakers.map((s, i) => (
             <div
               key={s.name}
@@ -604,7 +538,6 @@ export function ContentTracks() {
 const insights = {
   stats: [
     { value: "62%",    label: "C-Level, Founders & Studio Heads" },
-    { value: "2,400+", label: "Registered Delegates (2026 Edition)" },
     { value: "25+",    label: "Countries Represented" },
     { value: "94%",    label: "Plan to Return or Recommend WAGCON" },
     { value: "48%",    label: "Delegates with Active Investment Mandate" },
@@ -652,7 +585,7 @@ export function AudienceInsights() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-24">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
           {insights.stats.map((s, i) => (
             <div key={i} className="text-center lg:text-left">
               <p className="font-heading text-4xl md:text-6xl font-black text-primary mb-2 tracking-tighter">{s.value}</p>
@@ -701,27 +634,7 @@ export function AudienceInsights() {
           </div>
         </div>
 
-        <div className="mb-12">
-          <p className="font-button text-[10px] uppercase tracking-[0.3em] text-primary mb-10">WHAT CAME OUT OF WAGCON 2026</p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {insights.outcomes.map((s, i) => (
-              <div key={i} className="p-8 bg-card border border-white/10 hover:border-primary/30 transition-all group">
-                <p className="font-heading text-4xl font-black text-primary mb-2 group-hover:scale-110 transition-transform origin-left">{s.value}</p>
-                <p className="font-button text-[10px] uppercase tracking-widest text-white/60">{s.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
 
-        <div className="p-12 bg-primary/10 border border-primary/20 text-center">
-          <h3 className="font-heading text-2xl font-bold text-white mb-4">Want the full audience breakdown?</h3>
-          <p className="text-white/60 font-body text-base mb-8">
-            Download the WAGCON 2026 Post-Event Report — complete delegate demographics, session attendance, and exhibitor outcomes.
-          </p>
-          <a href="#" className="inline-flex items-center gap-2 font-button text-xs uppercase tracking-widest font-black bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all">
-            [ DOWNLOAD POST-EVENT REPORT ] <Download size={14} />
-          </a>
-        </div>
       </div>
     </section>
   );
@@ -736,6 +649,7 @@ const personas = [
   { id: "investors",  label: "Investors",   title: "Investors & Gaming Funds.",          description: "VCs, angel investors, gaming-focused funds, and corporate VCs actively backing the continent's most promising gaming startups.",                                  stats: "180+ Investors & Fund Representatives" },
   { id: "esports",    label: "Esports",     title: "Esports Teams & Organizers.",        description: "Team owners, tournament organizers, esports infrastructure builders, and competitive gaming communities defining the African esports landscape.",                  stats: "320+ Esports Industry Delegates" },
   { id: "creators",   label: "Creators",    title: "Creators, Media & Community.",       description: "Gaming creators, streamers, journalists, podcast hosts, and community managers shaping public perception and driving audience growth.",                            stats: "410+ Creators, Media & Community Leaders" },
+  { id: "gamers",    label: "Gamers",    title: "Gaming Enthusiasts & Aficionados.",  description: "The players, enthusiasts, and competitive gamers who make West Africa's gaming scene vibrant — from casual mobile to hardcore esports.",                                stats: "500+ Gaming Enthusiasts" },
 ];
 
 export function WhoYouWillMeet() {
@@ -800,22 +714,26 @@ function LogoChip({ label }: { label: string }) {
 
 export function LogoWall() {
   return (
-    <section className="py-24 bg-background overflow-hidden border-b border-white/5 marquee-pause">
-      <div className="max-w-7xl mx-auto px-4 mb-16 text-center">
-        <p className="font-button text-[10px] uppercase tracking-[0.4em] text-white/40 font-bold mb-4">
-          STUDIOS · PLATFORMS · PUBLISHERS IN THE ROOM
+    <section className="py-24 bg-background overflow-hidden border-b border-white/5">
+      <div className="max-w-7xl mx-auto px-4 text-center">
+        <Eyebrow>PARTNER WITH WAGCON</Eyebrow>
+        <h2 className="font-heading text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
+          Want to sponsor, exhibit,<br />or speak at WAGCON 2027?
+        </h2>
+        <p className="text-lg text-white/60 font-body max-w-2xl mx-auto mb-12">
+          Put your brand in front of West Africa's top gaming decision-makers. Sponsorship
+          and exhibition packages are now open.
         </p>
-      </div>
-
-      <div className="relative flex overflow-x-hidden">
-        <div className="py-6 animate-marquee whitespace-nowrap flex items-center gap-6 md:gap-10">
-          {[...studios, ...studios].map((l, i) => <LogoChip key={`a-${i}`} label={l} />)}
-        </div>
-      </div>
-
-      <div className="relative flex overflow-x-hidden mt-8">
-        <div className="py-6 animate-marquee2 whitespace-nowrap flex items-center gap-6 md:gap-10">
-          {[...platforms, ...platforms].map((l, i) => <LogoChip key={`b-${i}`} label={l} />)}
+        <div className="flex flex-col sm:flex-row justify-center gap-4">
+          <Link to="/exhibit" className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all flex items-center justify-center gap-2.5">
+            <Building2 size={18} /> Exhibit or Sponsor
+          </Link>
+          <Link to="/contact" className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5">
+            <Mic size={18} /> Apply to Speak
+          </Link>
+          <Link to="/contact" className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5">
+            <Phone size={18} /> Contact Us
+          </Link>
         </div>
       </div>
     </section>
@@ -833,55 +751,7 @@ const testimonials = [
 ];
 
 export function Testimonials() {
-  const [active, setActive] = useState(0);
-  useEffect(() => {
-    const id = setInterval(() => setActive((p) => (p + 1) % testimonials.length), 5500);
-    return () => clearInterval(id);
-  }, []);
-
-  return (
-    <section className="py-24 bg-card/10 border-b border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <Eyebrow>TESTIMONIALS</Eyebrow>
-          <h2 className="font-heading text-4xl md:text-6xl font-black text-white mb-4 tracking-tighter leading-[0.9]">
-            What the industry says.
-          </h2>
-        </div>
-
-        <div className="relative max-w-4xl mx-auto h-[400px] md:h-[320px]">
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className={`absolute inset-0 transition-all duration-1000 flex flex-col items-center justify-center text-center ${
-                active === i ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-10 scale-95"
-              }`}
-            >
-              <Quote size={48} className="text-primary mb-8" strokeWidth={1.5} />
-              <p className="font-heading text-2xl md:text-3xl font-bold text-white mb-8 italic leading-tight">
-                "{t.quote}"
-              </p>
-              <div>
-                <p className="font-button text-sm uppercase tracking-widest font-black text-primary mb-1">{t.author}</p>
-                <p className="font-button text-[10px] uppercase tracking-widest text-white/40">{t.company}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className="flex justify-center gap-4 mt-12">
-          {testimonials.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setActive(i)}
-              aria-label={`Show testimonial ${i + 1}`}
-              className={`w-12 h-1 transition-all duration-500 ${active === i ? "bg-primary" : "bg-white/10"}`}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+  return null;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -989,36 +859,7 @@ export function WhyWestAfrica() {
 const partners = ["MTN", "AIRTEL", "GTBANK", "STANBIC", "ACCESS BANK", "MICROSOFT", "GOOGLE", "META", "CARRY1ST", "MALIYO", "ESL", "UNITY"];
 
 export function PartnersPreview() {
-  return (
-    <section className="py-24 bg-card/20 border-t border-white/5 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <div className="mb-16">
-          <Eyebrow>POWERED BY</Eyebrow>
-          <h2 className="font-heading text-4xl md:text-6xl font-black text-foreground mb-6 tracking-tighter leading-[0.9]">
-            Backed by the studios<br />and platforms building<br />Africa's gaming future.
-          </h2>
-        </div>
-
-        <div className="mb-12">
-          <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
-            {partners.map((p) => (
-              <div key={p} className="flex items-center justify-center bg-white/95 rounded-md shadow-md h-20 md:h-24 w-[calc(50%-12px)] md:w-[calc(25%-18px)] min-w-[140px] max-w-[200px] px-5">
-                <span className="font-heading text-base font-black tracking-[0.08em] text-zinc-900">{p}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <Link
-          to="/partners"
-          className="inline-flex items-center gap-3 font-button text-xs uppercase tracking-widest font-black text-foreground hover:text-primary transition-colors group"
-        >
-          [ SEE FULL ECOSYSTEM DIRECTORY ]
-          <ArrowRight size={16} className="transition-transform group-hover:translate-x-2" />
-        </Link>
-      </div>
-    </section>
-  );
+  return null;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -1050,8 +891,7 @@ const tiers: Tier[] = [
       [true,  "WAGCON Networking App"],
       [false, "Bootcamp & Conference Sessions"],
       [false, "Esports Tournament seating"],
-      [false, "The Guild (28 April)"],
-      [false, "The Respawn (1 May)"],
+      [false, "After Party (30 April)"],
     ],
     ideal: "Local enthusiasts, students, and community members exploring the convention floor.",
     cta: "REGISTER FREE",
@@ -1067,11 +907,10 @@ const tiers: Tier[] = [
       [true,  "Keynotes, panels & bootcamp (Days 2 & 3)"],
       [true,  "Exhibition Floor & Demo Zone (Days 2 & 3)"],
       [true,  "Esports Tournament & Indie Showcase"],
-      [true,  "The Respawn — Industry After Party (Day 4)"],
+      [true,  "After Party — Industry After Party (Day 3)"],
       [true,  "Startup Pitch Stage access"],
       [true,  "Workshop & masterclass access"],
       [true,  "Lunch & refreshments (Days 2 & 3)"],
-      [false, "The Guild — Champion Pass only"],
     ],
     ideal: "Developers, founders, publishers, and creators seeking the full WAGCON experience.",
     cta: "GET PLAYER PASS",
@@ -1085,8 +924,8 @@ const tiers: Tier[] = [
     color: "gold",
     features: [
       [true, "Everything on the Player Pass"],
-      [true, "The Guild — Gaming Leaders Dinner (Day 1)"],
-      [true, "The Respawn — Priority VIP section"],
+      [true, "VIP Networking Dinner (Day 1)"],
+      [true, "After Party — Priority VIP section"],
       [true, "VIP Speaker & Sponsor Lounge"],
       [true, "Reserved front-row seating — all sessions"],
       [true, "3 curated 1-on-1 meeting introductions"],
@@ -1115,7 +954,7 @@ export function PassTiers() {
             Choose your role at<br />WAGCON 2027.
           </h2>
           <p className="text-lg text-white/60 font-body max-w-xl mx-auto">
-            Four days. Three venues. Every level of participation covered. Early bird pricing
+            Three days. Two venues. Every level of participation covered. Early bird pricing
             active — ends 28 February 2027.
           </p>
         </div>
@@ -1181,9 +1020,9 @@ export function PassTiers() {
  * 17. FINAL CTA — Ticket banner + team contacts
  * ───────────────────────────────────────────────────────────── */
 const team = [
-  { name: "Tunde Adekunle", role: "Sponsorship & Exhibition Lead", phone: "+234 901 234 5678" },
-  { name: "Amara Nwosu",    role: "Speaker & Programme Lead",       phone: "+234 802 345 6789" },
-  { name: "Kofi Mensah",    role: "Delegate & Tickets Lead",        phone: "+234 703 456 7890" },
+  { name: "T.U.A Events", role: "Sponsorship & Exhibition", phone: "hello@wagcon.africa" },
+  { name: "T.U.A Events", role: "Speakers & Programme",     phone: "hello@wagcon.africa" },
+  { name: "T.U.A Events", role: "Delegates & Tickets",      phone: "hello@wagcon.africa" },
 ];
 
 export function FinalCTA() {
@@ -1198,7 +1037,7 @@ export function FinalCTA() {
               How will you show up<br />at WAGCON 2027?
             </h2>
             <p className="text-lg text-white/70 font-body max-w-2xl mx-auto mb-10">
-              Four days. Three venues. The only gaming convention built for West Africa's
+              Three days. Two venues. The only gaming convention built for West Africa's
               fastest-growing digital industry. The room is filling up — secure your place.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -1215,8 +1054,8 @@ export function FinalCTA() {
         {/* Three pillar CTAs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {[
-            { Icon: Gamepad2,  title: "Get Your Pass",    body: "The Arena, The Respawn, and for Champion Pass holders — The Guild. Choose your level.",                cta: "Get Tickets",  href: "/tickets" as const },
-            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across all three WAGCON venues.", cta: "Exhibit Now",  href: "/exhibit" as const },
+            { Icon: Gamepad2,  title: "Get Your Pass",    body: "The Arena for conference and exhibition, the After Party at Fahrenheit. Choose your level.",                cta: "Get Tickets",  href: "/tickets" as const },
+            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across both WAGCON venues.", cta: "Exhibit Now",  href: "/exhibit" as const },
             { Icon: Mic,       title: "Apply to Speak",   body: "Share your expertise with West Africa's most engaged gaming audience. Applications open.",              cta: "Apply Now",    href: "/contact" as const },
           ].map((c) => (
             <div key={c.title} className="bg-card border border-white/10 p-8 hover:border-primary/40 transition-all">
@@ -1228,30 +1067,6 @@ export function FinalCTA() {
               <Link to={c.href} className="font-button text-[10px] uppercase tracking-widest font-bold text-primary hover:text-white transition-colors flex items-center gap-2">
                 [ {c.cta} ] <ArrowRight size={14} />
               </Link>
-            </div>
-          ))}
-        </div>
-
-        {/* Team contacts */}
-        <div className="text-center mb-10">
-          <Eyebrow>SPEAK DIRECTLY TO OUR TEAM</Eyebrow>
-          <h3 className="font-heading text-3xl md:text-4xl font-black text-white tracking-tighter leading-[0.9]">
-            Talk to a human.
-          </h3>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {team.map((m) => (
-            <div key={m.name} className="bg-card border border-white/10 p-6 flex flex-col items-start hover:border-primary/40 transition-all">
-              <div className="flex items-center gap-4 mb-5">
-                <InitialAvatar name={m.name} size={56} />
-                <div>
-                  <p className="font-heading text-base font-bold text-white">{m.name}</p>
-                  <p className="font-button text-[10px] uppercase tracking-widest text-white/40">{m.role}</p>
-                </div>
-              </div>
-              <a href={`tel:${m.phone.replace(/\s/g, "")}`} className="inline-flex items-center gap-2 font-button text-xs uppercase tracking-widest font-bold text-primary hover:text-white transition-colors">
-                <Phone size={14} /> {m.phone}
-              </a>
             </div>
           ))}
         </div>

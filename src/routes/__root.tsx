@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "WAGCON 2027 — West Africa Gaming Convention" },
+      { title: "WAGCON 2027 — West Africa Gaming Convention · Co-located with ABDS" },
       {
         name: "description",
         content:
-          "West Africa's premier gaming convention. Four days, three venues, Lagos. 28–31 April 2027.",
+          "West Africa's premier gaming convention. Three days, two venues, Lagos. 28–30 April 2027.",
       },
       { name: "author", content: "T.U.A Events" },
       { property: "og:site_name", content: "WAGCON 2027" },
