@@ -426,12 +426,7 @@ export function EventEssentials() {
 /* ─────────────────────────────────────────────────────────────
  * 7. SPEAKERS
  * ───────────────────────────────────────────────────────────── */
-const confirmedSpeakers = [
-  { name: "Speaker TBA",  role: "To be announced",  company: "" },
-  { name: "Speaker TBA",  role: "To be announced",  company: "" },
-  { name: "Speaker TBA",  role: "To be announced",  company: "" },
-  { name: "Speaker TBA",  role: "To be announced",  company: "" },
-];
+const confirmedSpeakers = [];
 
 export function Speakers() {
   const ref = useRef<HTMLDivElement>(null);
@@ -452,39 +447,33 @@ export function Speakers() {
             WAGCON 2027 Speakers.
           </h2>
           <p className="text-muted-foreground font-body max-w-2xl mx-auto">
-            Speakers to be announced. The founders, executives, esports leaders, and policy voices
-            shaping West Africa's gaming industry — on one stage.
+            The founders, executives, esports leaders, and policy voices shaping West Africa's
+            gaming industry — on one stage.
           </p>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 md:gap-6">
-          {confirmedSpeakers.map((s, i) => (
-            <div
-              key={s.name}
-              className={`group transition-all duration-700 ${visible ? "opacity-100 translate-y-0" : "opacity-20 translate-y-4"}`}
-              style={{ transitionDelay: `${i * 50}ms` }}
-            >
-              <div className="relative w-full aspect-[3/4] bg-card/40 border border-white/10 overflow-hidden mb-3">
-                <div className="absolute inset-0 wagcon-hero-grid opacity-40" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <InitialAvatar name={s.name} size={96} />
-                </div>
-                <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </div>
-              <h3 className="font-heading text-sm md:text-base font-bold text-foreground leading-tight">{s.name}</h3>
-              <p className="text-xs text-muted-foreground mt-0.5 font-body">{s.role}</p>
-              <p className="text-xs text-primary/80 font-body">{s.company}</p>
+        <div className={`max-w-3xl mx-auto p-8 md:p-12 bg-gradient-to-br from-card/85 to-background/50 border border-primary/20 hover:border-primary/50 relative overflow-hidden rounded-sm transition-all duration-700 text-center ${visible ? "opacity-100 translate-y-0" : "opacity-20 translate-y-4"}`}>
+          <div className="absolute inset-0 wagcon-hero-grid opacity-10" />
+          <div className="absolute -top-24 -left-24 w-48 h-48 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-48 h-48 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
+          
+          <div className="relative z-10">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-6 animate-pulse">
+              <Users size={32} />
             </div>
-          ))}
-        </div>
-
-        <div className="mt-14 text-center">
-          <Link
-            to="/speakers"
-            className="inline-flex items-center gap-2 font-button text-sm uppercase tracking-wider font-bold border-2 border-white/10 text-foreground px-10 py-5 hover:border-primary hover:text-primary transition-all"
-          >
-            View All Speakers <ArrowRight size={16} />
-          </Link>
+            <h3 className="font-heading text-2xl md:text-3xl font-bold text-white mb-4">Speakers Announcement Coming Soon</h3>
+            <p className="text-sm md:text-base text-white/70 font-body max-w-lg mx-auto mb-8 leading-relaxed">
+              We are finalizing our line-up of international founders, studio heads, esports pioneers, and investment decision-makers who are shaping the future of African gaming.
+            </p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              <Link
+                to="/speakers"
+                className="inline-flex items-center justify-center gap-2.5 font-button text-xs uppercase tracking-wider font-bold bg-primary text-primary-foreground px-8 py-4 hover:bg-primary/85 transition-all"
+              >
+                Apply to Speak <ArrowRight size={14} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>
