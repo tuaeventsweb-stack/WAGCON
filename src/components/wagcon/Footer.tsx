@@ -15,7 +15,7 @@ const groups = [
     title: "Participate",
     links: [
       { label: "Get Your Pass",     to: "https://app.eventpadi.com/wagcon" },
-      { label: "Exhibit / Sponsor", to: "/exhibit" },
+      { label: "Exhibit / Sponsor", to: "https://app.eventpadi.com/wagcon" },
       { label: "Apply to Speak",    to: "/contact" },
       { label: "Partners",          to: "/partners" },
     ],
@@ -25,7 +25,7 @@ const groups = [
     links: [
       { label: "Contact",           to: "/contact" },
       { label: "Press & Media",     to: "/contact" },
-      { label: "Sponsorship Deck",  to: "/exhibit" },
+      { label: "Sponsorship Deck",  to: "https://app.eventpadi.com/wagcon" },
     ],
   },
 ];

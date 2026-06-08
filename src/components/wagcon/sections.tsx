@@ -107,12 +107,14 @@ export function Hero() {
           >
             <Ticket size={18} /> Get Your Pass
           </a>
-          <Link
-            to="/exhibit"
+          <a
+            href="https://app.eventpadi.com/wagcon"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
           >
             Exhibit at WAGCON <ArrowRight size={18} />
-          </Link>
+          </a>
         </div>
 
         <div className="flex justify-center gap-4">
@@ -740,9 +742,14 @@ export function LogoWall() {
           <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Link to="/exhibit" className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all flex items-center justify-center gap-2.5">
+          <a
+            href="https://app.eventpadi.com/wagcon"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all flex items-center justify-center gap-2.5"
+          >
             <Building2 size={18} /> Exhibit or Sponsor
-          </Link>
+          </a>
           <Link to="/contact" className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5">
             <Mic size={18} /> Apply to Speak
           </Link>
@@ -1074,9 +1081,14 @@ export function FinalCTA() {
               >
                 <Ticket size={18} /> Get Your Pass
               </a>
-              <Link to="/exhibit" className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5">
+              <a
+                href="https://app.eventpadi.com/wagcon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5"
+              >
                 Exhibit at WAGCON <ArrowRight size={18} />
-              </Link>
+              </a>
             </div>
           </div>
         </div>
@@ -1085,7 +1097,7 @@ export function FinalCTA() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {[
             { Icon: Gamepad2,  title: "Get Your Pass",    body: "The Arena for conference and exhibition, the After Party at Fahrenheit. Choose your level.",                cta: "Get Tickets",  href: "https://app.eventpadi.com/wagcon" },
-            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across both WAGCON venues.", cta: "Exhibit Now",  href: "/exhibit" },
+            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across both WAGCON venues.", cta: "Exhibit Now",  href: "https://app.eventpadi.com/wagcon" },
             { Icon: Mic,       title: "Apply to Speak",   body: "Share your expertise with West Africa's most engaged gaming audience. Applications open.",              cta: "Apply Now",    href: "/contact" },
           ].map((c) => (
             <div key={c.title} className="bg-card border border-white/10 p-8 hover:border-primary/40 transition-all">

@@ -148,12 +148,14 @@ function PartnersPage() {
               Maximize your brand visibility, run custom showcase panels, or distribute developer kits. Download the exhibitor deck or contact the committee.
             </p>
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
-              <Link
-                to="/exhibit"
+              <a
+                href="https://app.eventpadi.com/wagcon"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 font-button text-xs uppercase tracking-wider font-bold bg-primary text-black px-8 py-4 hover:bg-primary/85 transition-all"
               >
                 Request Sponsorship Deck <ArrowRight size={14} />
-              </Link>
+              </a>
               <Link
                 to="/contact"
                 className="inline-flex items-center justify-center gap-2 font-button text-xs uppercase tracking-wider font-bold border border-white/20 text-white px-8 py-4 hover:border-primary hover:text-primary transition-all"

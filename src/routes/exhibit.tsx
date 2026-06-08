@@ -3,7 +3,7 @@ import { useState } from "react";
 import { Nav } from "@/components/wagcon/Nav";
 import { Footer } from "@/components/wagcon/Footer";
 import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
-import { Building2, Landmark, Check, ShieldCheck, Mail, Send, Award, Phone } from "lucide-react";
+import { Building2, Landmark, Check, ShieldCheck, Mail, Send, Award, Phone, ExternalLink } from "lucide-react";
 
 export const Route = createFileRoute("/exhibit")({
   head: () => ({
@@ -238,124 +238,28 @@ function ExhibitPage() {
           </div>
         </Section>
 
-        {/* Interactive Request Form */}
+        {/* Eventpadi Sponsor Form CTA */}
         <Section bg="bg2" className="border-t border-white/5">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <Eyebrow>INQUIRE TODAY</Eyebrow>
-              <SectionTitle className="mb-3">Request Sponsorship & Exhibition Deck</SectionTitle>
-              <p className="text-white/60 font-body text-xs md:text-sm">
-                Fill out the form below to receive the comprehensive brochure. Our sponsorship committee will reply within 24 hours.
-              </p>
-            </div>
-
-            {success ? (
-              <div className="p-8 border border-primary/20 bg-primary/5 rounded-sm text-center space-y-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-2">
-                  <ShieldCheck size={36} />
-                </div>
-                <h3 className="font-heading text-xl font-bold text-white">Proposal Request Submitted</h3>
-                <p className="text-sm text-white/70 font-body max-w-md mx-auto leading-relaxed">
-                  Thank you! We have received your inquiry. A member of the T.U.A Events team will contact you shortly at the provided email address to deliver the deck.
-                </p>
-                <button
-                  onClick={() => setSuccess(false)}
-                  className="font-button text-[10px] uppercase tracking-wider font-bold text-primary hover:text-white transition-colors"
-                >
-                  [ Submit Another Request ]
-                </button>
+          <div className="max-w-3xl mx-auto text-center">
+            <div className="p-8 md:p-12 border border-primary/20 bg-gradient-to-b from-wagcon-bg3/50 to-wagcon-bg3/10 rounded-sm space-y-6">
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-2">
+                <Building2 size={32} />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6 bg-wagcon-bg3/30 border border-white/5 p-8 rounded-sm">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider block">Your Name *</label>
-                    <input
-                      type="text"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      placeholder="e.g. Queeneth Clinton"
-                      className="w-full bg-wagcon-bg border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-primary rounded-sm font-body"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider block">Company Name *</label>
-                    <input
-                      type="text"
-                      name="company"
-                      required
-                      value={formData.company}
-                      onChange={handleChange}
-                      placeholder="e.g. ChopUp Studios"
-                      className="w-full bg-wagcon-bg border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-primary rounded-sm font-body"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider block">Business Email *</label>
-                    <input
-                      type="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="e.g. partner@studio.com"
-                      className="w-full bg-wagcon-bg border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-primary rounded-sm font-body"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider block">Phone Number</label>
-                    <input
-                      type="text"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="e.g. +234 915 461 1827"
-                      className="w-full bg-wagcon-bg border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-primary rounded-sm font-body"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider block">Target Package</label>
-                  <select
-                    name="package"
-                    value={formData.package}
-                    onChange={handleChange}
-                    className="w-full bg-wagcon-bg border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-primary rounded-sm font-body"
-                  >
-                    <option value="platinum">Platinum / Title Sponsor (Custom)</option>
-                    <option value="gold">Gold Partner (₦5,000,000)</option>
-                    <option value="silver">Silver Exhibitor (₦2,500,000)</option>
-                    <option value="indie">Indie Dev Showcase (₦350,000)</option>
-                  </select>
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-[10px] uppercase font-bold text-white/60 tracking-wider block">Message / Specific Requirements</label>
-                  <textarea
-                    name="message"
-                    rows={4}
-                    value={formData.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about what you plan to exhibit, or requests for bespoke integrations..."
-                    className="w-full bg-wagcon-bg border border-white/10 px-4 py-3 text-sm text-white focus:outline-none focus:border-primary rounded-sm font-body resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={submitting}
-                  className="w-full flex items-center justify-center gap-2 font-button text-xs uppercase tracking-wider font-bold bg-primary text-black py-4 hover:bg-primary/85 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-sm"
+              <h3 className="font-heading text-2xl md:text-3xl font-extrabold text-white">Sponsorship & Exhibitor Registration</h3>
+              <p className="text-sm md:text-base text-white/70 font-body max-w-lg mx-auto leading-relaxed">
+                WAGCON 2027 sponsorship applications and exhibition booth reservations are managed externally on our official platform, Eventpadi. 
+              </p>
+              <div className="pt-4">
+                <a
+                  href="https://app.eventpadi.com/wagcon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2.5 font-button text-sm uppercase tracking-wider font-bold bg-primary text-black px-10 py-5 hover:bg-primary/85 transition-all shadow-[0_0_30px_rgba(34,197,94,0.25)] rounded-sm"
                 >
-                  {submitting ? "SUBMITTING INQUIRY..." : <>SUBMIT PROPOSAL REQUEST <Send size={14} /></>}
-                </button>
-              </form>
-            )}
+                  Open Registration Form <ExternalLink size={16} />
+                </a>
+              </div>
+            </div>
             
             <div className="mt-8 text-center text-xs text-white/40 font-body">
               For immediate assistance, contact us directly at <a href="mailto:info@tuaevents.org" className="text-primary hover:underline font-bold">info@tuaevents.org</a>.

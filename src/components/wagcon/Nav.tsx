@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { label: "Home",     href: "/" },
   { label: "Agenda",   href: "/agenda" },
   { label: "Speakers", href: "/speakers" },
-  { label: "Exhibit",  href: "/exhibit" },
+  { label: "Exhibit",  href: "https://app.eventpadi.com/wagcon" },
   { label: "Tickets",  href: "https://app.eventpadi.com/wagcon" },
   { label: "Partners", href: "/partners" },
   { label: "About",    href: "/about" },
@@ -77,12 +77,14 @@ export function Nav() {
             >
               <Ticket size={12} /> Tickets
             </a>
-            <Link
-              to="/exhibit"
+            <a
+              href="https://app.eventpadi.com/wagcon"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-button text-[10px] uppercase tracking-wider font-bold border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-primary-foreground transition-all active:scale-[0.97] flex items-center gap-1.5"
             >
               Exhibit <ArrowRight size={12} />
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -143,13 +145,15 @@ export function Nav() {
               >
                 <Ticket size={14} /> Tickets
               </a>
-              <Link
-                to="/exhibit"
+              <a
+                href="https://app.eventpadi.com/wagcon"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="font-button text-xs uppercase tracking-wider font-bold border border-primary text-primary px-4 py-3 flex items-center justify-center gap-1.5"
               >
-                Exhibit <ArrowRight size={14} />
-              </Link>
+                Exhibit <ArrowRight size={12} />
+              </a>
             </div>
           </div>
         </div>
