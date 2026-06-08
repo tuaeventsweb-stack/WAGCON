@@ -8,8 +8,8 @@ export function TopBar() {
           <a href="tel:+2349154611827" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
             <Phone size={13} /> +234 915 461 1827
           </a>
-          <a href="mailto:hello@wagcon.africa" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
-            <Mail size={13} /> hello@wagcon.africa
+          <a href="mailto:info@tuaevents.org" className="flex items-center gap-1.5 hover:text-foreground transition-colors">
+            <Mail size={13} /> info@tuaevents.org
           </a>
           <span className="flex items-center gap-1.5">
             <MapPin size={13} /> Lagos, Nigeria

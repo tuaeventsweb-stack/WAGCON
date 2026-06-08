@@ -61,8 +61,8 @@ export function Footer() {
               together in Lagos to build the continent's gaming future.
             </p>
             <div className="mt-6 space-y-2 text-xs text-muted-foreground">
-              <a href="mailto:hello@wagcon.africa" className="flex items-center gap-2 hover:text-primary transition-colors">
-                <Mail size={13} /> hello@wagcon.africa
+              <a href="mailto:info@tuaevents.org" className="flex items-center gap-2 hover:text-primary transition-colors">
+                <Mail size={13} /> info@tuaevents.org
               </a>
               <p className="flex items-center gap-2">
                 <MapPin size={13} /> Victoria Island, Lagos, Nigeria

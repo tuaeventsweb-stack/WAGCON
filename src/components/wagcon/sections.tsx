@@ -229,20 +229,22 @@ export function About() {
           </div>
 
           <div className="lg:w-1/2 relative">
-            <div className="aspect-[4/5] overflow-hidden border border-white/10 bg-card/40 relative">
-              <div className="absolute inset-0 wagcon-hero-grid" />
-              <div className="absolute inset-0 wagcon-hero-glow" />
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-5">
-                <Gamepad2 className="text-primary" size={96} strokeWidth={1.5} />
-                <p className="font-heading text-4xl md:text-5xl font-black tracking-tighter text-foreground">
-                  LAGOS · 2027
+            <div className="aspect-[4/5] overflow-hidden border border-white/10 relative group bg-card/40">
+              <img
+                src="/about-audience.jpg"
+                alt="WAGCON delegates"
+                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+              <div className="absolute bottom-8 left-8 z-10">
+                <p className="font-heading text-3xl font-black tracking-tighter text-white">
+                  Lagos, Nigeria
                 </p>
-                <p className="font-button text-[11px] uppercase tracking-[0.4em] text-muted-foreground">
-                  GAMING · BUILT IN AFRICA
+                <p className="font-button text-[10px] uppercase tracking-[0.3em] text-primary font-bold mt-1">
+                  Built for Africa's Gaming Industry
                 </p>
               </div>
             </div>
-            
           </div>
         </div>
       </div>
@@ -1028,18 +1030,23 @@ export function PassTiers() {
  * 17. FINAL CTA — Ticket banner + team contacts
  * ───────────────────────────────────────────────────────────── */
 const team = [
-  { name: "T.U.A Events", role: "Sponsorship & Exhibition", phone: "hello@wagcon.africa" },
-  { name: "T.U.A Events", role: "Speakers & Programme",     phone: "hello@wagcon.africa" },
-  { name: "T.U.A Events", role: "Delegates & Tickets",      phone: "hello@wagcon.africa" },
+  { name: "T.U.A Events", role: "Sponsorship & Exhibition", phone: "info@tuaevents.org" },
+  { name: "T.U.A Events", role: "Speakers & Programme",     phone: "info@tuaevents.org" },
+  { name: "T.U.A Events", role: "Delegates & Tickets",      phone: "info@tuaevents.org" },
 ];
 
 export function FinalCTA() {
   return (
     <section className="py-24 bg-card/10 border-y border-white/5">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="relative overflow-hidden bg-primary/10 border border-primary/20 p-12 md:p-16 text-center mb-20">
-          <div className="absolute inset-0 wagcon-hero-glow opacity-40" />
-          <div className="relative">
+        <div className="relative overflow-hidden border border-white/10 p-12 md:p-16 text-center mb-20 bg-black">
+          <img
+            src="/convention-hall.jpg"
+            alt="WAGCON convention hall"
+            className="absolute inset-0 w-full h-full object-cover opacity-20"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-black" />
+          <div className="relative z-10">
             <Eyebrow>DON'T MISS WAGCON 2027</Eyebrow>
             <h2 className="font-heading text-4xl md:text-6xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
               How will you show up<br />at WAGCON 2027?
