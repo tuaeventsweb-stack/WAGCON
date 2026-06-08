@@ -25,7 +25,7 @@ export function StubPage({
             {description}
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <BtnPrimary href="/tickets">Get Your Pass</BtnPrimary>
+            <BtnPrimary href="https://app.eventpadi.com/wagcon">Get Your Pass</BtnPrimary>
             <Link to="/" className="text-sm text-wagcon-green hover:underline">
               ← Back to home
             </Link>

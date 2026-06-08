@@ -99,12 +99,14 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <Link
-            to="/tickets"
+          <a
+            href="https://app.eventpadi.com/wagcon"
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
           >
             <Ticket size={18} /> Get Your Pass
-          </Link>
+          </a>
           <Link
             to="/exhibit"
             className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
@@ -220,12 +222,14 @@ export function About() {
               </p>
             </div>
 
-            <Link
-              to="/tickets"
+            <a
+              href="https://app.eventpadi.com/wagcon"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-button text-sm uppercase tracking-widest font-black bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all"
             >
               <Ticket size={16} /> Get Your Pass
-            </Link>
+            </a>
           </div>
 
           <div className="lg:w-1/2 relative">
@@ -267,7 +271,7 @@ const venues = [
     passColor: "text-pass-green",
     PassIcon: Gamepad2,
     cta: "Get Your Pass",
-    href: "/tickets",
+    href: "https://app.eventpadi.com/wagcon",
   },
   {
     id: "afterparty",
@@ -280,7 +284,7 @@ const venues = [
     passColor: "text-pass-blue",
     PassIcon: Mic,
     cta: "Upgrade to Player Pass",
-    href: "/tickets",
+    href: "https://app.eventpadi.com/wagcon",
   },
 ] as const;
 
@@ -321,13 +325,25 @@ function VenueCard({ v }: { v: typeof venues[number] }) {
           </p>
         </div>
 
-        <Link
-          to={v.href}
-          className="inline-flex items-center gap-3 font-button text-xs uppercase tracking-widest font-black text-white hover:text-primary transition-colors group/btn"
-        >
-          [ {v.cta} ]
-          <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-2" />
-        </Link>
+        {v.href.startsWith("http") ? (
+          <a
+            href={v.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 font-button text-xs uppercase tracking-widest font-black text-white hover:text-primary transition-colors group/btn"
+          >
+            [ {v.cta} ]
+            <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-2" />
+          </a>
+        ) : (
+          <Link
+            to={v.href as any}
+            className="inline-flex items-center gap-3 font-button text-xs uppercase tracking-widest font-black text-white hover:text-primary transition-colors group/btn"
+          >
+            [ {v.cta} ]
+            <ArrowRight size={16} className="transition-transform group-hover/btn:translate-x-2" />
+          </Link>
+        )}
       </div>
     </div>
   );
@@ -832,10 +848,15 @@ export function WhyWestAfrica() {
                 Accra, and Abidjan right now. WAGCON is where that momentum gets its stage.
               </p>
             </div>
-            <Link to="/tickets" className="inline-flex items-center gap-3 font-button text-xs uppercase tracking-widest font-black text-white hover:text-primary transition-colors group">
+            <a
+              href="https://app.eventpadi.com/wagcon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 font-button text-xs uppercase tracking-widest font-black text-white hover:text-primary transition-colors group"
+            >
               [ JOIN THE MOVEMENT ]
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-2" />
-            </Link>
+            </a>
           </div>
 
           <div className="lg:w-1/2 grid grid-cols-1 gap-6">
@@ -1045,9 +1066,14 @@ export function FinalCTA() {
               fastest-growing digital industry. The room is filling up — secure your place.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/tickets" className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all flex items-center justify-center gap-2.5 shadow-[0_0_50px_rgba(34,197,94,0.35)]">
+              <a
+                href="https://app.eventpadi.com/wagcon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all flex items-center justify-center gap-2.5 shadow-[0_0_50px_rgba(34,197,94,0.35)]"
+              >
                 <Ticket size={18} /> Get Your Pass
-              </Link>
+              </a>
               <Link to="/exhibit" className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5">
                 Exhibit at WAGCON <ArrowRight size={18} />
               </Link>
@@ -1058,9 +1084,9 @@ export function FinalCTA() {
         {/* Three pillar CTAs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {[
-            { Icon: Gamepad2,  title: "Get Your Pass",    body: "The Arena for conference and exhibition, the After Party at Fahrenheit. Choose your level.",                cta: "Get Tickets",  href: "/tickets" as const },
-            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across both WAGCON venues.", cta: "Exhibit Now",  href: "/exhibit" as const },
-            { Icon: Mic,       title: "Apply to Speak",   body: "Share your expertise with West Africa's most engaged gaming audience. Applications open.",              cta: "Apply Now",    href: "/contact" as const },
+            { Icon: Gamepad2,  title: "Get Your Pass",    body: "The Arena for conference and exhibition, the After Party at Fahrenheit. Choose your level.",                cta: "Get Tickets",  href: "https://app.eventpadi.com/wagcon" },
+            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across both WAGCON venues.", cta: "Exhibit Now",  href: "/exhibit" },
+            { Icon: Mic,       title: "Apply to Speak",   body: "Share your expertise with West Africa's most engaged gaming audience. Applications open.",              cta: "Apply Now",    href: "/contact" },
           ].map((c) => (
             <div key={c.title} className="bg-card border border-white/10 p-8 hover:border-primary/40 transition-all">
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
@@ -1068,9 +1094,23 @@ export function FinalCTA() {
               </div>
               <h3 className="font-heading text-xl font-bold text-white mb-3">{c.title}</h3>
               <p className="text-sm text-white/60 font-body mb-6 leading-relaxed">{c.body}</p>
-              <Link to={c.href} className="font-button text-[10px] uppercase tracking-widest font-bold text-primary hover:text-white transition-colors flex items-center gap-2">
-                [ {c.cta} ] <ArrowRight size={14} />
-              </Link>
+              {c.href.startsWith("http") ? (
+                <a
+                  href={c.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-button text-[10px] uppercase tracking-widest font-bold text-primary hover:text-white transition-colors flex items-center gap-2"
+                >
+                  [ {c.cta} ] <ArrowRight size={14} />
+                </a>
+              ) : (
+                <Link
+                  to={c.href as any}
+                  className="font-button text-[10px] uppercase tracking-widest font-bold text-primary hover:text-white transition-colors flex items-center gap-2"
+                >
+                  [ {c.cta} ] <ArrowRight size={14} />
+                </Link>
+              )}
             </div>
           ))}
         </div>

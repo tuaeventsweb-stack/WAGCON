@@ -14,7 +14,7 @@ const groups = [
   {
     title: "Participate",
     links: [
-      { label: "Get Your Pass",     to: "/tickets" },
+      { label: "Get Your Pass",     to: "https://app.eventpadi.com/wagcon" },
       { label: "Exhibit / Sponsor", to: "/exhibit" },
       { label: "Apply to Speak",    to: "/contact" },
       { label: "Partners",          to: "/partners" },
@@ -78,12 +78,23 @@ export function Footer() {
               <ul className="space-y-3">
                 {g.links.map((l) => (
                   <li key={l.label}>
-                    <Link
-                      to={l.to}
-                      className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      {l.label}
-                    </Link>
+                    {l.to.startsWith("http") ? (
+                      <a
+                        href={l.to}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {l.label}
+                      </a>
+                    ) : (
+                      <Link
+                        to={l.to as any}
+                        className="font-body text-sm text-muted-foreground hover:text-primary transition-colors"
+                      >
+                        {l.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

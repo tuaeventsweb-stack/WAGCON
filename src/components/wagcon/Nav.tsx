@@ -7,7 +7,7 @@ const NAV_LINKS = [
   { label: "Agenda",   href: "/agenda" },
   { label: "Speakers", href: "/speakers" },
   { label: "Exhibit",  href: "/exhibit" },
-  { label: "Tickets",  href: "/tickets" },
+  { label: "Tickets",  href: "https://app.eventpadi.com/wagcon" },
   { label: "Partners", href: "/partners" },
   { label: "About",    href: "/about" },
 ];
@@ -46,23 +46,37 @@ export function Nav() {
             </div>
           </div>
 
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.label}
-              to={link.href}
-              className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {NAV_LINKS.map((link) => 
+            link.href.startsWith("http") ? (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.label}
+                to={link.href as any}
+                className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
 
           <div className="flex items-center gap-3 ml-4">
-            <Link
-              to="/tickets"
+            <a
+              href="https://app.eventpadi.com/wagcon"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-button text-[10px] uppercase tracking-wider font-bold bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/85 transition-all active:scale-[0.97] flex items-center gap-1.5"
             >
               <Ticket size={12} /> Tickets
-            </Link>
+            </a>
             <Link
               to="/exhibit"
               className="font-button text-[10px] uppercase tracking-wider font-bold border border-primary text-primary px-4 py-2 hover:bg-primary hover:text-primary-foreground transition-all active:scale-[0.97] flex items-center gap-1.5"
@@ -95,25 +109,40 @@ export function Nav() {
               </Link>
             ))}
 
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.label}
-                to={link.href}
-                onClick={() => setOpen(false)}
-                className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary py-2 transition-colors px-2"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {NAV_LINKS.map((link) => 
+              link.href.startsWith("http") ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                  className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary py-2 transition-colors px-2"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.label}
+                  to={link.href as any}
+                  onClick={() => setOpen(false)}
+                  className="font-button text-sm uppercase tracking-wider text-muted-foreground hover:text-primary py-2 transition-colors px-2"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
 
             <div className="grid grid-cols-2 gap-3 mt-4">
-              <Link
-                to="/tickets"
+              <a
+                href="https://app.eventpadi.com/wagcon"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setOpen(false)}
                 className="font-button text-xs uppercase tracking-wider font-bold bg-primary text-primary-foreground px-4 py-3 flex items-center justify-center gap-1.5"
               >
                 <Ticket size={14} /> Tickets
-              </Link>
+              </a>
               <Link
                 to="/exhibit"
                 onClick={() => setOpen(false)}
