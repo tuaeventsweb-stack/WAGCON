@@ -1,10 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Nav } from "@/components/wagcon/Nav";
-import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
-import { Building2, Landmark, Check, ShieldCheck, Mail, Send, Award, Phone, ExternalLink } from "lucide-react";
-
 export const Route = createFileRoute("/exhibit")({
   head: () => ({
     meta: [
@@ -19,74 +13,16 @@ export const Route = createFileRoute("/exhibit")({
   component: ExhibitPage,
 });
 
-type Tier = {
-  name: string;
-  price: string;
-  size: string;
-  passes: string;
-  features: string[];
-  color: "green" | "purple" | "amber" | "grey";
-};
 
-const tiers: Tier[] = [
-  {
-    name: "Platinum / Title Sponsor",
-    price: "Custom",
-    size: "10m × 10m Island Booth",
-    passes: "15 Champion Passes",
-    features: [
-      "Exclusive main-stage opening keynote (15 mins)",
-      "Co-branding on official WAGCON logo and lanyard",
-      "Full page ad in physical convention booklet",
-      "Top-tier placement on website, emails, and press releases",
-      "Dedicated PR release & standalone newsletter feature",
-      "10x complimentary delegate passes for clients",
-    ],
-    color: "green",
-  },
-  {
-    name: "Gold Partner",
-    price: "₦5,000,000",
-    size: "6m × 3m Premium Corner Booth",
-    passes: "8 Player Passes",
-    features: [
-      "Speaking opportunity (Panelist inclusion)",
-      "Logo placement on main-stage screen and backdrop",
-      "Half-page ad in physical convention booklet",
-      "Prime logo placement on website and event signs",
-      "Mention in partner-announcement press release",
-      "5x complimentary delegate passes for clients",
-    ],
-    color: "purple",
-  },
-  {
-    name: "Silver Exhibitor",
-    price: "₦2,500,000",
-    size: "3m × 3m Standard Booth",
-    passes: "4 Player Passes",
-    features: [
-      "Standard booth shell with power outlet and table",
-      "Logo placement in event booklet",
-      "Logo placement on website partner directory",
-      "Digital assets pack to advertise attendance",
-      "2x complimentary delegate passes for clients",
-    ],
-    color: "amber",
-  },
-  {
-    name: "Indie Dev Showcase",
-    price: "₦350,000",
-    size: "1.5m Demo Station",
-    passes: "2 Spectator Passes",
-    features: [
-      "Shared tabletop setup in high-traffic Indie Zone",
-      "1x standard display screen & power hookup",
-      "Listed in Indie Developer Directory on website",
-      "Eligibility for Indie Showcase Pitch Awards",
-    ],
-    color: "grey",
-  },
-];
+import { useState } from "react";
+import { Nav } from "@/components/wagcon/Nav";
+import { Footer } from "@/components/wagcon/Footer";
+import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
+import { Building2, Landmark, Check, ShieldCheck, Mail, Send, Award, Phone, ExternalLink } from "lucide-react";
+
+
+
+
 
 function ExhibitPage() {
   const [formData, setFormData] = useState({
@@ -200,42 +136,6 @@ function ExhibitPage() {
             </div>
           </div>
 
-          {/* Tiers Grid */}
-          <div className="border-t border-white/5 pt-20">
-            <div className="text-center mb-14">
-              <Eyebrow>SPONSORSHIP TIERS</Eyebrow>
-              <SectionTitle className="mb-4">Booth Packages & Sponsorship Levels</SectionTitle>
-              <p className="text-white/60 font-body max-w-xl mx-auto text-xs md:text-sm">
-                Choose the size, placement, and exposure level that matches your brand goals.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {tiers.map((tier) => (
-                <Card 
-                  key={tier.name} 
-                  className={`flex flex-col h-full bg-wagcon-bg3/40 border-white/5 transition-all duration-300 hover:border-primary/20 hover:scale-[1.01]`}
-                >
-                  <div className="mb-6">
-                    <span className="text-[10px] uppercase font-bold text-primary tracking-widest block mb-2">{tier.name}</span>
-                    <h3 className="text-2xl font-heading font-black text-white">{tier.price}</h3>
-                    <p className="text-[10px] text-white/40 font-body uppercase mt-1">
-                      {tier.size} · {tier.passes}
-                    </p>
-                  </div>
-
-                  <ul className="space-y-3 font-body text-xs text-white/70 flex-1 border-t border-white/5 pt-4 mb-6">
-                    {tier.features.map((f, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check size={12} className="text-primary shrink-0 mt-0.5" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Card>
-              ))}
-            </div>
-          </div>
         </Section>
 
         {/* Eventpadi Sponsor Form CTA */}
@@ -251,7 +151,7 @@ function ExhibitPage() {
               </p>
               <div className="pt-4">
                 <a
-                  href="https://app.eventpadi.com/wagcon"
+                  href="https://app.eventpadi.com/wagcon/f/WAGCON"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2.5 font-button text-sm uppercase tracking-wider font-bold bg-primary text-black px-10 py-5 hover:bg-primary/85 transition-all shadow-[0_0_30px_rgba(34,197,94,0.25)] rounded-sm"

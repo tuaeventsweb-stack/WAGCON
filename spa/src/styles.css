@@ -1,0 +1,194 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * WAGCON 2027 — ported from ABDS layout system, WAGCON palette.
+ * Raleway (headings) · Open Sans (body) · Montserrat (buttons/eyebrows).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --font-display: var(--font-display);
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+  --font-button: var(--font-button);
+
+  /* WAGCON tokens */
+  --color-wagcon-bg: var(--bg);
+  --color-wagcon-bg2: var(--bg2);
+  --color-wagcon-bg3: var(--bg3);
+  --color-wagcon-green: var(--gold);
+  --color-wagcon-green-dim: var(--gold-dim);
+  --color-wagcon-green-border: var(--gold-border);
+  --color-wagcon-purple: var(--blue);
+  --color-wagcon-purple-dim: var(--blue-dim);
+  --color-wagcon-purple-border: var(--blue-border);
+  --color-wagcon-amber: var(--purple);
+  --color-wagcon-amber-dim: var(--purple-dim);
+  --color-wagcon-amber-border: var(--purple-border);
+  --color-wagcon-grey: var(--green);
+  --color-wagcon-grey-dim: var(--green-dim);
+  --color-wagcon-grey-border: var(--green-border);
+  --color-wagcon-white: var(--white);
+  --color-wagcon-muted: var(--muted);
+  --color-wagcon-border: var(--border);
+
+  /* Pass tier colors (mapped to WAGCON palette) */
+  --color-pass-green: var(--gold);
+  --color-pass-blue: var(--blue);
+  --color-pass-gold: var(--purple);
+
+  /* shadcn semantic mapped to WAGCON */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted-shadcn);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border-shadcn);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  --bg:    #000000;
+  --bg2:   #000000;
+  --bg3:   #000000;
+
+  --gold:        #22C55E;
+  --gold-dim:    rgba(34, 197, 94, 0.10);
+  --gold-border: rgba(34, 197, 94, 0.30);
+
+  --blue:        #A855F7;
+  --blue-dim:    rgba(168, 85, 247, 0.10);
+  --blue-border: rgba(168, 85, 247, 0.35);
+
+  --purple:        #F59E0B;
+  --purple-dim:    rgba(245, 158, 11, 0.10);
+  --purple-border: rgba(245, 158, 11, 0.35);
+
+  --green:        #9CA3AF;
+  --green-dim:    rgba(156, 163, 175, 0.10);
+  --green-border: rgba(156, 163, 175, 0.30);
+
+  --white: #F0FFF0;
+  --muted: #8A9C8A;
+  --border: rgba(255, 255, 255, 0.08);
+
+  --font-display: "Raleway", sans-serif;
+  --font-heading: "Raleway", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --font-button: "Montserrat", sans-serif;
+
+  --background: #000000;
+  --foreground: #F0FFF0;
+  --card: #000000;
+  --card-foreground: #F0FFF0;
+  --popover: #000000;
+  --popover-foreground: #F0FFF0;
+  --primary: #22C55E;
+  --primary-foreground: #000000;
+  --secondary: #000000;
+  --secondary-foreground: #F0FFF0;
+  --muted-shadcn: #000000;
+  --muted-foreground: #8A9C8A;
+  --accent: rgba(34, 197, 94, 0.12);
+  --accent-foreground: #22C55E;
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: #F0FFF0;
+  --border-shadcn: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #22C55E;
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    background: var(--gold-dim);
+    color: var(--gold);
+  }
+}
+
+/* Font utility classes */
+@utility font-heading { font-family: var(--font-heading); }
+@utility font-body    { font-family: var(--font-body); }
+@utility font-button  { font-family: var(--font-button); }
+
+/* Solid accent text (no gradient) */
+@utility gradient-text {
+  color: var(--gold);
+}
+
+/* Hero grid — subtle solid lines, no fills */
+@utility wagcon-hero-grid {
+  background-image:
+    linear-gradient(rgba(34, 197, 94, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 197, 94, 0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* No glow — pure black */
+@utility wagcon-hero-glow {
+  background: transparent;
+}
+
+@utility grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+/* Marquee logo tickers */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee2 {
+  0%   { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+.animate-marquee  { animation: marquee 40s linear infinite; }
+.animate-marquee2 { animation: marquee2 40s linear infinite; }
+.marquee-pause:hover .animate-marquee,
+.marquee-pause:hover .animate-marquee2 { animation-play-state: paused; }

@@ -1,10 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/wagcon/Nav";
-import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
-import { Handshake, Building, Users, Star, ArrowRight, ExternalLink } from "lucide-react";
-import { Link } from "@tanstack/react-router";
-
 export const Route = createFileRoute("/partners")({
   head: () => ({
     meta: [
@@ -18,6 +12,15 @@ export const Route = createFileRoute("/partners")({
   }),
   component: PartnersPage,
 });
+
+
+import { Nav } from "@/components/wagcon/Nav";
+import { Footer } from "@/components/wagcon/Footer";
+import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
+import { Handshake, Building, Users, Star, ArrowRight, ExternalLink } from "lucide-react";
+import { Link } from "@tanstack/react-router";
+
+
 
 function PartnersPage() {
   return (
@@ -149,7 +152,7 @@ function PartnersPage() {
             </p>
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
               <a
-                href="https://app.eventpadi.com/wagcon"
+                href="https://app.eventpadi.com/wagcon/f/WAGCON"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 font-button text-xs uppercase tracking-wider font-bold bg-primary text-black px-8 py-4 hover:bg-primary/85 transition-all"

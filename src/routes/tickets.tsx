@@ -1,10 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
-import { Nav } from "@/components/wagcon/Nav";
-import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent } from "@/components/wagcon/ui/primitives";
-import { ExternalLink, Loader2 } from "lucide-react";
-
 export const Route = createFileRoute("/tickets")({
   head: () => ({
     meta: [
@@ -18,6 +12,15 @@ export const Route = createFileRoute("/tickets")({
   }),
   component: RedirectTicketsPage,
 });
+
+
+import { useEffect } from "react";
+import { Nav } from "@/components/wagcon/Nav";
+import { Footer } from "@/components/wagcon/Footer";
+import { Eyebrow, SectionTitle, Accent } from "@/components/wagcon/ui/primitives";
+import { ExternalLink, Loader2 } from "lucide-react";
+
+
 
 function RedirectTicketsPage() {
   useEffect(() => {

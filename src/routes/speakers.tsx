@@ -1,10 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Nav } from "@/components/wagcon/Nav";
-import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
-import { Mic, Check, Send, Award, BookOpen, Cpu, ShieldCheck } from "lucide-react";
-
 export const Route = createFileRoute("/speakers")({
   head: () => ({
     meta: [
@@ -18,6 +12,15 @@ export const Route = createFileRoute("/speakers")({
   }),
   component: SpeakersPage,
 });
+
+
+import { useState } from "react";
+import { Nav } from "@/components/wagcon/Nav";
+import { Footer } from "@/components/wagcon/Footer";
+import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
+import { Mic, Check, Send, Award, BookOpen, Cpu, ShieldCheck } from "lucide-react";
+
+
 
 type Track = {
   title: string;

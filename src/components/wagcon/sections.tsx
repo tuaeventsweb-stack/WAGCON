@@ -7,9 +7,9 @@ import {
   Target, Zap, Award, MessageSquare, Eye, Crown, PlayCircle, User, Phone,
 } from "lucide-react";
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * Shared atoms
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="font-button text-xs uppercase tracking-[0.4em] text-primary font-bold mb-4">
@@ -30,10 +30,10 @@ function InitialAvatar({ name, size = 56 }: { name: string; size?: number }) {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 1. HERO with countdown
- * ───────────────────────────────────────────────────────────── */
-const TARGET_DATE = new Date("2027-04-29T09:00:00+01:00");
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+const TARGET_DATE = new Date("2027-04-28T09:00:00+01:00");
 function getTimeLeft() {
   const diff = Math.max(0, TARGET_DATE.getTime() - Date.now());
   return {
@@ -65,12 +65,18 @@ export function Hero() {
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 wagcon-hero-grid" />
+        <img 
+          src="/hero_bg_uploaded.jpg" 
+          alt="" 
+          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none opacity-20" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
         <div className="absolute inset-0 grain opacity-20 mix-blend-overlay" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
         <p className="font-button text-xs sm:text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6">
-          WEST AFRICA GAMING CONVENTION  ·  29 APRIL – 1 MAY 2027
+          WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
         </p>
 
         <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-8">
@@ -88,12 +94,12 @@ export function Hero() {
         </p>
 
         <p className="font-button text-xs sm:text-sm uppercase tracking-widest text-white/60 mb-6">
-          Conference & Exhibition  ·  After Party  ·  Co-located with{" "}
+          Leaders Dinner  ·  Conference & Exhibition  ·  After Party  ·  Co-located with{" "}
           <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>
         </p>
 
         <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-body leading-[1.8] mb-12 px-4">
-          Three days. Two venues. The only gaming convention built for West Africa's
+          Four days. Two venues. The only gaming convention built for West Africa's
           fastest-growing digital industry. Co-located with{" "}
           <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
         </p>
@@ -108,7 +114,7 @@ export function Hero() {
             <Ticket size={18} /> Get Your Pass
           </a>
           <a
-            href="https://app.eventpadi.com/wagcon"
+            href="https://app.eventpadi.com/wagcon/f/WAGCON"
             target="_blank"
             rel="noopener noreferrer"
             className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
@@ -128,16 +134,16 @@ export function Hero() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 2. STATS BAR
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const stats = [
   { value: 2400, label: "EXPECTED DELEGATES",            suffix: "+" },
   { value: 80,   label: "WORLD-CLASS SPEAKERS",          suffix: "+" },
   { value: 120,  label: "EXHIBITING BRANDS & STUDIOS",   suffix: "+" },
   { value: 25,   label: "COUNTRIES REPRESENTED",         suffix: "+" },
   { value: 2,    label: "VENUES ACROSS LAGOS",           suffix: "" },
-  { value: 3,    label: "DAYS OF PROGRAMMING",           suffix: "" },
+  { value: 4,    label: "DAYS OF PROGRAMMING",           suffix: "" },
 ];
 
 function StatItem({ value, label, suffix }: { value: number; label: string; suffix: string }) {
@@ -191,9 +197,9 @@ export function StatsBar() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 3. ABOUT
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 export function About() {
   return (
     <section className="py-24 bg-background overflow-hidden" id="about">
@@ -209,7 +215,7 @@ export function About() {
                 WAGCON — West Africa Gaming Convention is Africa's flagship gaming, esports, and interactive entertainment industry event, bringing together game developers, esports organizations, publishers, gaming operators, investors, technology providers, content creators, regulators, and industry innovators to shape the future of the continent's digital entertainment ecosystem.
               </p>
               <p>
-                Positioned as <span className="font-bold text-white">West Africa Gaming Week</span>, WAGCON unfolds over three days across premier venues in Lagos, Nigeria, co-located with{" "}
+                Positioned as <span className="font-bold text-white">West Africa Gaming Week</span>, WAGCON unfolds over four days across premier venues in Lagos, Nigeria, co-located with{" "}
                 <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS</a>, serving as a platform for industry collaboration, investment, innovation, talent development, and market expansion. The event features conferences, exhibitions, esports tournaments, networking sessions, product showcases, and thought-leadership discussions spanning video gaming, esports, interactive entertainment, gaming technologies, and the broader gaming economy.
               </p>
               <p>
@@ -258,14 +264,14 @@ export function About() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 4. VENUES (3 cards + timeline)
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const venues = [
   {
     id: "arena",
-    tag: "DAYS 1 & 2 · 29–30 APRIL 2027 · 9AM – 6PM",
-    brand: "THE ARENA",
+    tag: "DAYS 2 & 3 · 29–30 APRIL 2027 · 9AM – 6PM",
+    brand: "CONFERENCE & EXHIBITION",
     name: "Lagos Oriental Hotel — Victoria Island, Lagos",
     Icon: Gamepad2,
     description: "Two full days of conference sessions, keynotes, panels, exhibition floor, live esports tournament, indie developer showcase, gaming demo zone, and startup pitch stage. West Africa's most immersive gaming convention experience, at full scale.",
@@ -277,7 +283,7 @@ const venues = [
   },
   {
     id: "afterparty",
-    tag: "DAY 3 · 1 MAY 2027 · 7PM – LATE",
+    tag: "DAY 4 · 1 MAY 2027 · 7PM – LATE",
     brand: "AFTER PARTY",
     name: "Fahrenheit — Victoria Island, Lagos",
     Icon: Mic,
@@ -358,7 +364,7 @@ export function Venues() {
         <div className="mb-16">
           <Eyebrow>THE WAGCON 2027 EXPERIENCE</Eyebrow>
           <h2 className="font-heading text-5xl md:text-7xl font-black text-foreground mb-6 tracking-tighter leading-[0.9]">
-            Three Days. Two Venues.<br />
+            Four Days. Two Venues.<br />
             Level Up in Every Mode.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl font-body leading-relaxed">
@@ -373,11 +379,12 @@ export function Venues() {
         </div>
 
         {/* Timeline */}
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 border-t border-white/10 mt-12">
+        <div className="w-full grid grid-cols-1 md:grid-cols-4 border-t border-white/10 mt-12">
           {[
-            ["DAY 1 · 29 APRIL",  "THE ARENA",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
-            ["DAY 2 · 30 APRIL",  "THE ARENA",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
-            ["DAY 3 · 1 MAY",      "AFTER PARTY",   "Fahrenheit · Industry After Party · 7PM–Late",        "pass-blue"],
+            ["DAY 1 · 28 APRIL",  "LEADERS DINNER",              "Lagos Oriental · VIP Networking Dinner · 7PM–Late",   "pass-gold"],
+            ["DAY 2 · 29 APRIL",  "CONFERENCE & EXHIBITION",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
+            ["DAY 3 · 30 APRIL",  "CONFERENCE & EXHIBITION",     "Lagos Oriental · Conference & Exhibition · 9AM–6PM",  "pass-green"],
+            ["DAY 4 · 1 MAY",      "AFTER PARTY",   "Fahrenheit · Industry After Party · 7PM–Late",        "pass-blue"],
           ].map(([day, name, desc, color], i, arr) => (
             <div
               key={i}
@@ -394,19 +401,67 @@ export function Venues() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 5. LOOKBACK / GALLERY CTA
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 export function Lookback() {
-  return null;
+  const previewImages = [
+    { src: "gallery/2J6A6809.jpg", title: "Industry Panel Discussions" },
+    { src: "gallery/IMG_9114.jpg", title: "Esports Arena Matches" },
+    { src: "gallery/IMG_9143.jpg", title: "Exhibition Floor Showcase" },
+    { src: "gallery/_MG_7367.jpg", title: "Networking & B2B Lounge" },
+  ];
+
+  return (
+    <section className="py-24 bg-background border-t border-white/5" id="lookback">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-16 gap-6">
+          <div>
+            <Eyebrow>WAGCON IN ACTION</Eyebrow>
+            <h2 className="font-heading text-4xl md:text-6xl font-black text-white tracking-tighter leading-[0.9]">
+              Lookback at<br />previous WAGCONs.
+            </h2>
+          </div>
+          <p className="text-base text-white/60 font-body max-w-md leading-relaxed">
+            Relive the energy from Victoria Island, Lagos. From keynotes and B2B panels to intense esports brackets and indie developer showcases.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+          {previewImages.map((img, i) => (
+            <div
+              key={i}
+              className="group relative aspect-[4/3] overflow-hidden border border-white/10 bg-card/40 rounded-sm"
+            >
+              <img
+                src={img.src}
+                alt=""
+                loading="lazy"
+                className="w-full h-full object-cover grayscale brightness-90 contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03] group-hover:brightness-100"
+              />
+            </div>
+          ))}
+        </div>
+
+        <div className="text-center">
+          <Link
+            to="/gallery"
+            className="inline-flex items-center gap-2.5 font-button text-xs uppercase tracking-widest font-black border border-white/20 hover:border-primary text-white hover:text-primary px-8 py-4 transition-colors"
+          >
+            View Full Photo Gallery <ArrowRight size={14} />
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 6. EVENT ESSENTIALS — 4 downloads
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const downloads = [
   { Icon: FileText,   title: "Sponsorship & Exhibitor Brochure", description: "Booth packages, sponsorship tiers, and visibility options across WAGCON venues.",            href: "#" },
-  { Icon: Calendar,   title: "2027 Convention Agenda",            description: "Three days, two venues — every session, every stage, every tournament bracket.",            href: "/agenda" },
+  { Icon: Calendar,   title: "2027 Convention Agenda",            description: "Four days, two venues — every session, every stage, every tournament bracket.",            href: "/agenda" },
 ];
 
 export function EventEssentials() {
@@ -441,9 +496,9 @@ export function EventEssentials() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 7. SPEAKERS
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const confirmedSpeakers = [];
 
 export function Speakers() {
@@ -498,9 +553,9 @@ export function Speakers() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 8. CONTENT TRACKS — 14 tiles
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const tracks = [
   { Icon: Gamepad2,    title: "Mobile Gaming & Development" },
   { Icon: Trophy,      title: "Esports & Competitive Gaming" },
@@ -546,9 +601,9 @@ export function ContentTracks() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 9. AUDIENCE INSIGHTS
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const insights = {
   stats: [
     { value: "62%",    label: "C-Level, Founders & Studio Heads" },
@@ -654,9 +709,9 @@ export function AudienceInsights() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 10. WHO YOU WILL MEET — 5 tabs
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const personas = [
   { id: "devs",       label: "Developers",  title: "Game Developers & Studio Founders.", description: "Studios, indie developers, and technical founders actively building games for African and global audiences — mobile, esports-ready, and Web3-powered.", stats: "850+ Developers & Studio Founders" },
   { id: "publishers", label: "Publishers",  title: "Publishers & Distributors.",         description: "Game publishers, distribution leads, and app store representatives deciding which African games reach regional and global audiences.",                            stats: "240+ Publishers & Distribution Leaders" },
@@ -712,9 +767,9 @@ export function WhoYouWillMeet() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 11. LOGO WALL — marquee
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const studios = ["MALIYO GAMES", "KUCHO STUDIOS", "GAMR AFRICA", "CARRY1ST", "USIKU GAMES", "RAVEN STUDIOS", "PLAYBOOK GAMES", "AFRICOMICS", "STUDIO MAYANGA", "NYAMAKOP"];
 const platforms = ["ESL AFRICA", "MTN GAMING", "TENCENT", "RIOT GAMES", "MICROSOFT XBOX", "PLAYSTATION", "GOOGLE PLAY", "META", "EPIC GAMES", "UNITY"];
 
@@ -743,7 +798,7 @@ export function LogoWall() {
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
-            href="https://app.eventpadi.com/wagcon"
+            href="https://app.eventpadi.com/wagcon/f/WAGCON"
             target="_blank"
             rel="noopener noreferrer"
             className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all flex items-center justify-center gap-2.5"
@@ -762,9 +817,9 @@ export function LogoWall() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 12. TESTIMONIALS
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const testimonials = [
   { quote: "WAGCON is the first event that took the business of gaming in West Africa seriously. We closed a publishing deal at The Guild dinner — before the convention floor even opened.", author: "Hugo Obi", company: "CEO, Maliyo Studios" },
   { quote: "I've spoken at gaming events in Berlin, San Francisco, and Tokyo. WAGCON is the only one where I left with three signed term sheets from African studios.",                       author: "Iyinoluwa Aboyeji", company: "Founding Partner, Future Africa" },
@@ -776,9 +831,9 @@ export function Testimonials() {
   return null;
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 13. WHY EXHIBIT
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const reasons = [
   { Icon: Target,         title: "High-Concentration Audience",            description: "Meet the people who sign the cheques. 62% of WAGCON delegates are C-level, founders, or senior decision-makers." },
   { Icon: Users,          title: "Unmatched Networking",                   description: "Use the WAGCON networking app to schedule 1-on-1 meetings with publishers, investors, and potential studio partners." },
@@ -825,9 +880,9 @@ export function WhyExhibit() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 14. WHY WEST AFRICA
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const waStats = [
   { value: "40M+",    label: "Active mobile gamers in Nigeria alone." },
   { value: "$1B+",    label: "Africa's projected gaming market size by 2027." },
@@ -880,18 +935,18 @@ export function WhyWestAfrica() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 15. PARTNERS PREVIEW
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const partners = ["MTN", "AIRTEL", "GTBANK", "STANBIC", "ACCESS BANK", "MICROSOFT", "GOOGLE", "META", "CARRY1ST", "MALIYO", "ESL", "UNITY"];
 
 export function PartnersPreview() {
   return null;
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 16. PASS TIERS
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 type Tier = {
   name: string;
   tag: string;
@@ -907,61 +962,73 @@ type Tier = {
 
 const tiers: Tier[] = [
   {
-    name: "SPECTATOR PASS",
-    tag: "Exhibition + Demo Access",
+    name: "GREEN PASS",
+    tag: "Exhibition Access",
     price: "FREE",
     Icon: Eye,
     color: "green",
     features: [
-      [true,  "The Arena — Exhibition Floor (Days 2 & 3)"],
-      [true,  "The Arena — Gaming Demo Zone (Days 2 & 3)"],
-      [true,  "WAGCON Networking App"],
-      [false, "Bootcamp & Conference Sessions"],
-      [false, "Esports Tournament seating"],
-      [false, "After Party (1 May)"],
+      [true,  "Exhibition floor access (Days 2 & 3)"],
+      [true,  "Access to selected workshops"],
+      [true,  "Access to WAGCON demo zone"],
+      [false, "Keynotes or B2B panels"],
+      [false, "After Party access (Day 4)"],
+      [false, "Complimentary meals & lunch"],
     ],
-    ideal: "Local enthusiasts, students, and community members exploring the convention floor.",
+    ideal: "Local enthusiasts, community members, and students exploring the convention floor.",
     cta: "REGISTER FREE",
   },
   {
-    name: "PLAYER PASS",
-    tag: "Full Convention Access",
-    price: "₦185,000",
-    oldPrice: "₦240,000",
+    name: "STANDARD PASS",
+    tag: "Conference & Exhibition Access",
+    price: "₦30,000",
     Icon: Gamepad2,
     color: "blue",
     features: [
-      [true,  "Keynotes, panels & bootcamp (Days 2 & 3)"],
-      [true,  "Exhibition Floor & Demo Zone (Days 2 & 3)"],
-      [true,  "Esports Tournament & Indie Showcase"],
-      [true,  "After Party — Industry After Party (Day 3)"],
-      [true,  "Startup Pitch Stage access"],
-      [true,  "Workshop & masterclass access"],
-      [true,  "Lunch & refreshments (Days 2 & 3)"],
+      [true,  "Conference & exhibition access (Days 2 & 3)"],
+      [true,  "Keynotes & panel sessions"],
+      [true,  "Startup pitch competition access"],
+      [true,  "Selected workshops & masterclasses"],
+      [false, "After Party access (Day 4)"],
+      [false, "Complimentary meals & lunch"],
     ],
-    ideal: "Developers, founders, publishers, and creators seeking the full WAGCON experience.",
-    cta: "GET PLAYER PASS",
+    ideal: "Students, developers, and professionals seeking core conference access.",
+    cta: "GET STANDARD PASS",
+  },
+  {
+    name: "BLUE PASS",
+    tag: "Full Summit Access",
+    price: "₦75,000",
+    Icon: Gamepad2,
+    color: "blue",
+    features: [
+      [true,  "Everything on the Standard Pass"],
+      [true,  "Full Summit access (keynotes, panels, bootcamps)"],
+      [true,  "Full workshop & masterclass access"],
+      [true,  "Access to After Party (Day 4)"],
+      [true,  "Complimentary lunch & refreshments (Days 2 & 3)"],
+      [true,  "WAGCON Networking App"],
+    ],
+    ideal: "Developers, founders, and professionals seeking full summit benefits.",
+    cta: "GET BLUE PASS",
     popular: true,
   },
   {
-    name: "CHAMPION PASS",
-    tag: "Full Convention + VIP Access",
-    price: "₦650,000",
+    name: "GOLD PASS",
+    tag: "Full Summit + VIP Access",
+    price: "₦350,000",
     Icon: Crown,
     color: "gold",
     features: [
-      [true, "Everything on the Player Pass"],
-      [true, "VIP Networking Dinner (Day 1)"],
-      [true, "After Party — Priority VIP section"],
-      [true, "VIP Speaker & Sponsor Lounge"],
-      [true, "Reserved front-row seating — all sessions"],
-      [true, "3 curated 1-on-1 meeting introductions"],
-      [true, "Gaming Investor Lounge access"],
-      [true, "Exclusive VIP networking dinner"],
-      [true, "Commemorative Champion Pass gift"],
+      [true,  "Everything on the Blue Pass"],
+      [true,  "Blockchain & Web3 Leaders Dinner (Day 1)"],
+      [true,  "VIP speaker & sponsor lounge access"],
+      [true,  "Priority VIP section access at the After Party"],
+      [true,  "Reserved front-row seating — all sessions"],
+      [true,  "3 curated 1-on-1 meeting introductions"],
     ],
-    ideal: "Studio executives, fund managers, publishers, sponsors, and senior industry leaders.",
-    cta: "UNLOCK CHAMPION ACCESS",
+    ideal: "C-level executives, founders, investors, and senior leaders.",
+    cta: "UNLOCK GOLD ACCESS",
   },
 ];
 
@@ -981,12 +1048,12 @@ export function PassTiers() {
             Choose your role at<br />WAGCON 2027.
           </h2>
           <p className="text-lg text-white/60 font-body max-w-xl mx-auto">
-            Three days. Two venues. Every level of participation covered. Early bird pricing
+            Four days. Two venues. Every level of participation covered. Early bird pricing
             active — ends 28 February 2027.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {tiers.map((t) => {
             const c = colorMap[t.color];
             return (
@@ -1031,9 +1098,14 @@ export function PassTiers() {
                   <p className="font-body text-xs text-white/60 leading-relaxed">{t.ideal}</p>
                 </div>
 
-                <button className={`w-full font-button text-xs uppercase tracking-widest font-black ${c.bg} text-background px-6 py-4 hover:opacity-85 transition-all`}>
+                <a
+                  href="https://app.eventpadi.com/wagcon"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-full font-button text-xs uppercase tracking-widest font-black ${c.bg} text-background px-6 py-4 hover:opacity-85 transition-all text-center block`}
+                >
                   [ {t.cta} ]
-                </button>
+                </a>
               </div>
             );
           })}
@@ -1043,9 +1115,9 @@ export function PassTiers() {
   );
 }
 
-/* ─────────────────────────────────────────────────────────────
+/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
  * 17. FINAL CTA — Ticket banner + team contacts
- * ───────────────────────────────────────────────────────────── */
+ * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const team = [
   { name: "T.U.A Events", role: "Sponsorship & Exhibition", phone: "info@tuaevents.org" },
   { name: "T.U.A Events", role: "Speakers & Programme",     phone: "info@tuaevents.org" },
@@ -1069,7 +1141,7 @@ export function FinalCTA() {
               How will you show up<br />at WAGCON 2027?
             </h2>
             <p className="text-lg text-white/70 font-body max-w-2xl mx-auto mb-10">
-              Three days. Two venues. The only gaming convention built for West Africa's
+              Four days. Two venues. The only gaming convention built for West Africa's
               fastest-growing digital industry. The room is filling up — secure your place.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -1082,7 +1154,7 @@ export function FinalCTA() {
                 <Ticket size={18} /> Get Your Pass
               </a>
               <a
-                href="https://app.eventpadi.com/wagcon"
+                href="https://app.eventpadi.com/wagcon/f/WAGCON"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all flex items-center justify-center gap-2.5"
@@ -1096,8 +1168,8 @@ export function FinalCTA() {
         {/* Three pillar CTAs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {[
-            { Icon: Gamepad2,  title: "Get Your Pass",    body: "The Arena for conference and exhibition, the After Party at Fahrenheit. Choose your level.",                cta: "Get Tickets",  href: "https://app.eventpadi.com/wagcon" },
-            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across both WAGCON venues.", cta: "Exhibit Now",  href: "https://app.eventpadi.com/wagcon" },
+            { Icon: Gamepad2,  title: "Get Your Pass",    body: "The Conference & Exhibition at Lagos Oriental Hotel, the After Party at Fahrenheit. Choose your level.",                cta: "Get Tickets",  href: "https://app.eventpadi.com/wagcon" },
+            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across both WAGCON venues.", cta: "Exhibit Now",  href: "https://app.eventpadi.com/wagcon/f/WAGCON" },
             { Icon: Mic,       title: "Apply to Speak",   body: "Share your expertise with West Africa's most engaged gaming audience. Applications open.",              cta: "Apply Now",    href: "/contact" },
           ].map((c) => (
             <div key={c.title} className="bg-card border border-white/10 p-8 hover:border-primary/40 transition-all">

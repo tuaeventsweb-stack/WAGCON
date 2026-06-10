@@ -15,7 +15,7 @@ const groups = [
     title: "Participate",
     links: [
       { label: "Get Your Pass",     to: "https://app.eventpadi.com/wagcon" },
-      { label: "Exhibit / Sponsor", to: "https://app.eventpadi.com/wagcon" },
+      { label: "Exhibit / Sponsor", to: "https://app.eventpadi.com/wagcon/f/WAGCON" },
       { label: "Apply to Speak",    to: "/contact" },
       { label: "Partners",          to: "/partners" },
     ],
@@ -25,7 +25,7 @@ const groups = [
     links: [
       { label: "Contact",           to: "/contact" },
       { label: "Press & Media",     to: "/contact" },
-      { label: "Sponsorship Deck",  to: "https://app.eventpadi.com/wagcon" },
+      { label: "Sponsorship Deck",  to: "https://app.eventpadi.com/wagcon/f/WAGCON" },
     ],
   },
 ];
@@ -46,18 +46,26 @@ const socials = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/5 bg-background">
-      <div className="max-w-7xl mx-auto px-4 py-16">
+    <footer className="relative border-t border-white/5 bg-background overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <img 
+          src="hero_bg.png" 
+          alt="" 
+          className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-transparent to-background" />
+      </div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr] mb-12">
           <div>
             <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
               <img src="/wagcon-logo.png" alt="WAGCON" className="h-10 w-auto" />
             </Link>
             <p className="font-button text-xs uppercase tracking-[0.3em] text-primary font-bold mb-3">
-              29 April – 1 May 2027
+              28 April – 1 May 2027
             </p>
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm">
-              West Africa Gaming Convention — three days, two venues, one industry coming
+              West Africa Gaming Convention — four days, two venues, one industry coming
               together in Lagos to build the continent's gaming future.
             </p>
             <div className="mt-6 space-y-2 text-xs text-muted-foreground">

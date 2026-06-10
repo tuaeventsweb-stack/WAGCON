@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { label: "Home",     href: "/" },
   { label: "Agenda",   href: "/agenda" },
   { label: "Speakers", href: "/speakers" },
-  { label: "Exhibit",  href: "https://app.eventpadi.com/wagcon" },
+  { label: "Exhibit",  href: "https://app.eventpadi.com/wagcon/f/WAGCON" },
   { label: "Tickets",  href: "https://app.eventpadi.com/wagcon" },
   { label: "Partners", href: "/partners" },
   { label: "About",    href: "/about" },
@@ -32,16 +32,16 @@ export function Nav() {
               <Link to="/venues" className="block px-4 py-3 hover:bg-white/5 transition-colors">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="w-2 h-2 rounded-full bg-pass-green" />
-                  <span className="font-heading text-sm font-bold text-pass-green">The Arena</span>
+                  <span className="font-heading text-sm font-bold text-pass-green">Conference & Exhibition</span>
                 </div>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Conference & Exhibition · Days 1 & 2 · 29–30 April · Lagos Oriental Hotel, Victoria Island</p>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Conference & Exhibition · Days 2 & 3 · 29–30 April · Lagos Oriental Hotel, Victoria Island</p>
               </Link>
               <Link to="/venues" className="block px-4 py-3 hover:bg-white/5 transition-colors">
                 <div className="flex items-center gap-2 mb-1">
                   <span className="w-2 h-2 rounded-full bg-pass-blue" />
                   <span className="font-heading text-sm font-bold text-pass-blue">After Party · Fahrenheit</span>
                 </div>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Industry After Party · Day 3 · 1 May · Fahrenheit, Victoria Island, Lagos</p>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-tight">Industry After Party · Day 4 · 1 May · Fahrenheit, Victoria Island, Lagos</p>
               </Link>
             </div>
           </div>
@@ -102,7 +102,7 @@ export function Nav() {
           <div className="flex flex-col px-4 py-4 gap-2">
             <p className="font-button text-[10px] uppercase tracking-widest text-muted-foreground px-2 mt-2">Venues</p>
             {[
-              ["The Arena",          "text-pass-green", "bg-pass-green"],
+              ["Conference & Exhibition", "text-pass-green", "bg-pass-green"],
               ["After Party · Fahrenheit", "text-pass-blue",  "bg-pass-blue"],
             ].map(([name, txt, dot]) => (
               <Link key={name} to="/venues" onClick={() => setOpen(false)} className="flex items-center gap-3 px-2 py-2 bg-white/5">

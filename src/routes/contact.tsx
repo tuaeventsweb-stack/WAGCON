@@ -1,10 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Nav } from "@/components/wagcon/Nav";
-import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
-import { Mail, Phone, MapPin, Send, ShieldCheck, ExternalLink, Globe } from "lucide-react";
-
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
@@ -18,6 +12,15 @@ export const Route = createFileRoute("/contact")({
   }),
   component: ContactPage,
 });
+
+
+import { useState } from "react";
+import { Nav } from "@/components/wagcon/Nav";
+import { Footer } from "@/components/wagcon/Footer";
+import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
+import { Mail, Phone, MapPin, Send, ShieldCheck, ExternalLink, Globe } from "lucide-react";
+
+
 
 function ContactPage() {
   const [formData, setFormData] = useState({

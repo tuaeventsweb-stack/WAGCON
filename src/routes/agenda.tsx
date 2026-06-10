@@ -1,10 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { Nav } from "@/components/wagcon/Nav";
-import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
-import { Calendar, Clock, MapPin, Tag, Filter } from "lucide-react";
-
 export const Route = createFileRoute("/agenda")({
   head: () => ({
     meta: [
@@ -19,6 +13,15 @@ export const Route = createFileRoute("/agenda")({
   component: AgendaPage,
 });
 
+
+import { useState } from "react";
+import { Nav } from "@/components/wagcon/Nav";
+import { Footer } from "@/components/wagcon/Footer";
+import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
+import { Calendar, Clock, MapPin, Tag, Filter } from "lucide-react";
+
+
+
 type Session = {
   time: string;
   title: string;
@@ -31,6 +34,16 @@ type Session = {
 
 const scheduleData: Record<string, Session[]> = {
   "day-1": [
+    {
+      time: "07:00 PM – Late",
+      title: "Blockchain & Web3 Leaders Networking Dinner",
+      location: "VIP Dining Room — Lagos Oriental Hotel",
+      track: "networking",
+      trackLabel: "VIP Dinner",
+      description: "The exclusive, closed-door gathering designed for C-level founders, investors, and government officials. Co-hosted with ABDS.com.ng.",
+    }
+  ],
+  "day-2": [
     {
       time: "09:00 AM – 10:00 AM",
       title: "Delegate Registration & Morning Networking Coffee",
@@ -98,10 +111,10 @@ const scheduleData: Record<string, Session[]> = {
       location: "Grand Ballroom Foyer",
       track: "networking",
       trackLabel: "Networking",
-      description: "Unwind after Day 1 with refreshing drinks and targeted 1-on-1 networking. Co-hosted by T.U.A Events.",
+      description: "Unwind after Day 2 with refreshing drinks and targeted 1-on-1 networking. Co-hosted by T.U.A Events.",
     },
   ],
-  "day-2": [
+  "day-3": [
     {
       time: "09:00 AM – 10:00 AM",
       title: "Doors Open & Exhibition Floor Opens",
@@ -154,7 +167,7 @@ const scheduleData: Record<string, Session[]> = {
       description: "The ultimate showdown: The region's top competitive gamers fight live on stage for glory and a share of the grand prize pool.",
     },
   ],
-  "day-3": [
+  "day-4": [
     {
       time: "12:00 PM – 03:00 PM",
       title: "WAGCON VIP Networking Brunch",
@@ -199,7 +212,7 @@ function AgendaPage() {
               WAGCON 2027 <Accent>Agenda</Accent>.
             </h1>
             <p className="text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed">
-              Three days. Two venues. Plan your time at West Africa's most comprehensive gathering for the gaming, esports, and interactive media economy.
+              Four days. Two venues. Plan your time at West Africa's most comprehensive gathering for the gaming, esports, and interactive media economy.
             </p>
           </div>
         </section>
@@ -209,9 +222,10 @@ function AgendaPage() {
           {/* Day Selector */}
           <div className="flex flex-wrap justify-center gap-4 mb-10">
             {[
-              { id: "day-1", label: "DAY 1 — 28 APRIL", subtitle: "B2B Conference & Exhibition" },
-              { id: "day-2", label: "DAY 2 — 29 APRIL", subtitle: "Showcase & Tournaments" },
-              { id: "day-3", label: "DAY 3 — 30 APRIL", subtitle: "VIP & Official After Party" },
+              { id: "day-1", label: "DAY 1 — 28 APRIL", subtitle: "Leaders Dinner (VIP)" },
+              { id: "day-2", label: "DAY 2 — 29 APRIL", subtitle: "B2B Conference & Exhibition" },
+              { id: "day-3", label: "DAY 3 — 30 APRIL", subtitle: "Showcase & Tournaments" },
+              { id: "day-4", label: "DAY 4 — 1 MAY",   subtitle: "VIP & Official After Party" },
             ].map((d) => (
               <button
                 key={d.id}

@@ -1,9 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/wagcon/Nav";
-import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent, Card, Section } from "@/components/wagcon/ui/primitives";
-import { Gamepad2, Trophy, Building2, ExternalLink } from "lucide-react";
-
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -17,6 +12,14 @@ export const Route = createFileRoute("/about")({
   }),
   component: AboutPage,
 });
+
+
+import { Nav } from "@/components/wagcon/Nav";
+import { Footer } from "@/components/wagcon/Footer";
+import { Eyebrow, SectionTitle, Accent, Card, Section } from "@/components/wagcon/ui/primitives";
+import { Gamepad2, Trophy, Building2, ExternalLink } from "lucide-react";
+
+
 
 function AboutPage() {
   return (
@@ -52,7 +55,7 @@ function AboutPage() {
                   West Africa's gaming economy is expanding at an unprecedented rate, powered by mobile connectivity, a massive youth demographic, and exceptional creative talent. WAGCON serves as the premier bridge connecting developers, esports teams, publishers, investors, and regulators.
                 </p>
                 <p>
-                  Our three-day event features conferences, B2B exhibition spaces, startup pitch contests, and the region's most competitive esports showcases. Positioned as West Africa's Gaming Week, we take the business of gaming as seriously as the games themselves.
+                  Our four-day event features conferences, B2B exhibition spaces, startup pitch contests, and the region's most competitive esports showcases. Positioned as West Africa's Gaming Week, we take the business of gaming as seriously as the games themselves.
                 </p>
                 <p>
                   By facilitating investment, supporting local talent development, and opening dialogue on policy and infrastructure, WAGCON builds a sustainable pipeline for African creators to thrive globally.
@@ -67,7 +70,7 @@ function AboutPage() {
                   <img 
                     src="/about-audience.jpg" 
                     alt="WAGCON delegates at silent conference" 
-                    className="w-full object-cover aspect-[4/3] grayscale contrast-125 brightness-90 hover:grayscale-0 transition-all duration-700" 
+                    className="w-full object-cover aspect-[4/3] grayscale contrast-125 brightness-95 hover:grayscale-0 transition-all duration-700" 
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
                   <div className="absolute bottom-4 left-4 right-4">
