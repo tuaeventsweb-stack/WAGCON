@@ -65,7 +65,7 @@ export function Footer() {
               28 April – 1 May 2027
             </p>
             <p className="font-body text-sm text-muted-foreground leading-relaxed max-w-sm">
-              West Africa Gaming Convention — four days, two venues, one industry coming
+              West Africa Gaming Convention — four days, three venues, one industry coming
               together in Lagos to build the continent's gaming future.
             </p>
             <div className="mt-6 space-y-2 text-xs text-muted-foreground">

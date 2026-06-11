@@ -383,7 +383,7 @@ export function Venues() {
         <div className="mb-16">
           <Eyebrow>THE WAGCON 2027 EXPERIENCE</Eyebrow>
           <h2 className="font-heading text-5xl md:text-7xl font-black text-foreground mb-6 tracking-tighter leading-[0.9]">
-            Four Days. Two Venues.<br />
+            Four Days. Three Venues.<br />
             Level Up in Every Mode.
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl font-body leading-relaxed">
@@ -393,7 +393,7 @@ export function Venues() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {venues.map((v) => <VenueCard key={v.id} v={v} />)}
         </div>
 
@@ -480,7 +480,7 @@ export function Lookback() {
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const downloads = [
   { Icon: FileText,   title: "Sponsorship & Exhibitor Brochure", description: "Booth packages, sponsorship tiers, and visibility options across WAGCON venues.",            href: "#" },
-  { Icon: Calendar,   title: "2027 Convention Agenda",            description: "Four days, two venues — every session, every stage, every tournament bracket.",            href: "/agenda" },
+  { Icon: Calendar,   title: "2027 Convention Agenda",            description: "Four days, three venues — every session, every stage, every tournament bracket.",            href: "/agenda" },
 ];
 
 export function EventEssentials() {

@@ -3,9 +3,9 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "WAGCON 2027 — West Africa Gaming Convention · Lagos" },
-      { name: "description", content: "Four days. Two venues. The only gaming convention built for West Africa's fastest-growing digital industry. 28 April – 1 May 2027, Lagos. Co-located with ABDS 2027 - Africa Blockchain Week." },
+      { name: "description", content: "Four days. Three venues. The only gaming convention built for West Africa's fastest-growing digital industry. 28 April – 1 May 2027, Lagos. Co-located with ABDS 2027 - Africa Blockchain Week." },
       { property: "og:title", content: "WAGCON 2027 — West Africa Gaming Convention" },
-      { property: "og:description", content: "Lagos · 28 April – 1 May 2027 · The Arena · After Party at Fahrenheit · Co-located with ABDS 2027 - Africa Blockchain Week" },
+      { property: "og:description", content: "Lagos · 28 April – 1 May 2027 · VIP Leaders Dinner · Conference & Exhibition · After Party · Co-located with ABDS 2027 - Africa Blockchain Week" },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],

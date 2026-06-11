@@ -81,7 +81,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "West Africa's premier gaming convention. Four days, two venues, Lagos. 28 April – 1 May 2027.",
+          "West Africa's premier gaming convention. Four days, three venues, Lagos. 28 April – 1 May 2027.",
       },
       { name: "author", content: "T.U.A Events" },
       { property: "og:site_name", content: "WAGCON 2027" },
