@@ -20,7 +20,7 @@ export default function VenuesPage() {
           <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 text-center">
             <Eyebrow className="mb-4">THE WAGCON LOCATIONS</Eyebrow>
             <h1 className="font-heading text-4xl md:text-6xl font-black mb-6 tracking-tighter leading-[0.9]">
-              Four Days. <Accent>Two Venues</Accent>.
+              Four Days. <Accent>Three Venues</Accent>.
             </h1>
             <p className="text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed">
               WAGCON 2027 unfolds across Victoria Island, the premium tech and commercial hub of Lagos, Nigeria. Co-located with ABDS 2027.
@@ -35,7 +35,7 @@ export default function VenuesPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
               <div className="lg:col-span-6 space-y-6">
                 <span className="text-[10px] uppercase font-bold text-primary tracking-widest block">VENUE 01 · DAY 1</span>
-                <SectionTitle>Leaders Networking Dinner — Lagos Oriental Hotel</SectionTitle>
+                <SectionTitle>Leaders Networking Dinner — Four Points by Sheraton</SectionTitle>
                 
                 <div className="flex flex-wrap gap-4 text-xs font-body uppercase text-white/50 tracking-wider">
                   <span className="flex items-center gap-1"><Calendar size={13} className="text-primary" /> 28 April 2027</span>
@@ -68,7 +68,7 @@ export default function VenuesPage() {
 
                 <div className="pt-2">
                   <a
-                    href="https://maps.google.com/?q=Lagos+Oriental+Hotel"
+                    href="https://maps.google.com/?q=Four+Points+by+Sheraton+Lagos"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 font-button text-xs uppercase tracking-wider font-bold text-primary hover:text-white transition-colors"
@@ -82,12 +82,12 @@ export default function VenuesPage() {
                 <div className="relative border border-white/10 bg-wagcon-bg3 p-2 rounded-lg overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
-                    src="hero_bg_uploaded.jpg" 
+                    src="fourpoints.png" 
                     alt="Leaders Networking Dinner Lounge" 
                     className="w-full object-cover aspect-[16/10] rounded-sm grayscale contrast-125 brightness-95" 
                   />
                   <div className="p-4 text-xs font-body uppercase text-white/50 flex justify-between items-center">
-                    <span>Lagos Oriental Hotel</span>
+                    <span>Four Points by Sheraton</span>
                     <span>VIP Dining Room</span>
                   </div>
                 </div>
@@ -145,7 +145,7 @@ export default function VenuesPage() {
                 <div className="relative border border-white/10 bg-wagcon-bg3 p-2 rounded-lg overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
-                    src="about-audience.jpg" 
+                    src="oriental.webp" 
                     alt="Lagos Oriental Hotel Convention Floor" 
                     className="w-full object-cover aspect-[16/10] rounded-sm grayscale contrast-125 brightness-95" 
                   />
@@ -208,12 +208,12 @@ export default function VenuesPage() {
                 <div className="relative border border-white/10 bg-wagcon-bg3 p-2 rounded-lg overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
-                    src="convention-hall.jpg" 
+                    src="fareighheit.jpeg" 
                     alt="Fahrenheit Rooftop Lounge" 
                     className="w-full object-cover aspect-[16/10] rounded-sm grayscale contrast-125 brightness-95" 
                   />
                   <div className="p-4 text-xs font-body uppercase text-white/50 flex justify-between items-center">
-                    <span>Fahrenheit Rooftop Lounge</span>
+                    <span>La Maison de Fahrenheit</span>
                     <span>Rooftop Terrace</span>
                   </div>
                 </div>

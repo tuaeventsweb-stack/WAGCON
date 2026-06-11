@@ -22,7 +22,7 @@ const scheduleData: Record<string, Session[]> = {
     {
       time: "07:00 PM – Late",
       title: "Blockchain & Web3 Leaders Networking Dinner",
-      location: "VIP Dining Room — Lagos Oriental Hotel",
+      location: "VIP Dining Room — Four Points by Sheraton",
       track: "networking",
       trackLabel: "VIP Dinner",
       description: "The exclusive, closed-door gathering designed for C-level founders, investors, and government officials. Co-hosted with ABDS.com.ng.",
@@ -197,7 +197,7 @@ export default function AgendaPage() {
               WAGCON 2027 <Accent>Agenda</Accent>.
             </h1>
             <p className="text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed">
-              Four days. Two venues. Plan your time at West Africa's most comprehensive gathering for the gaming, esports, and interactive media economy.
+              Four days. Three venues. Plan your time at West Africa's most comprehensive gathering for the gaming, esports, and interactive media economy.
             </p>
           </div>
         </section>

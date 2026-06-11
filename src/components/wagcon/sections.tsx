@@ -99,7 +99,7 @@ export function Hero() {
         </p>
 
         <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-body leading-[1.8] mb-12 px-4">
-          Four days. Two venues. The only gaming convention built for West Africa's
+          Four days. Three venues. The only gaming convention built for West Africa's
           fastest-growing digital industry. Co-located with{" "}
           <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
         </p>
@@ -142,7 +142,7 @@ const stats = [
   { value: 80,   label: "WORLD-CLASS SPEAKERS",          suffix: "+" },
   { value: 120,  label: "EXHIBITING BRANDS & STUDIOS",   suffix: "+" },
   { value: 25,   label: "COUNTRIES REPRESENTED",         suffix: "+" },
-  { value: 2,    label: "VENUES ACROSS LAGOS",           suffix: "" },
+  { value: 3,    label: "VENUES ACROSS LAGOS",           suffix: "" },
   { value: 4,    label: "DAYS OF PROGRAMMING",           suffix: "" },
 ];
 
@@ -269,14 +269,29 @@ export function About() {
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const venues = [
   {
+    id: "dinner",
+    tag: "DAY 1 · 28 APRIL 2027 · 7PM – LATE",
+    brand: "VIP LEADERS DINNER",
+    name: "Four Points by Sheraton — Victoria Island, Lagos",
+    Icon: Trophy,
+    image: "fourpoints.png",
+    description: "An exclusive, closed-door B2B networking dinner co-located with ABDS 2027. Curated for C-level founders, investors, government officials, and senior gaming/blockchain leaders. Admission via Gold Pass only.",
+    pass: "Gold Pass — Included",
+    passColor: "text-pass-gold",
+    PassIcon: Crown,
+    cta: "Unlock Gold Access",
+    href: "https://app.eventpadi.com/wagcon",
+  },
+  {
     id: "arena",
     tag: "DAYS 2 & 3 · 29–30 APRIL 2027 · 9AM – 6PM",
     brand: "CONFERENCE & EXHIBITION",
     name: "Lagos Oriental Hotel — Victoria Island, Lagos",
     Icon: Gamepad2,
-    description: "Two full days of conference sessions, keynotes, panels, exhibition floor, live esports tournament, indie developer showcase, gaming demo zone, and startup pitch stage. West Africa's most immersive gaming convention experience, at full scale.",
-    pass: "Player & Champion — Full access · Spectator — Expo + Demo only",
-    passColor: "text-pass-green",
+    image: "oriental.webp",
+    description: "Two full days of conference sessions, keynotes, panels, exhibition floor, live esports tournament, indie developer showcase, gaming demo zone, and startup pitch stage co-located with ABDS 2027.",
+    pass: "Gold & Blue — Full Access · Standard — Conf & Expo · Green — Expo Only",
+    passColor: "text-pass-blue",
     PassIcon: Gamepad2,
     cta: "Get Your Pass",
     href: "https://app.eventpadi.com/wagcon",
@@ -285,11 +300,12 @@ const venues = [
     id: "afterparty",
     tag: "DAY 4 · 1 MAY 2027 · 7PM – LATE",
     brand: "AFTER PARTY",
-    name: "Fahrenheit — Victoria Island, Lagos",
+    name: "La Maison de Fahrenheit — Victoria Island, Lagos",
     Icon: Mic,
-    description: "Game over? Not even close. The official WAGCON × ABDS industry after party at Fahrenheit, VI closes the week the right way — curated networking, open bar, and the conversations that only happen when the convention floor has closed.",
-    pass: "Player & Champion — Included · Spectator — Upgrade required",
-    passColor: "text-pass-blue",
+    image: "fareighheit.jpeg",
+    description: "Game over? Not even close. The official WAGCON × ABDS industry after party at Fahrenheit closes the week the right way — curated networking, open bar, and the conversations that only happen when the convention floor has closed.",
+    pass: "Gold & Blue — Included · Standard/Green — Upgrade required",
+    passColor: "text-purple-500",
     PassIcon: Mic,
     cta: "Upgrade to Player Pass",
     href: "https://app.eventpadi.com/wagcon",
@@ -300,9 +316,12 @@ function VenueCard({ v }: { v: typeof venues[number] }) {
   return (
     <div className="group relative flex flex-col h-[600px] overflow-hidden border border-white/10 hover:border-primary/50 transition-all duration-500 bg-card/40">
       <div className="absolute inset-0">
-        <div className="absolute inset-0 wagcon-hero-grid opacity-60" />
-        <div className="absolute inset-0 wagcon-hero-glow opacity-50" />
-        
+        <img
+          src={v.image}
+          alt={v.brand}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale contrast-125 brightness-95"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-90" />
       </div>
 
       <div className="absolute top-7 right-7 z-10">
@@ -1048,7 +1067,7 @@ export function PassTiers() {
             Choose your role at<br />WAGCON 2027.
           </h2>
           <p className="text-lg text-white/60 font-body max-w-xl mx-auto">
-            Four days. Two venues. Every level of participation covered. Early bird pricing
+            Four days. Three venues. Every level of participation covered. Early bird pricing
             active — ends 28 February 2027.
           </p>
         </div>
@@ -1141,7 +1160,7 @@ export function FinalCTA() {
               How will you show up<br />at WAGCON 2027?
             </h2>
             <p className="text-lg text-white/70 font-body max-w-2xl mx-auto mb-10">
-              Four days. Two venues. The only gaming convention built for West Africa's
+              Four days. Three venues. The only gaming convention built for West Africa's
               fastest-growing digital industry. The room is filling up — secure your place.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -1168,8 +1187,8 @@ export function FinalCTA() {
         {/* Three pillar CTAs */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
           {[
-            { Icon: Gamepad2,  title: "Get Your Pass",    body: "The Conference & Exhibition at Lagos Oriental Hotel, the After Party at Fahrenheit. Choose your level.",                cta: "Get Tickets",  href: "https://app.eventpadi.com/wagcon" },
-            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across both WAGCON venues.", cta: "Exhibit Now",  href: "https://app.eventpadi.com/wagcon/f/WAGCON" },
+            { Icon: Gamepad2,  title: "Get Your Pass",    body: "The VIP dinner at Four Points, the Conference & Exhibition at Oriental, and the After Party at Fahrenheit. Choose your level.",                cta: "Get Tickets",  href: "https://app.eventpadi.com/wagcon" },
+            { Icon: Building2, title: "Exhibit or Sponsor", body: "Put your brand in front of West Africa's top gaming decision-makers across all three WAGCON venues.", cta: "Exhibit Now",  href: "https://app.eventpadi.com/wagcon/f/WAGCON" },
             { Icon: Mic,       title: "Apply to Speak",   body: "Share your expertise with West Africa's most engaged gaming audience. Applications open.",              cta: "Apply Now",    href: "/contact" },
           ].map((c) => (
             <div key={c.title} className="bg-card border border-white/10 p-8 hover:border-primary/40 transition-all">
