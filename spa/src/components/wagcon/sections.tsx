@@ -479,8 +479,8 @@ export function Lookback() {
  * 6. EVENT ESSENTIALS — 4 downloads
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const downloads = [
-  { Icon: FileText,   title: "Sponsorship & Exhibitor Brochure", description: "Booth packages, sponsorship tiers, and visibility options across WAGCON venues.",            href: "#" },
-  { Icon: Calendar,   title: "2027 Convention Agenda",            description: "Four days, three venues — every session, every stage, every tournament bracket.",            href: "/agenda" },
+  { Icon: FileText,   title: "Sponsorship & Exhibitor Brochure", description: "Booth packages, sponsorship tiers, and visibility options across WAGCON venues.",            href: "#", cta: "DOWNLOAD PDF" },
+  { Icon: Calendar,   title: "2027 Convention Agenda",            description: "Agenda Coming Soon — we are currently finalizing B2B session schedules, panel timings, and speaker slots.",            href: "/agenda", cta: "VIEW AGENDA" },
 ];
 
 export function EventEssentials() {
@@ -505,7 +505,7 @@ export function EventEssentials() {
                 {item.description}
               </p>
               <a href={item.href} className="font-button text-[10px] uppercase tracking-widest font-bold text-primary hover:text-white transition-colors flex items-center gap-2">
-                [ DOWNLOAD PDF ] <Download size={14} />
+                [ {item.cta} ] {item.href.startsWith("#") ? <Download size={14} /> : <ArrowRight size={14} />}
               </a>
             </div>
           ))}

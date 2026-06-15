@@ -1,9 +1,8 @@
 
-import { useState } from "react";
 import { Nav } from "@/components/wagcon/Nav";
 import { Footer } from "@/components/wagcon/Footer";
-import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
-import { Calendar, Clock, MapPin, Tag, Filter } from "lucide-react";
+import { Eyebrow, Accent, Section } from "@/components/wagcon/ui/primitives";
+import { Calendar } from "lucide-react";
 
 
 
@@ -154,14 +153,6 @@ const scheduleData: Record<string, Session[]> = {
   ],
   "day-4": [
     {
-      time: "12:00 PM – 03:00 PM",
-      title: "WAGCON VIP Networking Brunch",
-      location: "Lagos Oriental Hotel Penthouse (Champion Pass Only)",
-      track: "networking",
-      trackLabel: "Networking",
-      description: "An exclusive closed-door gathering for Champion Pass holders, title sponsors, global speakers, and senior delegates. Fine dining and business discussions.",
-    },
-    {
       time: "07:00 PM – Late",
       title: "Official WAGCON × ABDS Industry After Party",
       location: "Fahrenheit — Victoria Island, Lagos (Player & Champion Pass)",
@@ -173,14 +164,6 @@ const scheduleData: Record<string, Session[]> = {
 };
 
 export default function AgendaPage() {
-  const [activeDay, setActiveDay] = useState("day-1");
-  const [activeTrack, setActiveTrack] = useState("all");
-
-  const filteredSessions = scheduleData[activeDay].filter((s) => {
-    if (activeTrack === "all") return true;
-    return s.track === activeTrack;
-  });
-
   return (
     <div className="min-h-screen bg-wagcon-bg text-wagcon-white">
       <Nav />
@@ -202,126 +185,32 @@ export default function AgendaPage() {
           </div>
         </section>
 
-        {/* Schedule & Filters Section */}
+        {/* Coming Soon Section */}
         <Section bg="bg">
-          {/* Day Selector */}
-          <div className="flex flex-wrap justify-center gap-4 mb-10">
-            {[
-              { id: "day-1", label: "DAY 1 — 28 APRIL", subtitle: "Leaders Dinner (VIP)" },
-              { id: "day-2", label: "DAY 2 — 29 APRIL", subtitle: "B2B Conference & Exhibition" },
-              { id: "day-3", label: "DAY 3 — 30 APRIL", subtitle: "Showcase & Tournaments" },
-              { id: "day-4", label: "DAY 4 — 1 MAY",   subtitle: "VIP & Official After Party" },
-            ].map((d) => (
-              <button
-                key={d.id}
-                onClick={() => {
-                  setActiveDay(d.id);
-                  setActiveTrack("all"); // Reset track filter on day change
-                }}
-                className={`flex flex-col items-center justify-center p-4 border rounded-sm min-w-[220px] transition-all ${
-                  activeDay === d.id
-                    ? "border-primary bg-primary/10 text-white"
-                    : "border-white/10 bg-wagcon-bg3/40 hover:border-primary/40 text-white/70"
-                }`}
+          <div className="max-w-4xl mx-auto text-center py-20 px-6 border border-primary/20 bg-gradient-to-b from-wagcon-bg3/50 to-wagcon-bg3/10 rounded-sm space-y-6">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary mb-2">
+              <Calendar size={32} />
+            </div>
+            <h2 className="font-heading text-3xl md:text-5xl font-black text-white tracking-tighter">
+              Agenda <Accent>Coming Soon</Accent>.
+            </h2>
+            <p className="text-sm md:text-base text-white/70 font-body max-w-lg mx-auto leading-relaxed">
+              We are currently finalizing the full B2B speaker sessions, panels, developer showcases, and esports tournament schedules for WAGCON 2027. Sign up for updates to receive the full convention agenda directly in your inbox.
+            </p>
+            <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+              <a
+                href="/contact"
+                className="font-button text-xs uppercase tracking-wider font-bold bg-primary text-black px-10 py-5 hover:bg-primary/85 transition-all rounded-sm flex items-center justify-center gap-2"
               >
-                <span className="font-heading font-extrabold text-sm uppercase tracking-wider mb-1">{d.label}</span>
-                <span className="text-[10px] opacity-65 font-body uppercase">{d.subtitle}</span>
-              </button>
-            ))}
-          </div>
-
-          {/* Track Filters */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-14 border-t border-white/5 pt-8">
-            <span className="text-xs text-white/40 font-body mr-2 flex items-center gap-1">
-              <Filter size={14} /> Filter by Track:
-            </span>
-            {[
-              { id: "all", label: "ALL SESSIONS" },
-              { id: "business", label: "BUSINESS OF GAMING" },
-              { id: "tech", label: "TECH & DEV" },
-              { id: "esports", label: "ESPORTS & COMMUNITY" },
-              { id: "networking", label: "NETWORKING" },
-            ].map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setActiveTrack(t.id)}
-                className={`px-4 py-2 text-[10px] font-bold uppercase tracking-wider border transition-all rounded-sm ${
-                  activeTrack === t.id
-                    ? "border-primary bg-primary text-black"
-                    : "border-white/10 bg-transparent text-white/60 hover:border-white/25 hover:text-white"
-                }`}
+                Get Notified
+              </a>
+              <a
+                href="/tickets"
+                className="font-button text-xs uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all rounded-sm flex items-center justify-center gap-2"
               >
-                {t.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Vertical Timeline */}
-          <div className="max-w-4xl mx-auto relative pl-6 md:pl-10 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-white/10">
-            {filteredSessions.length > 0 ? (
-              filteredSessions.map((session, index) => (
-                <div key={index} className="relative mb-12 last:mb-0 group">
-                  {/* Timeline dot */}
-                  <div className={`absolute -left-[30px] md:-left-[34px] w-6 h-6 rounded-full border bg-wagcon-bg flex items-center justify-center transition-colors duration-300 ${
-                    session.track === "business"
-                      ? "border-primary text-primary"
-                      : session.track === "tech"
-                      ? "border-secondary text-secondary"
-                      : session.track === "esports"
-                      ? "border-accent-purple text-accent-purple"
-                      : "border-white/35 text-white/60"
-                  }`}>
-                    <div className="w-1.5 h-1.5 rounded-full bg-current" />
-                  </div>
-
-                  <Card className="hover:border-primary/30 transition-all duration-300">
-                    <div className="flex flex-wrap items-start justify-between gap-4 mb-4">
-                      {/* Left: Time and Title */}
-                      <div className="space-y-1">
-                        <div className="flex items-center gap-2 text-xs text-primary font-bold">
-                          <Clock size={12} /> {session.time}
-                        </div>
-                        <h3 className="font-heading text-lg md:text-xl font-bold text-white leading-snug group-hover:text-primary transition-colors">
-                          {session.title}
-                        </h3>
-                      </div>
-                      
-                      {/* Right: Badge */}
-                      <span className={`inline-block px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-wider ${
-                        session.track === "business"
-                          ? "bg-primary/10 text-primary border border-primary/20"
-                          : session.track === "tech"
-                          ? "bg-secondary/10 text-secondary border border-secondary/20"
-                          : session.track === "esports"
-                          ? "bg-purple-500/10 text-purple-400 border border-purple-500/20"
-                          : "bg-white/5 text-white/50 border border-white/10"
-                      }`}>
-                        {session.trackLabel}
-                      </span>
-                    </div>
-
-                    <p className="text-xs md:text-sm text-white/60 font-body mb-6 leading-relaxed">
-                      {session.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] text-white/40 uppercase tracking-widest font-body pt-4 border-t border-white/5">
-                      {session.speaker && (
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-white/60">SPEAKER:</span> {session.speaker}
-                        </div>
-                      )}
-                      <div className="flex items-center gap-1.5">
-                        <MapPin size={12} className="text-primary" /> {session.location}
-                      </div>
-                    </div>
-                  </Card>
-                </div>
-              ))
-            ) : (
-              <div className="text-center py-12 border border-white/5 bg-wagcon-bg3/30 rounded-sm">
-                <p className="text-white/40 font-body">No sessions match the selected track filter.</p>
-              </div>
-            )}
+                Explore Passes
+              </a>
+            </div>
           </div>
         </Section>
       </main>
