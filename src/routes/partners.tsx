@@ -150,6 +150,18 @@ function PartnersPage() {
             <p className="text-sm md:text-base text-white/60 font-body leading-relaxed">
               Maximize your brand visibility, run custom showcase panels, or distribute developer kits. Download the exhibitor deck or contact the committee.
             </p>
+            
+            {/* Early Bird highlight */}
+            <div className="inline-flex items-center gap-4 px-6 py-3 border border-primary/20 bg-primary/5 mx-auto">
+              <span className="font-button text-[10px] uppercase tracking-[0.2em] font-black text-primary">
+                SUPER EARLY BIRD
+              </span>
+              <span className="w-px h-4 bg-white/15" />
+              <span className="font-button text-[11px] uppercase tracking-wider text-white/80 font-bold">
+                <span className="text-primary">30% OFF</span> — Commit before 30 Sep 2026
+              </span>
+            </div>
+
             <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
               <a
                 href="https://app.eventpadi.com/wagcon/f/WAGCON"

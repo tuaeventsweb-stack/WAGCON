@@ -138,6 +138,70 @@ function ExhibitPage() {
 
         </Section>
 
+        {/* Early Bird Pricing */}
+        <Section bg="bg" className="border-t border-white/5">
+          <div className="text-center mb-12">
+            <Eyebrow className="mb-4">EARLY BIRD PRICING</Eyebrow>
+            <h2 className="font-heading text-3xl md:text-5xl font-black text-white mb-4 tracking-tighter leading-[0.9]">
+              Book Early. <span className="text-primary">Save Up to 30%.</span>
+            </h2>
+            <p className="text-sm md:text-base text-white/60 font-body max-w-xl mx-auto leading-relaxed">
+              Four pricing windows for sponsorship, exhibition and partnership opportunities. The earlier you commit, the more you save.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+            {([
+              { stage: "Super Early Bird", discount: "30%", deadline: "30 Sep 2026", benefit: "Maximum savings + first access to preferred positions" },
+              { stage: "Early Bird 2",     discount: "15%", deadline: "30 Nov 2026", benefit: "Strong savings + priority exhibition & branding" },
+              { stage: "Early Bird 3",     discount: "10%", deadline: "31 Jan 2027", benefit: "Savings + programme and visibility consideration" },
+              { stage: "Final Early Bird", discount: "5%",  deadline: "15 Mar 2027", benefit: "Final discounted rate before standard pricing" },
+            ] as const).map((tier, i) => {
+              const isActive = (() => {
+                const now = Date.now();
+                const deadlines = [
+                  new Date("2026-09-30T23:59:59+01:00"),
+                  new Date("2026-11-30T23:59:59+01:00"),
+                  new Date("2027-01-31T23:59:59+01:00"),
+                  new Date("2027-03-15T23:59:59+01:00"),
+                ];
+                const activeIdx = deadlines.findIndex((d) => now < d.getTime());
+                return activeIdx === i;
+              })();
+
+              return (
+                <div
+                  key={tier.stage}
+                  className={`relative p-6 border transition-all ${
+                    isActive
+                      ? "border-primary/40 bg-primary/5"
+                      : "border-white/5 bg-wagcon-bg3/30"
+                  }`}
+                >
+                  {isActive && (
+                    <span className="absolute top-3 right-3 font-button text-[8px] uppercase tracking-[0.2em] font-black text-primary border border-primary/30 px-2 py-0.5">
+                      CURRENT
+                    </span>
+                  )}
+                  <p className="font-button text-[9px] uppercase tracking-[0.2em] text-white/40 font-bold mb-3">
+                    {tier.stage}
+                  </p>
+                  <p className={`font-heading text-3xl font-black tracking-tighter mb-1 ${isActive ? "text-primary" : "text-white/70"}`}>
+                    {tier.discount}
+                  </p>
+                  <p className="font-button text-[9px] uppercase tracking-widest text-white/30 mb-4">OFF</p>
+                  <p className="font-body text-[11px] text-white/50 leading-relaxed mb-4">
+                    {tier.benefit}
+                  </p>
+                  <p className={`font-button text-[10px] uppercase tracking-wider ${isActive ? "text-primary font-black" : "text-white/40"}`}>
+                    Ends {tier.deadline}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </Section>
+
         {/* Eventpadi Sponsor Form CTA */}
         <Section bg="bg2" className="border-t border-white/5">
           <div className="max-w-3xl mx-auto text-center">

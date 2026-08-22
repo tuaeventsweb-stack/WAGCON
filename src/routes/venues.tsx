@@ -97,7 +97,7 @@ function VenuesPage() {
                 <div className="relative border border-white/10 bg-wagcon-bg3 p-2 rounded-lg overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
-                    src="fourpoints.png" 
+                    src="/fourpoints.png" 
                     alt="Leaders Networking Dinner Lounge" 
                     className="w-full object-cover aspect-[16/10] rounded-sm grayscale contrast-125 brightness-95" 
                   />
@@ -160,7 +160,7 @@ function VenuesPage() {
                 <div className="relative border border-white/10 bg-wagcon-bg3 p-2 rounded-lg overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
-                    src="oriental.webp" 
+                    src="/oriental.webp" 
                     alt="Lagos Oriental Hotel Convention Floor" 
                     className="w-full object-cover aspect-[16/10] rounded-sm grayscale contrast-125 brightness-95" 
                   />
@@ -223,7 +223,7 @@ function VenuesPage() {
                 <div className="relative border border-white/10 bg-wagcon-bg3 p-2 rounded-lg overflow-hidden group">
                   <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   <img 
-                    src="fareighheit.jpeg" 
+                    src="/fareighheit.jpeg" 
                     alt="Fahrenheit Rooftop Lounge" 
                     className="w-full object-cover aspect-[16/10] rounded-sm grayscale contrast-125 brightness-95" 
                   />

@@ -1,0 +1,27 @@
+# WAGCON 2027 Robots.txt
+# Optimized for Google, Bing, Perplexity, ChatGPT, Claude, and Gemini
+
+User-agent: *
+Allow: /
+
+# Explicitly Allow AI Search Engines (AIEO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# Sitemap Location
+Sitemap: https://wagconvention.com/sitemap.xml

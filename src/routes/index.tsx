@@ -31,6 +31,7 @@ import {
   LogoWall,
   WhyExhibit,
   WhyWestAfrica,
+  EarlyBirdOffer,
   PassTiers,
   FinalCTA,
 } from "@/components/wagcon/sections";
@@ -57,6 +58,7 @@ function Index() {
         <LogoWall />
         <WhyExhibit />
         <WhyWestAfrica />
+        <EarlyBirdOffer />
         <PassTiers />
         <FinalCTA />
       </main>

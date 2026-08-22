@@ -16,6 +16,7 @@ const groups = [
     links: [
       { label: "Get Your Pass",     to: "https://app.eventpadi.com/wagcon" },
       { label: "Exhibit / Sponsor", to: "https://app.eventpadi.com/wagcon/f/WAGCON" },
+      { label: "Early Bird Offers", to: "/#early-bird" },
       { label: "Apply to Speak",    to: "/contact" },
       { label: "Partners",          to: "/partners" },
     ],
@@ -49,7 +50,7 @@ export function Footer() {
     <footer className="relative border-t border-white/5 bg-background overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <img 
-          src="hero_bg.png" 
+          src="/hero_bg_uploaded.jpg" 
           alt="" 
           className="absolute inset-0 w-full h-full object-cover opacity-10 pointer-events-none" 
         />

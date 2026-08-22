@@ -4,7 +4,7 @@ import {
   ArrowRight, Ticket, MapPin, Download, FileText, BarChart3, Calendar, Quote,
   Gamepad2, Trophy, Link2, Package, Bot, Glasses, Hammer, DollarSign, Landmark,
   CreditCard, Palette, Users, Monitor, Globe, Check, X as XIcon, Mic, Building2,
-  Target, Zap, Award, MessageSquare, Eye, Crown, PlayCircle, User, Phone,
+  Target, Zap, Award, MessageSquare, Eye, Crown, PlayCircle, User, Phone, Clock,
 } from "lucide-react";
 
 /* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -122,6 +122,40 @@ export function Hero() {
             Exhibit at WAGCON <ArrowRight size={18} />
           </a>
         </div>
+
+        {/* Early Bird badge */}
+        {(() => {
+          const now = Date.now();
+          const ebTiers = [
+            { label: "SUPER EARLY BIRD", discount: "30% OFF", deadline: new Date("2026-09-30T23:59:59+01:00") },
+            { label: "EARLY BIRD 2",     discount: "15% OFF", deadline: new Date("2026-11-30T23:59:59+01:00") },
+            { label: "EARLY BIRD 3",     discount: "10% OFF", deadline: new Date("2027-01-31T23:59:59+01:00") },
+            { label: "FINAL EARLY BIRD", discount: "5% OFF",  deadline: new Date("2027-03-15T23:59:59+01:00") },
+          ];
+          const activeTier = ebTiers.find((t) => now < t.deadline.getTime());
+          if (!activeTier) return null;
+          const deadlineStr = activeTier.deadline.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
+          return (
+            <a
+              href="https://app.eventpadi.com/wagcon/f/WAGCON"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-6 py-3 border border-primary/25 bg-primary/5 hover:bg-primary/10 transition-all mb-10 group"
+            >
+              <span className="font-button text-[10px] uppercase tracking-[0.2em] font-black text-primary">
+                {activeTier.label}
+              </span>
+              <span className="w-px h-4 bg-white/15" />
+              <span className="font-button text-[11px] uppercase tracking-wider text-white/80 font-bold">
+                <span className="text-primary">{activeTier.discount}</span> Sponsorship & Exhibition
+              </span>
+              <span className="w-px h-4 bg-white/15" />
+              <span className="font-button text-[10px] uppercase tracking-wider text-white/40">
+                Ends {deadlineStr}
+              </span>
+            </a>
+          );
+        })()}
 
         <div className="flex justify-center gap-4">
           <CountdownUnit value={time.days}    label="Days" />
@@ -274,7 +308,7 @@ const venues = [
     brand: "VIP LEADERS DINNER",
     name: "Four Points by Sheraton — Victoria Island, Lagos",
     Icon: Trophy,
-    image: "fourpoints.png",
+    image: "/fourpoints.png",
     description: "An exclusive, closed-door B2B networking dinner co-located with ABDS 2027. Curated for C-level founders, investors, government officials, and senior gaming/blockchain leaders. Admission via Gold Pass only.",
     pass: "Gold Pass — Included",
     passColor: "text-pass-gold",
@@ -288,7 +322,7 @@ const venues = [
     brand: "CONFERENCE & EXHIBITION",
     name: "Lagos Oriental Hotel — Victoria Island, Lagos",
     Icon: Gamepad2,
-    image: "oriental.webp",
+    image: "/oriental.webp",
     description: "Two full days of conference sessions, keynotes, panels, exhibition floor, live esports tournament, indie developer showcase, gaming demo zone, and startup pitch stage co-located with ABDS 2027.",
     pass: "Gold & Blue — Full Access · Standard — Conf & Expo · Green — Expo Only",
     passColor: "text-pass-blue",
@@ -302,7 +336,7 @@ const venues = [
     brand: "AFTER PARTY",
     name: "La Maison de Fahrenheit — Victoria Island, Lagos",
     Icon: Mic,
-    image: "fareighheit.jpeg",
+    image: "/fareighheit.jpeg",
     description: "Game over? Not even close. The official WAGCON × ABDS industry after party at Fahrenheit closes the week the right way — curated networking, open bar, and the conversations that only happen when the convention floor has closed.",
     pass: "Gold & Blue — Included · Standard/Green — Upgrade required",
     passColor: "text-purple-500",
@@ -425,10 +459,10 @@ export function Venues() {
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 export function Lookback() {
   const previewImages = [
-    { src: "gallery/2J6A6809.jpg", title: "Industry Panel Discussions" },
-    { src: "gallery/IMG_9114.jpg", title: "Esports Arena Matches" },
-    { src: "gallery/IMG_9143.jpg", title: "Exhibition Floor Showcase" },
-    { src: "gallery/_MG_7367.jpg", title: "Networking & B2B Lounge" },
+    { src: "/about-audience.jpg", title: "Industry Panel Discussions" },
+    { src: "/convention-hall.jpg", title: "Exhibition Floor Showcase" },
+    { src: "/oriental.webp", title: "Convention & Esports Arena" },
+    { src: "/fourpoints.png", title: "VIP Networking Lounge" },
   ];
 
   return (
@@ -1067,8 +1101,7 @@ export function PassTiers() {
             Choose your role at<br />WAGCON 2027.
           </h2>
           <p className="text-lg text-white/60 font-body max-w-xl mx-auto">
-            Four days. Three venues. Every level of participation covered. Early bird pricing
-            active — ends 28 February 2027.
+            Four days. Three venues. Every level of participation covered.
           </p>
         </div>
 
@@ -1128,6 +1161,23 @@ export function PassTiers() {
               </div>
             );
           })}
+        </div>
+
+        {/* Sponsor Early Bird cross-sell */}
+        <div className="mt-12 max-w-2xl mx-auto text-center p-8 border border-primary/15 bg-primary/5">
+          <p className="font-button text-[10px] uppercase tracking-[0.3em] text-primary font-black mb-3">FOR SPONSORS & EXHIBITORS</p>
+          <p className="font-body text-sm text-white/70 leading-relaxed mb-5">
+            Looking to put your brand on the convention floor? Early Bird pricing for sponsorship and exhibition packages starts at 30% OFF.
+          </p>
+          <a
+            href="https://app.eventpadi.com/wagcon/f/WAGCON"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-button text-[10px] uppercase tracking-widest font-black text-primary hover:text-white transition-colors group"
+          >
+            [ VIEW EARLY BIRD PACKAGES ]
+            <ArrowRight size={14} className="transition-transform group-hover:translate-x-2" />
+          </a>
         </div>
       </div>
     </section>
@@ -1216,6 +1266,185 @@ export function FinalCTA() {
               )}
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+ * 18. EARLY BIRD OFFER — Sponsor & Exhibition Pricing Timeline
+ * ═══════════════════════════════════════════════════════════════════ */
+const EB_TIERS = [
+  {
+    stage: "Super Early Bird",
+    discount: "30",
+    deadline: new Date("2026-09-30T23:59:59+01:00"),
+    benefit: "Maximum savings + first access to preferred positions",
+  },
+  {
+    stage: "Early Bird 2",
+    discount: "15",
+    deadline: new Date("2026-11-30T23:59:59+01:00"),
+    benefit: "Strong savings + priority exhibition & branding",
+  },
+  {
+    stage: "Early Bird 3",
+    discount: "10",
+    deadline: new Date("2027-01-31T23:59:59+01:00"),
+    benefit: "Savings + programme and visibility consideration",
+  },
+  {
+    stage: "Final Early Bird",
+    discount: "5",
+    deadline: new Date("2027-03-15T23:59:59+01:00"),
+    benefit: "Final discounted rate before standard pricing",
+  },
+];
+
+function getActiveEBIndex() {
+  const now = Date.now();
+  const idx = EB_TIERS.findIndex((t) => now < t.deadline.getTime());
+  return idx === -1 ? null : idx;
+}
+
+function useEBCountdown(deadline: Date) {
+  const [left, setLeft] = useState(() => Math.max(0, deadline.getTime() - Date.now()));
+  useEffect(() => {
+    const id = setInterval(() => setLeft(Math.max(0, deadline.getTime() - Date.now())), 1000);
+    return () => clearInterval(id);
+  }, [deadline]);
+  const d = Math.floor(left / 86400000);
+  const h = Math.floor((left / 3600000) % 24);
+  const m = Math.floor((left / 60000) % 60);
+  const s = Math.floor((left / 1000) % 60);
+  return { days: d, hours: h, minutes: m, seconds: s };
+}
+
+export function EarlyBirdOffer() {
+  const activeIdx = getActiveEBIndex();
+  if (activeIdx === null) return null;
+
+  const activeTier = EB_TIERS[activeIdx];
+  const countdown = useEBCountdown(activeTier.deadline);
+
+  return (
+    <section className="py-24 bg-card/20 border-y border-white/5 overflow-hidden" id="early-bird">
+      <div className="max-w-7xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <Eyebrow>EARLY BIRD OFFER</Eyebrow>
+          <h2 className="font-heading text-4xl md:text-7xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
+            Level Up Your Brand.<br />Book Early. Save Up to 30%.
+          </h2>
+          <p className="text-lg md:text-xl text-white/60 max-w-3xl mx-auto font-body leading-relaxed">
+            Gaming companies, publishers, developers, technology providers, investors and brands
+            can secure sponsorship, exhibition and partnership opportunities through four
+            Early Bird pricing windows.
+          </p>
+        </div>
+
+        {/* Countdown to active deadline */}
+        <div className="max-w-xl mx-auto mb-20">
+          <p className="text-center font-button text-[10px] uppercase tracking-[0.3em] text-white/40 mb-6">
+            {activeTier.stage} ends in
+          </p>
+          <div className="grid grid-cols-4 gap-4">
+            {([
+              [countdown.days, "Days"],
+              [countdown.hours, "Hours"],
+              [countdown.minutes, "Min"],
+              [countdown.seconds, "Sec"],
+            ] as const).map(([val, label]) => (
+              <div key={label} className="text-center p-4 border border-primary/20 bg-primary/5">
+                <span className="font-heading text-3xl md:text-5xl font-black text-primary tabular-nums block leading-none">
+                  {String(val).padStart(2, "0")}
+                </span>
+                <span className="font-button text-[9px] uppercase tracking-[0.3em] text-white/40 mt-2 block">
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Pricing timeline — 4 tiers */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 mb-16">
+          {EB_TIERS.map((tier, i) => {
+            const isActive = i === activeIdx;
+            const isPast = i < activeIdx;
+            const deadlineStr = tier.deadline.toLocaleDateString("en-GB", {
+              day: "numeric",
+              month: "short",
+              year: "numeric",
+            });
+
+            return (
+              <div
+                key={tier.stage}
+                className={`relative p-8 flex flex-col transition-all ${
+                  isActive
+                    ? "bg-primary/8 border-l-2 border-l-primary"
+                    : isPast
+                      ? "bg-background opacity-40"
+                      : "bg-background"
+                }`}
+              >
+                {isActive && (
+                  <span className="absolute top-4 right-4 font-button text-[9px] uppercase tracking-[0.2em] font-black text-primary border border-primary/30 px-2.5 py-1">
+                    ACTIVE
+                  </span>
+                )}
+                {isPast && (
+                  <span className="absolute top-4 right-4 font-button text-[9px] uppercase tracking-[0.2em] font-bold text-white/30 line-through">
+                    CLOSED
+                  </span>
+                )}
+
+                <p className="font-button text-[10px] uppercase tracking-[0.2em] text-white/50 font-bold mb-4">
+                  {tier.stage}
+                </p>
+
+                <p className={`font-heading text-4xl md:text-5xl font-black tracking-tighter mb-2 ${
+                  isActive ? "text-primary" : "text-white/60"
+                }`}>
+                  {tier.discount}%
+                </p>
+                <p className="font-button text-[10px] uppercase tracking-widest text-white/40 mb-6">OFF</p>
+
+                <p className="font-body text-xs text-white/60 leading-relaxed mb-6 flex-1">
+                  {tier.benefit}
+                </p>
+
+                <div className="pt-4 border-t border-white/10">
+                  <p className="font-button text-[10px] uppercase tracking-wider text-white/40">
+                    Deadline
+                  </p>
+                  <p className={`font-heading text-sm font-bold ${isActive ? "text-primary" : "text-white/60"}`}>
+                    {deadlineStr}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* CTA */}
+        <div className="text-center">
+          <a
+            href="https://app.eventpadi.com/wagcon/f/WAGCON"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all shadow-[0_0_40px_rgba(34,197,94,0.2)]"
+          >
+            Secure Early Bird Pricing <ArrowRight size={18} />
+          </a>
+          <p className="mt-6 font-body text-xs text-white/40">
+            For immediate assistance, contact us at{" "}
+            <a href="mailto:info@tuaevents.org" className="text-primary hover:underline font-bold">
+              info@tuaevents.org
+            </a>
+          </p>
         </div>
       </div>
     </section>
