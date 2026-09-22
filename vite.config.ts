@@ -13,7 +13,7 @@ import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Allow the Nitro preset to be overridden at build time via env variable.
 // This lets you deploy to Vercel or Netlify without touching source code.
-const nitroPreset = (process.env.NITRO_PRESET as string | undefined) ?? undefined;
+const nitroPreset = (process.env.NITRO_PRESET as string | undefined) ?? "node-server";
 
 export default defineConfig({
   tanstackStart: {
@@ -21,5 +21,12 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  ...(nitroPreset ? { nitro: { preset: nitroPreset } } : {}),
+  vite: {
+    server: {
+      port: 5283,
+    },
+  },
+  nitro: {
+    preset: nitroPreset,
+  },
 });

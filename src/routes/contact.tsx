@@ -60,21 +60,43 @@ function ContactPage() {
   const teamMembers = [
     {
       name: "Jidenna Iwuno",
-      role: "Sponsorship & Partnerships",
-      email: "jidennaiwino@tuaevents.org",
-      phone: "+234 915 461 1827",
+      role: "Sponsorship & Exhibitions Enquiry",
+      email: "jidenna@tuaevents.org",
+      phone: "+234 (803) 971 7998",
+      image: "/team/jidenna-iwuno.jpg",
+      tag: "Sponsorships",
     },
     {
       name: "Queeneth Clinton",
-      role: "Delegate & Tickets",
+      role: "Speaker & Media Enquiry",
       email: "queeneth@tuaevents.org",
-      phone: "+234 915 461 1827",
+      phone: "+234 (809) 567 8301",
+      image: "/team/queeneth-clinton.jpg",
+      tag: "Speakers & Media",
+    },
+    {
+      name: "Jerome Miller",
+      role: "International Sales & Partnerships",
+      email: "sales@tuaevents.org",
+      phone: "+1 (912) 695-5453",
+      image: "/team/jerome-miller.jpg",
+      tag: "International",
+    },
+    {
+      name: "Gigi Ait-Messaoud",
+      role: "International Sales & Partnerships",
+      email: "sales@tuaevents.org",
+      phone: "+1 (678) 907-6692",
+      image: "/team/gigi-ait-messaoud.jpg",
+      tag: "International",
     },
     {
       name: "David Ogbor",
-      role: "Exhibition & Operations",
+      role: "Media Partnerships",
       email: "info@tuaevents.org",
-      phone: "+234 915 461 1827",
+      phone: "+234 (915) 461 1827",
+      image: "/team/david-ogbor.jpg",
+      tag: "Media",
     },
   ];
 
@@ -94,13 +116,81 @@ function ContactPage() {
               Contact <Accent>WAGCON</Accent>.
             </h1>
             <p className="text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed">
-              Have questions about registration, exhibition booths, or speaking slots? Get in touch with the T.U.A Events organizing committee.
+              Have questions about registration, exhibition booths, sponsorship, or speaking slots? Get in touch with our team leads and representatives directly.
             </p>
           </div>
         </section>
 
-        {/* Contact Content */}
-        <Section bg="bg">
+        {/* Team Representatives Grid */}
+        <Section bg="bg" className="border-b border-white/5">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <Eyebrow>DIRECT CONTACTS</Eyebrow>
+            <SectionTitle className="text-3xl md:text-4xl font-black mt-2">
+              Key <Accent>Representatives</Accent>
+            </SectionTitle>
+            <p className="font-body text-sm text-white/60 mt-3">
+              Reach out directly to our dedicated leads for partnerships, speaking engagements, and event inquiries.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member) => (
+              <div 
+                key={member.name}
+                className="group relative border-2 border-white/10 bg-wagcon-bg3/50 hover:border-primary/60 hover:shadow-[0_0_30px_rgba(34,197,94,0.18)] transition-all duration-300 p-7 flex flex-col justify-between overflow-hidden rounded-sm"
+              >
+                {/* Accent glow corner */}
+                <div className="absolute -top-12 -right-12 w-28 h-28 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/20 transition-all pointer-events-none" />
+                
+                <div>
+                  <div className="flex items-center gap-5 mb-5">
+                    <div className="relative w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full overflow-hidden border-2 border-primary/40 group-hover:border-primary group-hover:scale-105 transition-all duration-300 bg-black shadow-lg">
+                      <img 
+                        src={member.image} 
+                        alt={member.name} 
+                        className="w-full h-full object-cover object-top filter brightness-95 group-hover:brightness-105 transition-all duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLElement).style.display = 'none';
+                        }}
+                      />
+                    </div>
+                    <div className="min-w-0">
+                      <span className="inline-block text-[10px] uppercase font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-xs mb-1.5">
+                        {member.tag}
+                      </span>
+                      <h3 className="font-heading text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors leading-tight truncate">
+                        {member.name}
+                      </h3>
+                      <p className="font-body text-xs md:text-sm text-white/70 mt-1 leading-snug">
+                        {member.role}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-5 mt-2 border-t border-white/10 space-y-2.5 font-body text-xs md:text-sm text-white/80">
+                  <a 
+                    href={`mailto:${member.email}`} 
+                    className="flex items-center gap-3 py-2 px-3 bg-white/5 hover:bg-primary hover:text-black border border-white/10 hover:border-primary transition-all rounded-xs group/link"
+                  >
+                    <Mail size={16} className="text-primary group-hover/link:text-black shrink-0 transition-colors" />
+                    <span className="truncate font-medium">{member.email}</span>
+                  </a>
+                  <a 
+                    href={`tel:${member.phone.replace(/[^0-9+]/g, "")}`} 
+                    className="flex items-center gap-3 py-2 px-3 bg-white/5 hover:bg-white/15 border border-white/10 transition-all rounded-xs group/link"
+                  >
+                    <Phone size={16} className="text-primary shrink-0" />
+                    <span className="font-medium">{member.phone}</span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* Contact Form & Office Section */}
+        <Section bg="bg2">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             {/* Form Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -193,9 +283,8 @@ function ContactPage() {
               )}
             </div>
 
-            {/* Contacts Column */}
+            {/* Organizer Office Column */}
             <div className="lg:col-span-5 space-y-8">
-              {/* Host & Location */}
               <div>
                 <Eyebrow className="mb-3">ORGANIZER OFFICE</Eyebrow>
                 <Card className="bg-wagcon-bg3/30 border-white/5 space-y-4">
@@ -218,37 +307,19 @@ function ContactPage() {
                   <div className="flex items-center gap-3 text-white/85">
                     <Phone size={18} className="text-primary shrink-0" />
                     <div>
-                      <h4 className="font-heading text-xs font-bold uppercase text-white">Contact Phone</h4>
+                      <h4 className="font-heading text-xs font-bold uppercase text-white">General Inquiries</h4>
                       <a href="tel:+2349154611827" className="text-xs text-white/60 hover:text-white font-body">+234 915 461 1827</a>
                     </div>
                   </div>
                 </Card>
               </div>
 
-              {/* Individual Contacts */}
-              <div className="space-y-4">
-                <Eyebrow>KEY REPRESENTATIVES</Eyebrow>
-                
-                {teamMembers.map((member) => (
-                  <div 
-                    key={member.name}
-                    className="p-5 border border-white/5 bg-wagcon-bg3/25 rounded-sm hover:border-primary/20 transition-all"
-                  >
-                    <span className="text-[9px] uppercase font-bold text-primary tracking-widest block mb-1">{member.role}</span>
-                    <h4 className="font-heading text-sm font-bold text-white mb-2">{member.name}</h4>
-                    
-                    <div className="space-y-1.5 font-body text-xs text-white/50">
-                      <div className="flex items-center gap-2">
-                        <Mail size={12} className="text-white/30" />
-                        <a href={`mailto:${member.email}`} className="hover:text-primary transition-colors">{member.email}</a>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Phone size={12} className="text-white/30" />
-                        <a href={`tel:${member.phone.replace(/\s+/g, "")}`} className="hover:text-white transition-colors">{member.phone}</a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+              {/* Event Location Card */}
+              <div className="p-6 border border-white/10 bg-wagcon-bg3/20 rounded-sm">
+                <h4 className="font-heading text-sm font-bold text-white mb-2">Hosted by T.U.A Events</h4>
+                <p className="text-xs text-white/60 font-body leading-relaxed">
+                  T.U.A Events is the premier event production group spearheading Africa's technological, gaming, and interactive media revolutions.
+                </p>
               </div>
             </div>
           </div>

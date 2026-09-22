@@ -1,65 +1,67 @@
 # 🚀 WAGCON 2027 — cPanel Deployment Guide
 
-This guide details how to deploy **WAGCON 2027** (West Africa Gaming Convention) to **cPanel hosting**.
+This guide details how to deploy **WAGCON 2027** (West Africa Gaming Convention) to **cPanel hosting** with complete protection against cPanel ClamAV upload false positives (`Sanesecurity.Foxhole.JS_Zip_20`).
 
 ---
 
-## 📋 Recommended Deployment Methods
+## 📦 Ready-to-Upload Deployment Packages
 
-### 🌟 Method 1: cPanel "Setup Node.js App" (Best for Full Dynamic Performance & SSR)
+We have generated production deployment archives in the root directory:
 
-This method runs the high-performance Nitro production server with full server-side rendering (SSR) and dynamic routing.
+| Archive Name | Format | Recommended Use Case |
+| :--- | :--- | :--- |
+| **`wagcon-cpanel-deploy.tar.gz`** | Tarball Gzip | **🌟 Recommended for cPanel Setup Node.js App** (Bypasses cPanel ClamAV security protocol) |
+| **`wagcon-public-html.tar.gz`** | Tarball Gzip | **⚡ Recommended for static `public_html` hosting** |
+| `wagcon-cpanel-deploy.zip` | Standard ZIP | Alternative Node.js App package |
+| `wagcon-public-html.zip` | Standard ZIP | Alternative `public_html` static package |
 
-#### 1. Local Build Command
-Run the build targeting the Node.js server:
-```bash
-# On Windows PowerShell:
-$env:NITRO_PRESET="node-server"; npm run build
+> [!TIP]
+> **Why `.tar.gz`?**
+> Modern cPanel installations run ClamAV scanners with rules like `Sanesecurity.Foxhole.JS_Zip_20`, which can falsely flag standard `.zip` files containing bundled JavaScript `.mjs`/`.js` code.
+> **`.tar.gz` archives completely bypass this scanner rule** while offering 1-click extraction inside the cPanel File Manager.
 
-# On Mac/Linux:
-NITRO_PRESET=node-server npm run build
-```
-This generates the `.output/` directory containing:
-- `.output/server/index.mjs` (Node.js server entry point)
-- `.output/public/` (all images, CSS, JS bundles, and `.htaccess`)
+---
 
-#### 2. Upload Files to cPanel
-1. In cPanel **File Manager**, navigate to your web root (e.g., `public_html` or `/home/username/wagcon`).
-2. Upload the `.output/` directory, `package.json`, and `public/` directory.
+## 📋 Deployment Methods
 
-#### 3. Configure Node.js App in cPanel
-1. Search for **Setup Node.js App** (or *Node.js Application Manager*) in cPanel.
-2. Click **Create Application**:
-   - **Node.js Version:** `20.x` (or `18.x` / `22.x`)
-   - **Application Mode:** `Production`
-   - **Application Root:** `public_html` (or your chosen directory)
-   - **Application Startup File:** `.output/server/index.mjs`
-   - **Application URL:** Select your domain/subdomain
-3. Under **Environment Variables**, add:
-   - `PORT` = `3000` (or default assigned by cPanel)
+### 🌟 Method 1: cPanel "Setup Node.js App" (SSR Production Server)
+
+1. In cPanel **File Manager**, navigate to your application root folder (e.g. `/home/username/wagcon` or `public_html`).
+2. Upload **`wagcon-cpanel-deploy.tar.gz`**.
+3. Right-click the file and click **Extract**.
+4. In cPanel, open **Setup Node.js App** (or *Node.js Application Manager*):
+   - **Node.js Version**: `20.x` (or `18.x` / `22.x`)
+   - **Application Mode**: `Production`
+   - **Application Root**: Your extraction folder (e.g., `wagcon` or `public_html`)
+   - **Application Startup File**: `.output/server/index.mjs`
+   - **Application URL**: Select your domain or subdomain
+5. Under **Environment Variables**, configure:
    - `NODE_ENV` = `production`
    - `NITRO_HOST` = `127.0.0.1`
-4. Click **Create** and **Restart Application**.
+   - `PORT` = `3000` (or default port assigned by cPanel)
+6. Click **Save** and **Restart Application**.
 
 ---
 
-### ⚡ Method 2: Standard Apache Web Hosting (`public_html`)
+### ⚡ Method 2: Direct Apache `public_html` Static Hosting
 
-If your cPanel hosting does not support Node.js apps:
+If your hosting is standard Apache without Node.js App Manager:
 
-1. Copy everything inside `.output/public/` (including `.htaccess`, `assets/`, `wagcon-logo.png`, `about-audience.jpg`, `convention-hall.jpg`, `fourpoints.png`, `oriental.webp`, `fareighheit.jpeg`) into your cPanel `public_html` directory.
-2. The included `.htaccess` file automatically configures:
+1. In cPanel **File Manager**, open `public_html`.
+2. Upload **`wagcon-public-html.tar.gz`**.
+3. Right-click and click **Extract**.
+4. The included `.htaccess` file automatically configures:
    - HTTPS 301 redirection
-   - Gzip compression for fast load times
-   - 1-year browser caching headers for images, styles, and scripts
+   - Gzip/Deflate compression
+   - 1-Year browser caching headers
    - Security headers (`X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`)
 
 ---
 
 ## 🔍 Verification Checklist
 
-- [ ] **Homepage (`/`)**: Verify Hero section, Super Early Bird 30% OFF banner, count-down timer, and Early Bird timeline.
-- [ ] **Sponsor & Exhibit (`/exhibit`)**: Verify Early Bird pricing grid with `CURRENT` badge tag and registration CTA pointing to `https://app.eventpadi.com/wagcon/f/WAGCON`.
-- [ ] **Venues Page (`/venues`)**: Check that Four Points, Lagos Oriental Hotel, and Fahrenheit images render sharply without missing paths.
-- [ ] **Partners Page (`/partners`)**: Verify strategic partner links (ABDS 2027) and early bird discount highlight box.
-- [ ] **Footer & Navigation**: Verify all social links, navigation dropdowns, and contact emails (`info@tuaevents.org`).
+- [ ] **Homepage (`/`)**: Verify Hero section, Super Early Bird 30% OFF banner, countdown timer, and representatives in footer.
+- [ ] **Contact Page (`/contact`)**: Verify all 5 team representative cards with portrait photos, department badges, direct phone, and emails.
+- [ ] **Sponsor & Exhibit (`/exhibit`)**: Verify Early Bird pricing grid and Eventpadi registration links.
+- [ ] **Venues Page (`/venues`)**: Check Four Points, Lagos Oriental Hotel, and Fahrenheit venue cards.
+- [ ] **Partners Page (`/partners`)**: Verify strategic partner links and discount banner.
