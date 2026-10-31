@@ -133,18 +133,18 @@ function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {teamMembers.map((member) => (
               <div 
                 key={member.name}
-                className="group relative border-2 border-white/10 bg-wagcon-bg3/50 hover:border-primary/60 hover:shadow-[0_0_30px_rgba(34,197,94,0.18)] transition-all duration-300 p-7 flex flex-col justify-between overflow-hidden rounded-sm"
+                className="group relative border border-white/10 bg-wagcon-bg3/40 hover:border-primary/50 hover:bg-wagcon-bg3/70 transition-all duration-300 p-5 flex flex-col justify-between overflow-hidden rounded-sm"
               >
                 {/* Accent glow corner */}
-                <div className="absolute -top-12 -right-12 w-28 h-28 bg-primary/5 rounded-full blur-xl group-hover:bg-primary/20 transition-all pointer-events-none" />
+                <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/5 rounded-full blur-lg group-hover:bg-primary/20 transition-all pointer-events-none" />
                 
                 <div>
-                  <div className="flex items-center gap-5 mb-5">
-                    <div className="relative w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-full overflow-hidden border-2 border-primary/40 group-hover:border-primary group-hover:scale-105 transition-all duration-300 bg-black shadow-lg">
+                  <div className="flex items-center gap-3.5 mb-4">
+                    <div className="relative w-12 h-12 sm:w-14 sm:h-14 shrink-0 rounded-full overflow-hidden border border-primary/30 group-hover:border-primary group-hover:scale-105 transition-all duration-300 bg-black/60 shadow-md">
                       <img 
                         src={member.image} 
                         alt={member.name} 
@@ -154,34 +154,34 @@ function ContactPage() {
                         }}
                       />
                     </div>
-                    <div className="min-w-0">
-                      <span className="inline-block text-[10px] uppercase font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 px-2.5 py-0.5 rounded-xs mb-1.5">
+                    <div className="min-w-0 flex-1">
+                      <span className="inline-block text-[9px] uppercase font-bold tracking-widest text-primary bg-primary/10 border border-primary/20 px-2 py-0.5 rounded-xs mb-1">
                         {member.tag}
                       </span>
-                      <h3 className="font-heading text-lg md:text-xl font-bold text-white group-hover:text-primary transition-colors leading-tight truncate">
+                      <h3 className="font-heading text-sm sm:text-base font-bold text-white group-hover:text-primary transition-colors leading-tight truncate">
                         {member.name}
                       </h3>
-                      <p className="font-body text-xs md:text-sm text-white/70 mt-1 leading-snug">
+                      <p className="font-body text-xs text-white/60 mt-0.5 leading-snug line-clamp-1">
                         {member.role}
                       </p>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-5 mt-2 border-t border-white/10 space-y-2.5 font-body text-xs md:text-sm text-white/80">
+                <div className="pt-3.5 mt-1 border-t border-white/10 space-y-2 font-body text-xs text-white/80">
                   <a 
                     href={`mailto:${member.email}`} 
-                    className="flex items-center gap-3 py-2 px-3 bg-white/5 hover:bg-primary hover:text-black border border-white/10 hover:border-primary transition-all rounded-xs group/link"
+                    className="flex items-center gap-2.5 py-1.5 px-2.5 bg-white/5 hover:bg-primary hover:text-black border border-white/10 hover:border-primary transition-all rounded-xs group/link"
                   >
-                    <Mail size={16} className="text-primary group-hover/link:text-black shrink-0 transition-colors" />
+                    <Mail size={14} className="text-primary group-hover/link:text-black shrink-0 transition-colors" />
                     <span className="truncate font-medium">{member.email}</span>
                   </a>
                   <a 
                     href={`tel:${member.phone.replace(/[^0-9+]/g, "")}`} 
-                    className="flex items-center gap-3 py-2 px-3 bg-white/5 hover:bg-white/15 border border-white/10 transition-all rounded-xs group/link"
+                    className="flex items-center gap-2.5 py-1.5 px-2.5 bg-white/5 hover:bg-white/15 border border-white/10 transition-all rounded-xs group/link"
                   >
-                    <Phone size={16} className="text-primary shrink-0" />
-                    <span className="font-medium">{member.phone}</span>
+                    <Phone size={14} className="text-primary shrink-0" />
+                    <span className="font-medium truncate">{member.phone}</span>
                   </a>
                 </div>
               </div>

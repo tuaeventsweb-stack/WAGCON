@@ -3,9 +3,9 @@ export const Route = createFileRoute("/agenda")({
   head: () => ({
     meta: [
       { title: "Agenda — WAGCON 2027" },
-      { name: "description", content: "Explore the WAGCON 2027 B2B conference agenda, sessions, panels, and networking events. 28 April – 1 May 2027, Lagos." },
+      { name: "description", content: "Explore the WAGCON 2027 B2B convention agenda: Video games, esports, iGaming & sports betting, and Web3 sessions. 28 April – 1 May 2027, Lagos." },
       { property: "og:title", content: "Agenda — WAGCON 2027" },
-      { property: "og:description", content: "Interactive schedule of conference keynotes, panels, showcases, and the industry after party." },
+      { property: "og:description", content: "Schedule of keynotes, developer panels, iGaming & betting roundtables, and the industry after party." },
       { property: "og:url", content: "/agenda" },
     ],
     links: [{ rel: "canonical", href: "/agenda" }],
@@ -26,7 +26,7 @@ type Session = {
   title: string;
   speaker?: string;
   location: string;
-  track: "business" | "tech" | "esports" | "networking" | "all";
+  track: "business" | "tech" | "esports" | "igaming" | "networking" | "all";
   trackLabel: string;
   description: string;
 };
@@ -35,11 +35,11 @@ const scheduleData: Record<string, Session[]> = {
   "day-1": [
     {
       time: "07:00 PM – Late",
-      title: "Blockchain & Web3 Leaders Networking Dinner",
+      title: "VIP Gaming, iGaming & Web3 Leaders Networking Dinner",
       location: "VIP Dining Room — Four Points by Sheraton",
       track: "networking",
       trackLabel: "VIP Dinner",
-      description: "The exclusive, closed-door gathering designed for C-level founders, investors, and government officials. Co-hosted with ABDS.com.ng.",
+      description: "The exclusive, closed-door gathering designed for C-level founders, sportsbook operators, gaming investors, and government officials. Co-hosted with ABDS.com.ng.",
     }
   ],
   "day-2": [
@@ -49,7 +49,7 @@ const scheduleData: Record<string, Session[]> = {
       location: "Exhibition Hall — Lagos Oriental Hotel",
       track: "networking",
       trackLabel: "Networking",
-      description: "Pick up your physical badges, explore the exhibition stands, and enjoy early morning coffee with developers, publishers, and sponsors.",
+      description: "Pick up your physical badges, explore the exhibition stands, and enjoy early morning coffee with developers, iGaming executives, publishers, and sponsors.",
     },
     {
       time: "10:00 AM – 10:30 AM",
@@ -62,12 +62,12 @@ const scheduleData: Record<string, Session[]> = {
     },
     {
       time: "10:30 AM – 11:30 AM",
-      title: "Keynote: The Sovereign African Gaming Market — Growth & Scale",
+      title: "Keynote: The Sovereign African Gaming Market — Video Games to iGaming",
       speaker: "To be announced",
       location: "Main Stage — Lagos Oriental Hotel",
       track: "business",
       trackLabel: "Business of Gaming",
-      description: "How localized narratives, mobile monetization mechanics, and demographic shifts are positioning Africa as the fastest-growing gaming ecosystem globally.",
+      description: "How localized narratives, mobile monetization mechanics, sports betting rails, and demographic shifts are positioning Africa as the fastest-growing digital gaming ecosystem globally.",
     },
     {
       time: "11:30 AM – 12:45 PM",
@@ -76,7 +76,7 @@ const scheduleData: Record<string, Session[]> = {
       location: "Main Stage — Lagos Oriental Hotel",
       track: "business",
       trackLabel: "Business of Gaming",
-      description: "A deep dive into funding models for African indie game studios, deal flow structures, and what global publishers are looking for in domestic IPs.",
+      description: "A deep dive into funding models for African indie game studios, deal flow structures, and what global publishers and gaming funds look for in domestic IPs.",
     },
     {
       time: "12:45 PM – 02:00 PM",
@@ -84,10 +84,19 @@ const scheduleData: Record<string, Session[]> = {
       location: "Exhibition Hall & Demo Zone",
       track: "networking",
       trackLabel: "Networking",
-      description: "Catered lunch at Fahrenheit Cafe & Terrace. Dedicated hours to interact with sponsors, demo upcoming games, and host B2B matchmaking meetings.",
+      description: "Catered lunch at Fahrenheit Cafe & Terrace. Dedicated hours to interact with sponsors, demo upcoming games, meet sportsbook tech vendors, and host B2B matchmaking meetings.",
     },
     {
       time: "02:00 PM – 03:15 PM",
+      title: "Panel: The Future of iGaming & Sports Betting in Africa — Tech, Payments & Retention",
+      speaker: "iGaming Operators, Platform Leads & Odds Providers",
+      location: "Main Stage — Lagos Oriental Hotel",
+      track: "igaming",
+      trackLabel: "iGaming & Betting",
+      description: "Analyzing player acquisition costs, mobile sportsbook architecture, AI-driven odds compilation, instant payout infrastructure, and sustainable user retention in West Africa.",
+    },
+    {
+      time: "03:15 PM – 04:30 PM",
       title: "Silent Conference (Track A): Advanced Mobile Game Architecture & Optimization",
       speaker: "Lead Game Engineers & Technical Directors",
       location: "Silent Zone — Lagos Oriental Hotel",
@@ -96,21 +105,12 @@ const scheduleData: Record<string, Session[]> = {
       description: "Technical masterclass on optimizing games for low-bandwidth environments, memory management in budget smartphones, and local storage design.",
     },
     {
-      time: "03:15 PM – 04:30 PM",
-      title: "Panel: Developing the Talent Loop — Curriculum, Mentors & Scale",
-      speaker: "Ecosystem Educators & Studio Founders",
-      location: "Main Stage — Lagos Oriental Hotel",
-      track: "tech",
-      trackLabel: "Tech & Dev",
-      description: "How universities, bootcamps, and developer collectives are scaling local talent pipelines in game design, 3D modeling, and interactive writing.",
-    },
-    {
       time: "04:30 PM – 06:00 PM",
       title: "Ecosystem Networking Drinks",
       location: "Grand Ballroom Foyer",
       track: "networking",
       trackLabel: "Networking",
-      description: "Unwind after Day 2 with refreshing drinks and targeted 1-on-1 networking. Co-hosted by T.U.A Events.",
+      description: "Unwind after Day 2 with refreshing drinks and targeted 1-on-1 networking across studios, esports teams, betting operators, and investors. Co-hosted by T.U.A Events.",
     },
   ],
   "day-3": [
@@ -120,10 +120,19 @@ const scheduleData: Record<string, Session[]> = {
       location: "Lagos Oriental Hotel",
       track: "networking",
       trackLabel: "Networking",
-      description: "Exhibition boots and live developer demo stations open for general audience and B2B buyers.",
+      description: "Exhibition booths, live developer demo stations, and iGaming product showcases open for general audience and B2B buyers.",
     },
     {
-      time: "10:00 AM – 11:30 AM",
+      time: "10:00 AM – 11:15 AM",
+      title: "Regulatory Roundtable: Licensing, Taxation & Responsible Gaming in ECOWAS",
+      speaker: "Gaming Commission Executives & Legal Experts",
+      location: "Main Stage — Lagos Oriental Hotel",
+      track: "igaming",
+      trackLabel: "iGaming & Regulation",
+      description: "An open dialogue between lottery boards, sports betting regulators (NLRC, LSLGA), tax consultants, and operators on harmonizing cross-border gaming licenses and responsible gaming frameworks.",
+    },
+    {
+      time: "11:15 AM – 12:30 PM",
       title: "Strategic Joint Panel: Blockchain, Web3 & Digital Assets in Gaming",
       speaker: "Co-hosted with ABDS 2027 - Africa Blockchain Week",
       location: "Main Stage — Lagos Oriental Hotel",
@@ -132,7 +141,7 @@ const scheduleData: Record<string, Session[]> = {
       description: "Exploring cross-over utility: player-owned economies, digital asset licensing, smart contracts for game development, and the future of secure transactions.",
     },
     {
-      time: "11:30 AM – 01:00 PM",
+      time: "12:30 PM – 01:30 PM",
       title: "Silent Conference (Track B): Narrative Design & African Folklore Integration",
       speaker: "Creative Directors & Writers",
       location: "Silent Zone — Lagos Oriental Hotel",
@@ -141,7 +150,7 @@ const scheduleData: Record<string, Session[]> = {
       description: "A workshops-based session on translating rich oral histories and cultural motifs into compelling interactive narratives and gameplay systems.",
     },
     {
-      time: "01:00 PM – 02:00 PM",
+      time: "01:30 PM – 02:30 PM",
       title: "Networking Lunch & Indie Developer Showcase Awards",
       location: "Exhibition Hall — Lagos Oriental Hotel",
       track: "networking",
@@ -149,7 +158,7 @@ const scheduleData: Record<string, Session[]> = {
       description: "Indie studios pitch their games to the jury. Winners across best game design, best aesthetics, and most innovative mechanic are announced.",
     },
     {
-      time: "02:00 PM – 03:30 PM",
+      time: "02:30 PM – 03:45 PM",
       title: "Panel: Esports Infrastructure — Arenas, Tournaments & Brand Deals",
       speaker: "Esports Managers & Brand Officers",
       location: "Main Stage — Lagos Oriental Hotel",
@@ -158,7 +167,7 @@ const scheduleData: Record<string, Session[]> = {
       description: "Breaking down how esports tournaments can monetize locally, standardizing player contracts, and aligning with global B2C brands.",
     },
     {
-      time: "03:30 PM – 06:00 PM",
+      time: "03:45 PM – 06:00 PM",
       title: "WAGCON Invitational Tournament Finals & Closing Keynote",
       location: "Esports Arena — Lagos Oriental Hotel",
       track: "esports",

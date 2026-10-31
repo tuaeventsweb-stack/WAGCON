@@ -72,17 +72,24 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
         <div className="absolute inset-0 grain opacity-20 mix-blend-overlay" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-float-delayed" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
-        <p className="font-button text-xs sm:text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6">
-          WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
-        </p>
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 mb-6 animate-fade-in-up">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-radar absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <p className="font-button text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-bold">
+            WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
+          </p>
+        </div>
 
         <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-8">
-          West Africa's Gaming<br />
-          Industry Levels Up<br />
-          <span className="gradient-text">in Lagos.</span>
+          Where Africa's Gaming<br />
+          <span className="gradient-text">Deals Get Done.</span>
         </h1>
 
         <p className="font-button text-xs sm:text-sm uppercase tracking-widest text-white/40 mb-8">
@@ -90,7 +97,7 @@ export function Hero() {
         </p>
 
         <p className="font-button text-sm sm:text-base uppercase tracking-widest text-primary font-bold mb-3">
-          Africa's Largest Gaming & Esports Event
+          Africa's Flagship Gaming, Esports & iGaming Convention
         </p>
 
         <p className="font-button text-xs sm:text-sm uppercase tracking-widest text-white/60 mb-6">
@@ -99,8 +106,7 @@ export function Hero() {
         </p>
 
         <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-body leading-[1.8] mb-12 px-4">
-          Four days. Three venues. The only gaming convention built for West Africa's
-          fastest-growing digital industry. Co-located with{" "}
+          Four Days. Three Venues. One Gaming Industry, Together. Games. Esports. iGaming. Web3. One Convention. Co-located with{" "}
           <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
         </p>
 
@@ -109,7 +115,7 @@ export function Hero() {
             href="https://app.eventpadi.com/wagcon"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
+            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all duration-300 active:scale-[0.97] flex items-center justify-center gap-2.5 animate-pulse-glow hover:scale-105"
           >
             <Ticket size={18} /> Get Your Pass
           </a>
@@ -203,7 +209,7 @@ function StatItem({ value, label, suffix }: { value: number; label: string; suff
   }, [visible, value]);
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center p-6 border-r border-border last:border-r-0">
+    <div ref={ref} className="group flex flex-col items-center justify-center p-6 border-r border-border last:border-r-0 motion-card hover:bg-white/5 cursor-default">
       <span className="font-heading text-3xl md:text-5xl font-black text-primary mb-2">
         {count.toLocaleString()}{suffix}
       </span>
@@ -246,21 +252,20 @@ export function About() {
             </h2>
             <div className="space-y-6 text-xl text-muted-foreground font-body leading-relaxed mb-10">
               <p>
-                WAGCON — West Africa Gaming Convention is Africa's flagship gaming, esports, and interactive entertainment industry event, bringing together game developers, esports organizations, publishers, gaming operators, investors, technology providers, content creators, regulators, and industry innovators to shape the future of the continent's digital entertainment ecosystem.
+                WAGCON — West Africa Gaming Convention is Africa's flagship gaming, esports, and interactive entertainment industry event, bringing together game developers, esports organizations, publishers, iGaming & sports betting operators, platform providers, investors, technology providers, content creators, gaming regulators, and industry innovators to shape the future of the continent's digital entertainment and wagering ecosystem.
               </p>
               <p>
                 Positioned as <span className="font-bold text-white">West Africa Gaming Week</span>, WAGCON unfolds over four days across premier venues in Lagos, Nigeria, co-located with{" "}
-                <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS</a>, serving as a platform for industry collaboration, investment, innovation, talent development, and market expansion. The event features conferences, exhibitions, esports tournaments, networking sessions, product showcases, and thought-leadership discussions spanning video gaming, esports, interactive entertainment, gaming technologies, and the broader gaming economy.
+                <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS</a>, serving as a platform for industry collaboration, investment, innovation, talent development, and market expansion. The event features conferences, exhibitions, esports tournaments, B2B matchmaking, product showcases, and thought-leadership discussions spanning video gaming, competitive esports, iGaming & sports betting tech, Web3 gaming, and digital payment rails.
               </p>
               <p>
-                As the region's most comprehensive gathering for the gaming industry, WAGCON uniquely bridges the worlds of interactive entertainment, competitive gaming, digital engagement, and gaming commerce—creating opportunities for businesses, investors, creators, and communities to connect, collaborate, and drive the next phase of growth across Africa's rapidly evolving digital entertainment landscape.
+                As the region's most comprehensive gathering for the gaming industry, WAGCON uniquely bridges the worlds of interactive entertainment, competitive gaming, wagering technologies, and digital commerce—creating opportunities for businesses, operators, investors, creators, and communities to connect, collaborate, and drive the next phase of growth across Africa's rapidly evolving digital economy.
               </p>
             </div>
 
             <div className="p-6 bg-primary/5 border-l-4 border-primary mb-10">
               <p className="font-heading text-xl font-bold text-foreground mb-2 italic">
-                "Africa's mobile gaming market is projected to exceed $1B by 2027. West Africa is
-                leading that growth. This is where the industry meets."
+                "Africa's combined gaming, esports, and sports betting market is expanding at an unprecedented rate. West Africa is the engine driving that growth. This is where the entire industry meets."
               </p>
             </div>
 
@@ -309,7 +314,7 @@ const venues = [
     name: "Four Points by Sheraton — Victoria Island, Lagos",
     Icon: Trophy,
     image: "/fourpoints.png",
-    description: "An exclusive, closed-door B2B networking dinner co-located with ABDS 2027. Curated for C-level founders, investors, government officials, and senior gaming/blockchain leaders. Admission via Gold Pass only.",
+    description: "An exclusive, closed-door B2B networking dinner co-located with ABDS 2027. Curated for C-level founders, investors, iGaming & betting executives, government officials, and senior gaming/blockchain leaders. Admission via Gold Pass only.",
     pass: "Gold Pass — Included",
     passColor: "text-pass-gold",
     PassIcon: Crown,
@@ -323,7 +328,7 @@ const venues = [
     name: "Lagos Oriental Hotel — Victoria Island, Lagos",
     Icon: Gamepad2,
     image: "/oriental.webp",
-    description: "Two full days of conference sessions, keynotes, panels, exhibition floor, live esports tournament, indie developer showcase, gaming demo zone, and startup pitch stage co-located with ABDS 2027.",
+    description: "Two full days of conference sessions, keynotes, panels, exhibition floor, live esports tournament, iGaming & sports betting showcase, indie developer zone, and startup pitch stage co-located with ABDS 2027.",
     pass: "Gold & Blue — Full Access · Standard — Conf & Expo · Green — Expo Only",
     passColor: "text-pass-blue",
     PassIcon: Gamepad2,
@@ -459,10 +464,10 @@ export function Venues() {
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 export function Lookback() {
   const previewImages = [
-    { src: "/about-audience.jpg", title: "Industry Panel Discussions" },
-    { src: "/convention-hall.jpg", title: "Exhibition Floor Showcase" },
-    { src: "/oriental.webp", title: "Convention & Esports Arena" },
-    { src: "/fourpoints.png", title: "VIP Networking Lounge" },
+    { src: "/gallery/_MG_6767.jpg", title: "Industry Panel Discussions" },
+    { src: "/gallery/IMG_9143.jpg", title: "Exhibition Floor Showcase" },
+    { src: "/gallery/2J6A6810.jpg", title: "Convention & Esports Arena" },
+    { src: "/gallery/_MG_6954.jpg", title: "VIP Networking Lounge" },
   ];
 
   return (
@@ -610,20 +615,20 @@ export function Speakers() {
  * 8. CONTENT TRACKS — 14 tiles
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const tracks = [
-  { Icon: Gamepad2,    title: "Mobile Gaming & Development" },
+  { Icon: Gamepad2,    title: "Mobile Gaming & Game Dev" },
   { Icon: Trophy,      title: "Esports & Competitive Gaming" },
+  { Icon: Zap,         title: "iGaming & Sports Betting Tech" },
+  { Icon: Landmark,    title: "Regulation, Licensing & Policy" },
   { Icon: Link2,       title: "Web3 & Blockchain Gaming" },
+  { Icon: CreditCard,  title: "Betting Payments & FinTech Rails" },
   { Icon: Package,     title: "Game Publishing & Distribution" },
-  { Icon: Bot,         title: "AI in Game Development" },
-  { Icon: Glasses,     title: "AR/VR & Immersive Gaming" },
-  { Icon: Hammer,      title: "Indie Game Development" },
+  { Icon: Bot,         title: "AI in Gaming & Odds Analytics" },
+  { Icon: Glasses,     title: "AR/VR & Immersive Tech" },
+  { Icon: Hammer,      title: "Indie Studios & African IPs" },
   { Icon: DollarSign,  title: "Gaming Investment & VC" },
-  { Icon: Landmark,    title: "Regulation & Gaming Policy" },
-  { Icon: CreditCard,  title: "Monetization & Game Economy" },
-  { Icon: Palette,     title: "Game Design & UX" },
+  { Icon: Target,      title: "Monetization & Retention" },
   { Icon: Users,       title: "Community & Creator Economy" },
-  { Icon: Monitor,     title: "Console & PC Gaming" },
-  { Icon: Globe,       title: "African Game Studios" },
+  { Icon: Globe,       title: "African Studios & Global Reach" },
 ];
 
 export function ContentTracks() {
@@ -673,16 +678,16 @@ const insights = {
     { label: "Creators, Media & Community",      value:  8, color: "bg-white/15" },
   ],
   industry: [
-    { label: "Game Development Studios",      value: 18 },
-    { label: "Startups & Indie Developers",   value: 16 },
-    { label: "Esports Teams & Orgs",          value: 12 },
-    { label: "Web3 Gaming Companies",         value: 11 },
-    { label: "Game Publishers & Distribution",value: 10 },
-    { label: "Tech & Hardware Innovators",    value:  9 },
-    { label: "AI & Data Science in Gaming",   value:  8 },
-    { label: "Gaming Investors & VCs",        value:  7 },
-    { label: "Gaming Media & Creators",       value:  5 },
-    { label: "Policy & Gaming Associations",  value:  4 },
+    { label: "Game Development Studios",         value: 16 },
+    { label: "iGaming & Sports Betting Operators",value: 15 },
+    { label: "Startups & Indie Developers",      value: 13 },
+    { label: "Esports Teams & Orgs",             value: 11 },
+    { label: "Web3 Gaming & Digital Assets",     value: 10 },
+    { label: "Betting Tech & Odds Providers",    value:  9 },
+    { label: "Game Publishers & Distribution",   value:  8 },
+    { label: "Payments & FinTech Rails",         value:  7 },
+    { label: "Gaming Investors & VCs",           value:  6 },
+    { label: "Gaming Policy & Regulators",       value:  5 },
   ],
   outcomes: [
     { value: "1,800+", label: "Meetings scheduled via the WAGCON networking app" },
@@ -766,12 +771,13 @@ export function AudienceInsights() {
  * 10. WHO YOU WILL MEET — 5 tabs
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const personas = [
-  { id: "devs",       label: "Developers",  title: "Game Developers & Studio Founders.", description: "Studios, indie developers, and technical founders actively building games for African and global audiences — mobile, esports-ready, and Web3-powered.", stats: "850+ Developers & Studio Founders" },
-  { id: "publishers", label: "Publishers",  title: "Publishers & Distributors.",         description: "Game publishers, distribution leads, and app store representatives deciding which African games reach regional and global audiences.",                            stats: "240+ Publishers & Distribution Leaders" },
-  { id: "investors",  label: "Investors",   title: "Investors & Gaming Funds.",          description: "VCs, angel investors, gaming-focused funds, and corporate VCs actively backing the continent's most promising gaming startups.",                                  stats: "180+ Investors & Fund Representatives" },
-  { id: "esports",    label: "Esports",     title: "Esports Teams & Organizers.",        description: "Team owners, tournament organizers, esports infrastructure builders, and competitive gaming communities defining the African esports landscape.",                  stats: "320+ Esports Industry Delegates" },
-  { id: "creators",   label: "Creators",    title: "Creators, Media & Community.",       description: "Gaming creators, streamers, journalists, podcast hosts, and community managers shaping public perception and driving audience growth.",                            stats: "410+ Creators, Media & Community Leaders" },
-  { id: "gamers",    label: "Gamers",    title: "Gaming Enthusiasts & Aficionados.",  description: "The players, enthusiasts, and competitive gamers who make West Africa's gaming scene vibrant — from casual mobile to hardcore esports.",                                stats: "500+ Gaming Enthusiasts" },
+  { id: "devs",       label: "Developers",        title: "Game Developers & Studio Founders.", description: "Studios, indie developers, and technical founders actively building games for African and global audiences — mobile, esports-ready, and Web3-powered.", stats: "850+ Developers & Studio Founders" },
+  { id: "igaming",    label: "iGaming & Betting", title: "iGaming & Sports Betting Operators.", description: "Sportsbook founders, iGaming platform architects, odds compilers, risk managers, and regulatory directors driving Africa's highest-grossing gaming vertical.", stats: "380+ iGaming & Betting Delegates" },
+  { id: "publishers", label: "Publishers",        title: "Publishers & Distributors.",         description: "Game publishers, distribution leads, and app store representatives deciding which African games reach regional and global audiences.",                            stats: "240+ Publishers & Distribution Leaders" },
+  { id: "investors",  label: "Investors",         title: "Investors & Gaming Funds.",          description: "VCs, angel investors, gaming-focused funds, and corporate VCs actively backing the continent's most promising gaming startups.",                                  stats: "180+ Investors & Fund Representatives" },
+  { id: "esports",    label: "Esports",           title: "Esports Teams & Organizers.",        description: "Team owners, tournament organizers, esports infrastructure builders, and competitive gaming communities defining the African esports landscape.",                  stats: "320+ Esports Industry Delegates" },
+  { id: "creators",   label: "Creators",          title: "Creators, Media & Community.",       description: "Gaming creators, streamers, journalists, podcast hosts, and community managers shaping public perception and driving audience growth.",                            stats: "410+ Creators, Media & Community Leaders" },
+  { id: "gamers",     label: "Gamers",            title: "Gaming Enthusiasts & Aficionados.",  description: "The players, enthusiasts, and competitive gamers who make West Africa's gaming scene vibrant — from casual mobile to hardcore esports.",                                stats: "500+ Gaming Enthusiasts" },
 ];
 
 export function WhoYouWillMeet() {
@@ -888,12 +894,12 @@ export function Testimonials() {
  * 13. WHY EXHIBIT
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const reasons = [
-  { Icon: Target,         title: "High-Concentration Audience",            description: "Meet the people who sign the cheques. 62% of WAGCON delegates are C-level, founders, or senior decision-makers." },
-  { Icon: Users,          title: "Unmatched Networking",                   description: "Use the WAGCON networking app to schedule 1-on-1 meetings with publishers, investors, and potential studio partners." },
-  { Icon: Zap,            title: "Market Entry & Scale",                   description: "Launch your studio, hardware, or platform in the heart of Africa's most active gaming market — Lagos." },
+  { Icon: Target,         title: "High-Concentration Audience",            description: "Meet the people who sign the cheques. 62% of WAGCON delegates are C-level, founders, gaming operators, or senior decision-makers." },
+  { Icon: Users,          title: "Unmatched Networking",                   description: "Use the WAGCON networking app to schedule 1-on-1 meetings with publishers, investors, iGaming executives, and studio partners." },
+  { Icon: Zap,            title: "Market Entry & Scale",                   description: "Launch your studio, sportsbook tech, hardware, or iGaming platform in the heart of Africa's most active market — Lagos." },
   { Icon: Globe,          title: "Global Visibility",                      description: "Benefit from extensive local and international gaming media coverage focused on West Africa's gaming convention." },
-  { Icon: MessageSquare,  title: "Thought Leadership",                     description: "Position your brand alongside the continent's most influential gaming voices on the main stage." },
-  { Icon: Award,          title: "Ecosystem Credibility",                  description: "Join the brands the African gaming industry trusts for their West African market presence." },
+  { Icon: MessageSquare,  title: "Thought Leadership",                     description: "Position your brand alongside the continent's most influential gaming & wagering voices on the main stage." },
+  { Icon: Award,          title: "Ecosystem Credibility",                  description: "Join the top studios, operators, and platforms that the African gaming industry trusts." },
 ];
 
 export function WhyExhibit() {
@@ -937,9 +943,10 @@ export function WhyExhibit() {
  * 14. WHY WEST AFRICA
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 const waStats = [
-  { value: "40M+",    label: "Active mobile gamers in Nigeria alone." },
-  { value: "$1B+",    label: "Africa's projected gaming market size by 2027." },
-  { value: "Under 30", label: "Average age of Africa's mobile-native gaming population." },
+  { value: "40M+",     label: "Active mobile gamers & digital players in Nigeria alone." },
+  { value: "$2B+",     label: "West Africa's booming annual sports betting & iGaming transaction volume." },
+  { value: "$1B+",     label: "Africa's projected video gaming software market size by 2027." },
+  { value: "Under 30", label: "Average age of Africa's digital-first gaming & wagering population." },
 ];
 
 export function WhyWestAfrica() {
@@ -950,17 +957,14 @@ export function WhyWestAfrica() {
           <div className="lg:w-1/2">
             <Eyebrow>WHY WEST AFRICA. WHY NOW.</Eyebrow>
             <h2 className="font-heading text-4xl md:text-6xl font-black text-white mb-8 tracking-tighter leading-[0.9]">
-              West Africa isn't just<br />playing games.<br /><span className="text-primary">It's building them.</span>
+              West Africa isn't just<br />playing games.<br /><span className="text-primary">It's building the ecosystem.</span>
             </h2>
             <div className="space-y-6 text-lg text-white/70 font-body leading-relaxed mb-10">
               <p>
-                Nigeria alone has over 40 million active mobile gamers — and that number is
-                growing faster than almost any other market on earth. Africa's young, mobile-first
-                population is not waiting for gaming culture to reach them. They are building it themselves.
+                Nigeria alone has over 40 million active mobile gamers and one of the world's most dynamic, high-volume sports betting and iGaming markets. Africa's young, mobile-first population is driving massive engagement across mobile games, competitive esports, and online wagering.
               </p>
               <p>
-                Game studios, esports teams, and gaming communities are forming across Lagos,
-                Accra, and Abidjan right now. WAGCON is where that momentum gets its stage.
+                Game studios, esports teams, iGaming operators, payment providers, and Web3 innovators are scaling across Lagos, Accra, and Abidjan right now. WAGCON is where that momentum gets its premier B2B stage.
               </p>
             </div>
             <a
@@ -1111,7 +1115,7 @@ export function PassTiers() {
             return (
               <div
                 key={t.name}
-                className={`relative bg-card border ${t.popular ? `border-2 ${c.border}` : "border-white/10"} p-8 flex flex-col`}
+                className={`relative bg-card border ${t.popular ? `border-2 ${c.border} shadow-[0_0_25px_rgba(34,197,94,0.18)]` : "border-white/10"} p-8 flex flex-col motion-card`}
               >
                 {t.popular && (
                   <div className={`absolute -top-3 left-1/2 -translate-x-1/2 ${c.bg} text-background font-button text-[10px] uppercase tracking-widest font-black px-4 py-1.5`}>

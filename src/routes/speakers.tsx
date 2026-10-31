@@ -3,9 +3,9 @@ export const Route = createFileRoute("/speakers")({
   head: () => ({
     meta: [
       { title: "Call for Speakers — WAGCON 2027" },
-      { name: "description", content: "Apply to speak at WAGCON 2027. Share your insights on game design, B2B investment, mobile esports, and web3 in Africa." },
+      { name: "description", content: "Apply to speak at WAGCON 2027. Share your insights on game design, iGaming & sports betting, B2B investment, esports, and Web3 in Africa." },
       { property: "og:title", content: "Call for Speakers — WAGCON 2027" },
-      { property: "og:description", content: "Pitch your session proposals for the flagship West Africa Gaming Convention." },
+      { property: "og:description", content: "Pitch your session proposals for West Africa's premier gaming, esports, and iGaming convention." },
       { property: "og:url", content: "/speakers" },
     ],
     links: [{ rel: "canonical", href: "/speakers" }],
@@ -30,19 +30,24 @@ type Track = {
 
 const speakTracks: Track[] = [
   {
-    title: "Venture Capital & Investment",
-    desc: "Targeting VC deals, studio growth funding, cross-border M&As, and building sustainable business models in emerging markets.",
-    icon: Award,
-  },
-  {
     title: "Game Dev & Technical Production",
     desc: "Highlighting asset pipelines, low-spec optimization, AI tools in production, localized narrative design, and engine performance.",
     icon: Cpu,
   },
   {
+    title: "iGaming, Sports Betting & Regulation",
+    desc: "Targeting sportsbook tech, odds algorithms, instant payments, AML/KYC compliance, licensing frameworks, and responsible gaming.",
+    icon: Award,
+  },
+  {
     title: "Esports & Community Scaling",
-    desc: "Focusing on tournament operations, telco integrations, community engagement, athlete recruitment, and B2C marketing.",
+    desc: "Focusing on tournament operations, telco integrations, community engagement, athlete recruitment, and B2C brand deals.",
     icon: Mic,
+  },
+  {
+    title: "Venture Capital & Studio Funding",
+    desc: "Targeting VC investments, publisher agreements, studio growth funding, cross-border M&As, and building sustainable business models.",
+    icon: Award,
   },
   {
     title: "Web3 & Co-located Blockchain Gaming",
@@ -239,9 +244,10 @@ function SpeakersPage() {
                     onChange={handleChange}
                     className="w-full bg-wagcon-bg border border-white/10 px-4 py-3.5 text-sm text-white focus:outline-none focus:border-primary rounded-sm font-body"
                   >
-                    <option value="investment">Venture Capital & Investment</option>
                     <option value="development">Game Dev & Technical Production</option>
+                    <option value="igaming">iGaming, Sports Betting & Regulation</option>
                     <option value="esports">Esports & Community Scaling</option>
+                    <option value="investment">Venture Capital & Studio Funding</option>
                     <option value="web3">Web3 & Co-located Blockchain Gaming</option>
                   </select>
                 </div>

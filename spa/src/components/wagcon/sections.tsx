@@ -72,17 +72,24 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
         <div className="absolute inset-0 grain opacity-20 mix-blend-overlay" />
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-float" />
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-float-delayed" />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
-        <p className="font-button text-xs sm:text-sm uppercase tracking-[0.3em] text-primary font-bold mb-6">
-          WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
-        </p>
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 mb-6 animate-fade-in-up">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-radar absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+          </span>
+          <p className="font-button text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-bold">
+            WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
+          </p>
+        </div>
 
         <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-8">
-          West Africa's Gaming<br />
-          Industry Levels Up<br />
-          <span className="gradient-text">in Lagos.</span>
+          Where Africa's Gaming<br />
+          <span className="gradient-text">Deals Get Done.</span>
         </h1>
 
         <p className="font-button text-xs sm:text-sm uppercase tracking-widest text-white/40 mb-8">
@@ -99,8 +106,7 @@ export function Hero() {
         </p>
 
         <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-body leading-[1.8] mb-12 px-4">
-          Four days. Three venues. The only gaming convention built for West Africa's
-          fastest-growing digital industry. Co-located with{" "}
+          Four Days. Three Venues. One Gaming Industry, Together. Games. Esports. iGaming. Web3. One Convention. Co-located with{" "}
           <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
         </p>
 
@@ -109,7 +115,7 @@ export function Hero() {
             href="https://app.eventpadi.com/wagcon"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
+            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all duration-300 active:scale-[0.97] flex items-center justify-center gap-2.5 animate-pulse-glow hover:scale-105"
           >
             <Ticket size={18} /> Get Your Pass
           </a>
@@ -169,7 +175,7 @@ function StatItem({ value, label, suffix }: { value: number; label: string; suff
   }, [visible, value]);
 
   return (
-    <div ref={ref} className="flex flex-col items-center justify-center p-6 border-r border-border last:border-r-0">
+    <div ref={ref} className="group flex flex-col items-center justify-center p-6 border-r border-border last:border-r-0 motion-card hover:bg-white/5 cursor-default">
       <span className="font-heading text-3xl md:text-5xl font-black text-primary mb-2">
         {count.toLocaleString()}{suffix}
       </span>
@@ -1078,7 +1084,7 @@ export function PassTiers() {
             return (
               <div
                 key={t.name}
-                className={`relative bg-card border ${t.popular ? `border-2 ${c.border}` : "border-white/10"} p-8 flex flex-col`}
+                className={`relative bg-card border ${t.popular ? `border-2 ${c.border} shadow-[0_0_25px_rgba(34,197,94,0.18)]` : "border-white/10"} p-8 flex flex-col motion-card`}
               >
                 {t.popular && (
                   <div className={`absolute -top-3 left-1/2 -translate-x-1/2 ${c.bg} text-background font-button text-[10px] uppercase tracking-widest font-black px-4 py-1.5`}>

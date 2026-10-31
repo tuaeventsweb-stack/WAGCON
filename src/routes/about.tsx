@@ -3,9 +3,9 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — WAGCON 2027" },
-      { name: "description", content: "Learn about WAGCON 2027, West Africa's flagship gaming, esports, and interactive entertainment industry event." },
+      { name: "description", content: "Learn about WAGCON 2027, West Africa's flagship convention for video games, esports, iGaming & sports betting, and Web3." },
       { property: "og:title", content: "About — WAGCON 2027" },
-      { property: "og:description", content: "Learn about the mission, organizers, and partner alignment with ABDS 2027." },
+      { property: "og:description", content: "Learn about the mission, organizers, iGaming & esports convergence, and partner alignment with ABDS 2027." },
       { property: "og:url", content: "/about" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/about")({
 import { Nav } from "@/components/wagcon/Nav";
 import { Footer } from "@/components/wagcon/Footer";
 import { Eyebrow, SectionTitle, Accent, Card, Section } from "@/components/wagcon/ui/primitives";
-import { Gamepad2, Trophy, Building2, ExternalLink } from "lucide-react";
+import { Gamepad2, Trophy, Building2, ExternalLink, Zap } from "lucide-react";
 
 
 
@@ -39,7 +39,7 @@ function AboutPage() {
               <Accent>On One Stage</Accent>.
             </h1>
             <p className="text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed">
-              WAGCON — West Africa Gaming Convention is Africa's flagship B2B gaming, esports, and interactive entertainment industry event, bringing together the ecosystem's builders and leaders.
+              WAGCON — West Africa Gaming Convention is Africa's flagship B2B convention uniting video game studios, esports organizations, iGaming & betting operators, and Web3 innovators.
             </p>
           </div>
         </section>
@@ -49,16 +49,16 @@ function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <Eyebrow>OUR MISSION</Eyebrow>
-              <SectionTitle>Shaping the Future of Africa's Digital Entertainment</SectionTitle>
+              <SectionTitle>Shaping the Future of Africa's Digital Entertainment & Wagering Economy</SectionTitle>
               <div className="space-y-4 text-white/70 font-body leading-relaxed text-sm md:text-base">
                 <p>
-                  West Africa's gaming economy is expanding at an unprecedented rate, powered by mobile connectivity, a massive youth demographic, and exceptional creative talent. WAGCON serves as the premier bridge connecting developers, esports teams, publishers, investors, and regulators.
+                  West Africa's gaming economy is expanding at an unprecedented rate, powered by mobile connectivity, a massive youth demographic, and high-frequency digital entertainment. WAGCON serves as the premier bridge connecting game developers, esports leagues, iGaming operators, platform providers, publishers, investors, and regulators.
                 </p>
                 <p>
-                  Our four-day event features conferences, B2B exhibition spaces, startup pitch contests, and the region's most competitive esports showcases. Positioned as West Africa's Gaming Week, we take the business of gaming as seriously as the games themselves.
+                  Our four-day event features conferences, B2B exhibition spaces, startup pitch contests, iGaming & sportsbook showcases, and the region's most competitive esports tournaments. Positioned as West Africa's Gaming Week, we take the business of gaming as seriously as the games themselves.
                 </p>
                 <p>
-                  By facilitating investment, supporting local talent development, and opening dialogue on policy and infrastructure, WAGCON builds a sustainable pipeline for African creators to thrive globally.
+                  By facilitating investment, fostering iGaming and FinTech partnerships, supporting local talent development, and opening dialogue on licensing and regulatory frameworks, WAGCON builds a sustainable pipeline for African operators and creators to thrive globally.
                 </p>
               </div>
             </div>
@@ -89,7 +89,7 @@ function AboutPage() {
             <Eyebrow>THE THREE PILLARS</Eyebrow>
             <SectionTitle className="mb-4">How We Drive Impact</SectionTitle>
             <p className="text-white/60 font-body max-w-xl mx-auto text-sm md:text-base">
-              WAGCON operates across three primary vectors to accelerate the regional gaming ecosystem.
+              WAGCON operates across three primary vectors to accelerate the regional gaming and wagering ecosystem.
             </p>
           </div>
           
@@ -100,7 +100,7 @@ function AboutPage() {
               </div>
               <h3 className="font-heading text-lg font-bold text-white mb-3">Industry Collaboration</h3>
               <p className="text-xs text-white/50 font-body flex-1 leading-relaxed">
-                Bringing together game developers, studios, publishers, and platforms to exchange resources, licensing, and distribution pathways.
+                Bringing together game studios, iGaming operators, publishers, and platform providers to exchange technology, licensing, payment rails, and distribution pathways.
               </p>
             </Card>
 
@@ -110,7 +110,7 @@ function AboutPage() {
               </div>
               <h3 className="font-heading text-lg font-bold text-white mb-3">Investment & Market Entry</h3>
               <p className="text-xs text-white/50 font-body flex-1 leading-relaxed">
-                Connecting venture capitalists, angel investors, and global gaming companies directly to African studios seeking growth capital and expansion.
+                Connecting venture capitalists, gaming funds, and global betting technology vendors directly to African enterprises seeking growth capital and regional scale.
               </p>
             </Card>
 
@@ -120,7 +120,7 @@ function AboutPage() {
               </div>
               <h3 className="font-heading text-lg font-bold text-white mb-3">Talent & Ecosystem Development</h3>
               <p className="text-xs text-white/50 font-body flex-1 leading-relaxed">
-                Hosting game jams, mentoring panels, and tech masterclasses to upskill the next generation of African digital artists and esports athletes.
+                Hosting developer workshops, compliance roundtables with gaming regulators, and esports championships to upskill and empower the regional ecosystem.
               </p>
             </Card>
           </div>

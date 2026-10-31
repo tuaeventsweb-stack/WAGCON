@@ -3,9 +3,9 @@ export const Route = createFileRoute("/partners")({
   head: () => ({
     meta: [
       { title: "Partners & Sponsors — WAGCON 2027" },
-      { name: "description", content: "Explore the WAGCON 2027 partner ecosystem, supporting organizations, and sponsors. Join the largest gaming event in West Africa." },
+      { name: "description", content: "Explore the WAGCON 2027 partner ecosystem: Game studios, esports leagues, iGaming operators, regulators, and sponsors." },
       { property: "og:title", content: "Partners & Sponsors — WAGCON 2027" },
-      { property: "og:description", content: "Meet our hosts, co-located events, and ecosystem partners shaping digital entertainment." },
+      { property: "og:description", content: "Meet our hosts, co-located events, and ecosystem partners shaping video gaming, esports, and iGaming across Africa." },
       { property: "og:url", content: "/partners" },
     ],
     links: [{ rel: "canonical", href: "/partners" }],
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/partners")({
 import { Nav } from "@/components/wagcon/Nav";
 import { Footer } from "@/components/wagcon/Footer";
 import { Eyebrow, SectionTitle, Accent, Section, Card } from "@/components/wagcon/ui/primitives";
-import { Handshake, Building, Users, Star, ArrowRight, ExternalLink } from "lucide-react";
+import { Handshake, Building, Users, Star, ArrowRight, ExternalLink, Landmark } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 
 
@@ -39,7 +39,7 @@ function PartnersPage() {
               Our <Accent>Partners</Accent> & Sponsors.
             </h1>
             <p className="text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed">
-              WAGCON is powered by a network of studios, technology providers, media outlets, and regulatory bodies committed to scaling Africa's interactive economy.
+              WAGCON is powered by a network of studios, iGaming operators, technology providers, media outlets, and regulatory bodies committed to scaling Africa's digital entertainment economy.
             </p>
           </div>
         </section>
@@ -104,18 +104,18 @@ function PartnersPage() {
               <Eyebrow>ECOSYSTEM CATEGORIES</Eyebrow>
               <SectionTitle className="mb-4">Partner Announcement In Waves</SectionTitle>
               <p className="text-white/60 font-body max-w-xl mx-auto text-xs md:text-sm">
-                Exhibitors, media houses, and gaming studios are being onboarded. The full directory will launch starting late June 2026.
+                Exhibitors, media houses, gaming studios, and iGaming operators are being onboarded. The full directory will launch starting late June 2026.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               <Card className="bg-wagcon-bg3/20 border-white/5 text-center p-8">
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 text-white/50 mb-4">
                   <Building size={20} />
                 </div>
-                <h4 className="font-heading text-base font-bold text-white mb-2">Venue & Hospitality Partners</h4>
+                <h4 className="font-heading text-base font-bold text-white mb-2">Venue & Hospitality</h4>
                 <p className="text-xs text-white/40 font-body leading-relaxed">
-                  Lagos Oriental Hotel (Victoria Island) & Fahrenheit VI. Providing B2B halls, networking spaces, and VIP after-party hospitality.
+                  Lagos Oriental Hotel & Fahrenheit VI. Providing B2B exhibition halls, networking spaces, and VIP after-party hospitality.
                 </p>
               </Card>
 
@@ -123,9 +123,19 @@ function PartnersPage() {
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 text-white/50 mb-4">
                   <Star size={20} />
                 </div>
-                <h4 className="font-heading text-base font-bold text-white mb-2">Esports & Showcase Partners</h4>
+                <h4 className="font-heading text-base font-bold text-white mb-2">Esports & Studios</h4>
                 <p className="text-xs text-white/40 font-body leading-relaxed">
-                  Regional esports leagues, console brand distributors, and mobile tournament platforms. Supporting the prize pools and brackets.
+                  Regional esports leagues, console distributors, and mobile tournament platforms supporting the prize pools and brackets.
+                </p>
+              </Card>
+
+              <Card className="bg-wagcon-bg3/20 border-white/5 text-center p-8">
+                <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 text-white/50 mb-4">
+                  <Landmark size={20} />
+                </div>
+                <h4 className="font-heading text-base font-bold text-white mb-2">iGaming & Regulation</h4>
+                <p className="text-xs text-white/40 font-body leading-relaxed">
+                  Sports betting operators, sportsbook tech providers, FinTech payment gateways, and regional lottery commissions.
                 </p>
               </Card>
 
@@ -133,7 +143,7 @@ function PartnersPage() {
                 <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white/5 text-white/50 mb-4">
                   <Users size={20} />
                 </div>
-                <h4 className="font-heading text-base font-bold text-white mb-2">Press & Media Partners</h4>
+                <h4 className="font-heading text-base font-bold text-white mb-2">Press & Media</h4>
                 <p className="text-xs text-white/40 font-body leading-relaxed">
                   Tech blogs, gaming journalism portals, and B2B newsletters providing wide regional and international coverage.
                 </p>

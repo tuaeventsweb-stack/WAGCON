@@ -3,9 +3,9 @@ export const Route = createFileRoute("/venues")({
   head: () => ({
     meta: [
       { title: "Venues — WAGCON 2027" },
-      { name: "description", content: "Learn about the WAGCON 2027 B2B venues: VIP Dinner at Four Points by Sheraton, The Arena at Lagos Oriental Hotel and After Party at Fahrenheit, Victoria Island, Lagos." },
+      { name: "description", content: "Explore the WAGCON 2027 B2B venues: VIP Dinner at Four Points by Sheraton, Conference & Exhibition at Lagos Oriental Hotel, and After Party at Fahrenheit, Victoria Island, Lagos." },
       { property: "og:title", content: "Venues — WAGCON 2027" },
-      { property: "og:description", content: "Location coordinates, dates, and event facilities across Victoria Island, Lagos." },
+      { property: "og:description", content: "Four days across Victoria Island, Lagos. Connecting gaming studios, esports leaders, iGaming operators, and Web3 builders." },
       { property: "og:url", content: "/venues" },
     ],
     links: [{ rel: "canonical", href: "/venues" }],
@@ -38,7 +38,7 @@ function VenuesPage() {
               Four Days. <Accent>Three Venues</Accent>.
             </h1>
             <p className="text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed">
-              WAGCON 2027 unfolds across Victoria Island, the premium tech and commercial hub of Lagos, Nigeria. Co-located with ABDS 2027.
+              WAGCON 2027 unfolds across Victoria Island, the premier tech and commercial hub of Lagos, Nigeria. Co-located with ABDS 2027.
             </p>
           </div>
         </section>
@@ -59,7 +59,7 @@ function VenuesPage() {
                 </div>
 
                 <p className="text-sm md:text-base text-white/70 font-body leading-relaxed">
-                  The exclusive, closed-door gathering designed for C-level executives, founders, investors, and senior blockchain & gaming leaders. Co-hosted with **ABDS.com.ng** to establish high-impact connections before the main convention floors open.
+                  The exclusive, closed-door gathering designed for C-level executives, studio founders, iGaming & sportsbook operators, investors, and regulatory leaders. Co-hosted with **ABDS.com.ng** to establish high-impact connections before the main convention floors open.
                 </p>
 
                 <ul className="grid grid-cols-2 gap-4 text-xs font-body text-white/80">
@@ -73,7 +73,7 @@ function VenuesPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Compass size={14} className="text-primary shrink-0" />
-                    <span>Government & Policy Leaders</span>
+                    <span>Government & Lottery Regulators</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Compass size={14} className="text-primary shrink-0" />
@@ -122,7 +122,7 @@ function VenuesPage() {
                 </div>
 
                 <p className="text-sm md:text-base text-white/70 font-body leading-relaxed">
-                  Lagos Oriental Hotel serves as the core hub for WAGCON 2027 and our co-located event, **ABDS 2027 - Africa Blockchain Week**. Conference & Exhibition hosts all B2B conference keynotes, panel sessions, the indie developer showcase, standard exhibition booths, B2B meeting lounges, and our live esports tournament arena.
+                  Lagos Oriental Hotel serves as the central exhibition and conference hub for WAGCON 2027 and our co-located event, **ABDS 2027 - Africa Blockchain Week**. It hosts B2B conference keynotes, game developer & iGaming technology stages, exhibition booths, B2B matchmaking suites, and our live esports tournament arena.
                 </p>
 
                 <ul className="grid grid-cols-2 gap-4 text-xs font-body text-white/80">
@@ -132,7 +132,7 @@ function VenuesPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Compass size={14} className="text-primary shrink-0" />
-                    <span>B2B Silent Conference Zone</span>
+                    <span>B2B Silent Conference Tracks</span>
                   </li>
                   <li className="flex items-center gap-2">
                     <Compass size={14} className="text-primary shrink-0" />
@@ -140,7 +140,7 @@ function VenuesPage() {
                   </li>
                   <li className="flex items-center gap-2">
                     <Compass size={14} className="text-primary shrink-0" />
-                    <span>Indie Showcase Demo Zone</span>
+                    <span>Indie & iGaming Demo Zones</span>
                   </li>
                 </ul>
 

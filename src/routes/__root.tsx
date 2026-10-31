@@ -81,12 +81,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "West Africa's premier gaming convention. 28 April – 1 May 2027, Lagos, Nigeria. Four days, three venues, 2,400+ delegates, 120+ exhibitors. Co-located with ABDS 2027 - Africa Blockchain Week.",
+          "West Africa's premier gaming, esports, and iGaming convention. 28 April – 1 May 2027, Lagos, Nigeria. Four days, three venues, 2,400+ delegates, 120+ exhibitors. Video games, esports, sports betting tech & Web3. Co-located with ABDS 2027.",
       },
       {
         name: "keywords",
         content:
-          "WAGCON 2027, West Africa Gaming Convention, Africa gaming convention, gaming event Lagos, esports tournament Africa, game development Africa, African game developers, gaming exhibition Nigeria, TUA Events, ABDS 2027",
+          "WAGCON 2027, West Africa Gaming Convention, iGaming Africa, sports betting Nigeria, betting technology Africa, Africa gaming convention, gaming event Lagos, esports tournament Africa, game development Africa, African game developers, gaming exhibition Nigeria, TUA Events, ABDS 2027",
       },
       { name: "author", content: "T.U.A Events" },
       { name: "robots", content: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" },
@@ -95,14 +95,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "WAGCON 2027" },
       { property: "og:type", content: "website" },
       { property: "og:title", content: "WAGCON 2027 — West Africa Gaming Convention · Lagos" },
-      { property: "og:description", content: "Four days. Three venues. 28 April – 1 May 2027, Lagos, Nigeria. Early bird sponsorship & exhibition pricing now live — save up to 30%." },
+      { property: "og:description", content: "Four days. Three venues. 28 April – 1 May 2027, Lagos, Nigeria. The central hub for video games, esports, iGaming, sports betting, and Web3. Early bird sponsorship & exhibition pricing live." },
       { property: "og:image", content: "https://wagconvention.com/about-audience.jpg" },
 
       /* Twitter Cards */
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@WAGCONofficial" },
       { name: "twitter:title", content: "WAGCON 2027 — West Africa Gaming Convention" },
-      { name: "twitter:description", content: "Africa's flagship gaming & esports convention in Lagos, Nigeria. Early bird offer active — save up to 30% on sponsorship & exhibition." },
+      { name: "twitter:description", content: "Africa's flagship gaming, esports & iGaming convention in Lagos, Nigeria. Connecting studios, esports, betting operators, and Web3 builders." },
       { name: "twitter:image", content: "https://wagconvention.com/about-audience.jpg" },
     ],
     links: [

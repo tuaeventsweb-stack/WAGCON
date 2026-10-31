@@ -3,9 +3,9 @@ export const Route = createFileRoute("/exhibit")({
   head: () => ({
     meta: [
       { title: "Sponsor & Exhibit — WAGCON 2027" },
-      { name: "description", content: "Sponsorship and B2B exhibition packages for WAGCON 2027. Put your brand in front of West Africa's gaming ecosystem." },
+      { name: "description", content: "Sponsorship and B2B exhibition packages for WAGCON 2027. Put your brand in front of West Africa's video game, esports, and iGaming ecosystem." },
       { property: "og:title", content: "Sponsor & Exhibit — WAGCON 2027" },
-      { property: "og:description", content: "Explore Platinum, Gold, Silver, and Indie developer packages. Request the exhibitor brochure today." },
+      { property: "og:description", content: "Explore Gold, Blue, Green, and iGaming & Studio exhibition packages. Request the exhibitor brochure today." },
       { property: "og:url", content: "/exhibit" },
     ],
     links: [{ rel: "canonical", href: "/exhibit" }],
@@ -79,7 +79,7 @@ function ExhibitPage() {
               Partner with <Accent>WAGCON 2027</Accent>.
             </h1>
             <p className="text-lg text-white/60 font-body max-w-2xl mx-auto leading-relaxed">
-              Exhibiting at WAGCON places your studio, brand, or platform directly in front of West Africa's B2B gaming buyers, executives, publishers, and investors.
+              Exhibiting at WAGCON places your studio, iGaming brand, betting technology, or platform directly in front of West Africa's B2B gaming buyers, executives, operators, and investors.
             </p>
           </div>
         </section>
@@ -89,9 +89,9 @@ function ExhibitPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div>
               <Eyebrow>WHY EXHIBIT?</Eyebrow>
-              <SectionTitle className="mb-6">The Gateway to Africa's B2B Gaming Market</SectionTitle>
+              <SectionTitle className="mb-6">The Gateway to Africa's B2B Gaming & Wagering Market</SectionTitle>
               <p className="text-white/70 font-body text-sm md:text-base leading-relaxed mb-6">
-                WAGCON is the region's largest gaming ecosystem platform. Whether you are launching a new game, searching for development talent, scaling a distribution platform, or seeking VC funding, our B2B exhibition floor is designed to generate business.
+                WAGCON is the region's largest gaming ecosystem platform. Whether you are launching a new game, showcasing sportsbook software, expanding iGaming operations, sourcing payment rails, or seeking VC funding, our B2B exhibition floor is built to generate high-intent business deals.
               </p>
               
               <ul className="space-y-4 font-body text-sm text-white/80">
@@ -99,19 +99,19 @@ function ExhibitPage() {
                   <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-0.5 shrink-0">
                     <Check size={12} />
                   </span>
-                  <span><strong>Build Authority:</strong> Showcase your games or technology on West Africa's primary stage.</span>
+                  <span><strong>Build Market Authority:</strong> Showcase your games, platform, or betting technology on West Africa's primary stage.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-0.5 shrink-0">
                     <Check size={12} />
                   </span>
-                  <span><strong>Unlock Partnerships:</strong> Meet international publishers, telecom operators, and local distributors.</span>
+                  <span><strong>Unlock Strategic Partnerships:</strong> Meet iGaming operators, international publishers, telecom providers, and FinTech payment aggregators.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="w-5 h-5 rounded-full bg-primary/10 text-primary flex items-center justify-center mt-0.5 shrink-0">
                     <Check size={12} />
                   </span>
-                  <span><strong>Pitch to Investors:</strong> Gain dedicated exposure to early-stage technology and entertainment VCs.</span>
+                  <span><strong>Pitch to Investors & Regulators:</strong> Connect with dedicated gaming venture funds, angel syndicates, and licensing authorities.</span>
                 </li>
               </ul>
             </div>

@@ -73,7 +73,7 @@ export function Nav() {
               href="https://app.eventpadi.com/wagcon"
               target="_blank"
               rel="noopener noreferrer"
-              className="font-button text-[10px] uppercase tracking-wider font-bold bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/85 transition-all active:scale-[0.97] flex items-center gap-1.5"
+              className="font-button text-[10px] uppercase tracking-wider font-bold bg-primary text-primary-foreground px-4 py-2 hover:bg-primary/85 transition-all duration-300 active:scale-[0.97] flex items-center gap-1.5 shadow-[0_0_15px_rgba(34,197,94,0.35)] hover:shadow-[0_0_25px_rgba(34,197,94,0.6)] hover:scale-105"
             >
               <Ticket size={12} /> Tickets
             </a>
