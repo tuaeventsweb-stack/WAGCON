@@ -87,3 +87,4 @@ spa/
 2. **Visual Inspection:** Verify Hero headline, countdown, and CTA buttons remain prominent and legible on top of the 3D glyph layer.
 3. **Responsive Check:** Test at 375px (mobile), 768px (tablet), 1024px (laptop), and 1440px+ (desktop).
 4. **Git Commit & Push:** Push cleanly to `https://github.com/tuaeventsweb-stack/WAGCON.git` on branch `main`.
+

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/ScrollReveal";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "@tanstack/react-router";
+import { FloatingGamingGlyphs } from "./FloatingGamingGlyphs";
 import {
   ArrowRight, Ticket, MapPin, Download, FileText, BarChart3, Calendar, Quote,
   Gamepad2, Trophy, Link2, Package, Bot, Glasses, Hammer, DollarSign, Landmark,
@@ -96,6 +97,9 @@ export function Hero() {
         }}
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[360px] bg-primary/25 blur-[150px] rounded-full pointer-events-none"
       />
+
+      {/* Floating 3D gaming console glyphs & ambient parallax */}
+      <FloatingGamingGlyphs />
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
         {/* Pre-headline / Kicker */}
