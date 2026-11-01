@@ -93,7 +93,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr] mb-12">
           <div>
             <Link to="/" className="inline-flex items-center gap-2.5 mb-6">
-              <img src="/wagcon-logo.png" alt="WAGCON" className="h-10 w-auto" />
+              <img src="/wagcon-logo.png" alt="WAGCON" className="h-9 md:h-10 w-auto object-contain shrink-0" />
             </Link>
             <p className="font-button text-xs uppercase tracking-[0.3em] text-primary font-bold mb-3">
               28 April – 1 May 2027
