@@ -62,6 +62,7 @@ const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
 
 export function Hero() {
   const [time, setTime] = useState(getTimeLeft);
+
   useEffect(() => {
     const id = setInterval(() => setTime(getTimeLeft()), 1000);
     return () => clearInterval(id);
@@ -69,143 +70,131 @@ export function Hero() {
 
   return (
     <section className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Background image & dark overlay */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 wagcon-hero-grid" />
         <img 
           src="/hero_bg_uploaded.jpg" 
           alt="" 
-          className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none opacity-20" 
+          className="w-full h-full object-cover object-center pointer-events-none opacity-25" 
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
-        <div className="absolute inset-0 grain opacity-20 mix-blend-overlay" />
-        {/* Fluid floating dual-energy ambient orbs */}
-        <motion.div
-          animate={{
-            scale: [1, 1.25, 0.95, 1],
-            opacity: [0.18, 0.32, 0.18],
-            x: [-20, 20, -20],
-            y: [-15, 15, -15],
-          }}
-          transition={{
-            duration: 9,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[360px] bg-primary/25 blur-[150px] rounded-full pointer-events-none"
-        />
-        <motion.div
-          animate={{
-            scale: [1.1, 0.9, 1.2, 1.1],
-            opacity: [0.12, 0.22, 0.12],
-            x: [25, -25, 25],
-            y: [20, -20, 20],
-          }}
-          transition={{
-            duration: 11,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute bottom-1/4 right-1/4 w-[500px] h-[300px] bg-purple-600/20 blur-[140px] rounded-full pointer-events-none"
-        />
+        <div className="absolute inset-0 bg-background/80" />
+        <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150" />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
-        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/25 mb-6 animate-fade-in-up">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-radar absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-          </span>
-          <p className="font-button text-[11px] sm:text-xs uppercase tracking-[0.25em] text-primary font-bold">
-            WEST AFRICA GAMING CONVENTION  ·  28 APRIL – 1 MAY 2027
-          </p>
-        </div>
+      {/* Ambient glowing energy orb with fluid floating motion */}
+      <motion.div
+        animate={{
+          scale: [1, 1.25, 0.95, 1],
+          opacity: [0.18, 0.32, 0.18],
+          x: [-20, 20, -20],
+          y: [-15, 15, -15],
+        }}
+        transition={{
+          duration: 9,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[360px] bg-primary/25 blur-[150px] rounded-full pointer-events-none"
+      />
 
-        <h1 className="font-heading text-4xl sm:text-6xl md:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-8">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
+        {/* Pre-headline / Kicker */}
+        <motion.div
+          initial={{ opacity: 0, y: -25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 mb-6"
+        >
+          <p className="font-button text-xs uppercase tracking-[0.3em] text-primary font-bold">
+            WEST AFRICA GAMING CONVENTION  ·  28TH APRIL – 1ST MAY 2027
+          </p>
+          <span className="hidden sm:inline text-white/30">|</span>
+          <p className="font-button text-xs uppercase tracking-widest text-white/60 font-medium">
+            CO-LOCATED WITH{" "}
+            <a 
+              href="https://www.abds.com.ng" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="text-primary hover:text-white underline transition-colors"
+            >
+              ABDS 2027
+            </a>
+          </p>
+        </motion.div>
+
+        {/* Main Headline */}
+        <motion.h1
+          initial={{ opacity: 0, y: 45 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.85, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="font-heading text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[0.95] tracking-tighter text-foreground mb-6"
+        >
           Where Africa's Gaming<br />
           <span className="gradient-text">Deals Get Done.</span>
-        </h1>
+        </motion.h1>
 
-        <p className="font-button text-xs sm:text-sm uppercase tracking-widest text-white/40 mb-8">
+        {/* Location Badge */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
+          className="font-button text-xs sm:text-sm uppercase tracking-[0.35em] text-white/50 mb-6"
+        >
           VICTORIA ISLAND, LAGOS, NIGERIA
-        </p>
+        </motion.p>
 
-        <p className="font-button text-sm sm:text-base uppercase tracking-widest text-primary font-bold mb-3">
-          Africa's Flagship Gaming, Esports & iGaming Convention
-        </p>
+        {/* Subtitle / Smaller Text */}
+        <motion.p
+          initial={{ opacity: 0, y: 25 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+          className="text-base sm:text-lg md:text-xl text-white/75 font-body max-w-3xl mx-auto leading-relaxed mb-12 font-medium"
+        >
+          Four Days. Three Venues. One Gaming Industry, Together. Games. Esports. iGaming. Web3. One Convention.
+        </motion.p>
 
-        <p className="font-button text-xs sm:text-sm uppercase tracking-widest text-white/60 mb-6">
-          Leaders Dinner  ·  Conference & Exhibition  ·  After Party  ·  Co-located with{" "}
-          <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>
-        </p>
+        {/* CTAs row */}
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.75, delay: 0.65, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-col sm:flex-row justify-center gap-4 mb-14"
+        >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
+            <a
+              href="https://app.eventpadi.com/wagcon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-10 py-5 hover:bg-primary/85 transition-all duration-200 flex items-center justify-center gap-2.5 shadow-[0_0_50px_rgba(34,197,94,0.35)]"
+            >
+              <Ticket size={18} /> Get Your Pass
+            </a>
+          </motion.div>
 
-        <p className="text-lg sm:text-xl text-white/80 max-w-2xl mx-auto font-body leading-[1.8] mb-12 px-4">
-          Four Days. Three Venues. One Gaming Industry, Together. Games. Esports. iGaming. Web3. One Convention. Co-located with{" "}
-          <a href="https://www.abds.com.ng" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-bold">ABDS 2027 - Africa Blockchain Week</a>.
-        </p>
-
-        <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <motion.a
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            href="https://app.eventpadi.com/wagcon"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_30px_rgba(34,197,94,0.35)]"
-          >
-            <Ticket size={18} /> Get Your Pass
-          </motion.a>
-          <motion.a
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.96 }}
-            href="https://app.eventpadi.com/wagcon/f/WAGCON"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center gap-2.5"
-          >
-            Exhibit at WAGCON <ArrowRight size={18} />
-          </motion.a>
-        </div>
-
-        {/* Early Bird badge */}
-        {(() => {
-          const now = Date.now();
-          const ebTiers = [
-            { label: "SUPER EARLY BIRD", discount: "30% OFF", deadline: new Date("2026-09-30T23:59:59+01:00") },
-            { label: "EARLY BIRD 2",     discount: "15% OFF", deadline: new Date("2026-11-30T23:59:59+01:00") },
-            { label: "EARLY BIRD 3",     discount: "10% OFF", deadline: new Date("2027-01-31T23:59:59+01:00") },
-            { label: "FINAL EARLY BIRD", discount: "5% OFF",  deadline: new Date("2027-03-15T23:59:59+01:00") },
-          ];
-          const activeTier = ebTiers.find((t) => now < t.deadline.getTime());
-          if (!activeTier) return null;
-          const deadlineStr = activeTier.deadline.toLocaleDateString("en-GB", { day: "numeric", month: "short" });
-          return (
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.96 }}>
             <a
               href="https://app.eventpadi.com/wagcon/f/WAGCON"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 px-6 py-3 border border-primary/25 bg-primary/5 hover:bg-primary/10 transition-all mb-10 group"
+              className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all duration-200 flex items-center justify-center gap-2.5 hover:bg-white/[0.03]"
             >
-              <span className="font-button text-[10px] uppercase tracking-[0.2em] font-black text-primary">
-                {activeTier.label}
-              </span>
-              <span className="w-px h-4 bg-white/15" />
-              <span className="font-button text-[11px] uppercase tracking-wider text-white/80 font-bold">
-                <span className="text-primary">{activeTier.discount}</span> Sponsorship & Exhibition
-              </span>
-              <span className="w-px h-4 bg-white/15" />
-              <span className="font-button text-[10px] uppercase tracking-wider text-white/40">
-                Ends {deadlineStr}
-              </span>
+              Exhibit at WAGCON <ArrowRight size={18} />
             </a>
-          );
-        })()}
+          </motion.div>
+        </motion.div>
 
-        <div className="flex justify-center gap-4">
+        {/* Countdown */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.85, y: 25 }}
+          animate={{ opacity: 1, scale: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8, type: "spring", stiffness: 240, damping: 20 }}
+          className="flex justify-center gap-4"
+        >
           <CountdownUnit value={time.days}    label="Days" />
           <CountdownUnit value={time.hours}   label="Hours" />
           <CountdownUnit value={time.minutes} label="Min" />
           <CountdownUnit value={time.seconds} label="Sec" />
-        </div>
+        </motion.div>
       </div>
     </section>
   );
