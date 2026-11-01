@@ -4,15 +4,22 @@ import { useEffect, useState } from "react";
 import { Nav } from "@/components/wagcon/Nav";
 import { Footer } from "@/components/wagcon/Footer";
 import { Eyebrow, Accent, Section } from "@/components/wagcon/ui/primitives";
-import { X, ChevronLeft, ChevronRight, Maximize2, Sparkles } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Gallery — WAGCON 2027 · Event Moments & Highlights" },
-      { name: "description", content: "Explore photos and moments from past editions of the West Africa Gaming Convention in Lagos — keynotes, exhibition floor, esports tournaments, and VIP networking." },
+      {
+        name: "description",
+        content:
+          "Official photo gallery from the West Africa Gaming Convention in Lagos — keynotes, exhibition floor, esports tournaments, and networking moments.",
+      },
       { property: "og:title", content: "Gallery — WAGCON 2027" },
-      { property: "og:description", content: "Official photography from past WAGCON editions in Victoria Island, Lagos." },
+      {
+        property: "og:description",
+        content: "Official photography from past WAGCON editions in Victoria Island, Lagos.",
+      },
       { property: "og:url", content: "/gallery" },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],
@@ -20,64 +27,51 @@ export const Route = createFileRoute("/gallery")({
   component: GalleryPage,
 });
 
-interface GalleryItem {
-  src: string;
-  title: string;
-  category: "Panels" | "Exhibition" | "Networking" | "Esports";
-}
-
-const GALLERY_ITEMS: GalleryItem[] = [
-  { src: "/gallery/_MG_6767.jpg", title: "Executive B2B Panel Sessions", category: "Panels" },
-  { src: "/gallery/IMG_9143.jpg", title: "Exhibition Floor Showcase & Booths", category: "Exhibition" },
-  { src: "/gallery/2J6A6810.jpg", title: "Arena Gaming Competitions & Crowd", category: "Esports" },
-  { src: "/gallery/_MG_6954.jpg", title: "VIP Networking Lounge Exchanges", category: "Networking" },
-  { src: "/gallery/2J6A6809.jpg", title: "Convention Hall & Main Stage Discussions", category: "Panels" },
-  { src: "/gallery/IMG_9097.jpg", title: "Industry Leaders Networking", category: "Networking" },
-  { src: "/gallery/IMG_9114.jpg", title: "Keynote Address & Audience Engagement", category: "Panels" },
-  { src: "/gallery/IMG_9119.jpg", title: "Interactive Developer Showcase", category: "Exhibition" },
-  { src: "/gallery/IMG_9186.jpg", title: "Esports Tournament Finals", category: "Esports" },
-  { src: "/gallery/IMG_9187.jpg", title: "Competitive Gaming Brackets", category: "Esports" },
-  { src: "/gallery/IMG_9782.jpg", title: "Audience & Stage Lighting", category: "Panels" },
-  { src: "/gallery/_MG_6849.jpg", title: "Tech & Gaming Demonstrations", category: "Exhibition" },
-  { src: "/gallery/_MG_6885.jpg", title: "Delegates & Speaker Sessions", category: "Panels" },
-  { src: "/gallery/_MG_6982.jpg", title: "Industry Dealmakers in Conversation", category: "Networking" },
-  { src: "/gallery/_MG_6985.jpg", title: "Investor & Founder Roundtables", category: "Networking" },
-  { src: "/gallery/_MG_7033.jpg", title: "Product Booth Showcases", category: "Exhibition" },
-  { src: "/gallery/_MG_7086.jpg", title: "Audience Q&A Discussions", category: "Panels" },
-  { src: "/gallery/_MG_7299.jpg", title: "Indie Game Demo Stations", category: "Exhibition" },
-  { src: "/gallery/_MG_7305.jpg", title: "Gaming Community Highlights", category: "Esports" },
-  { src: "/gallery/_MG_7367.jpg", title: "Exhibition Hall Buzz & Meetings", category: "Exhibition" },
-  { src: "/gallery/_MG_7391.jpg", title: "Closing Networking & Connections", category: "Networking" },
+const GALLERY_IMAGES: string[] = [
+  "/gallery/_MG_6767.jpg",
+  "/gallery/IMG_9143.jpg",
+  "/gallery/2J6A6810.jpg",
+  "/gallery/_MG_6954.jpg",
+  "/gallery/2J6A6809.jpg",
+  "/gallery/IMG_9097.jpg",
+  "/gallery/IMG_9114.jpg",
+  "/gallery/IMG_9119.jpg",
+  "/gallery/IMG_9186.jpg",
+  "/gallery/IMG_9187.jpg",
+  "/gallery/IMG_9782.jpg",
+  "/gallery/_MG_6849.jpg",
+  "/gallery/_MG_6885.jpg",
+  "/gallery/_MG_6982.jpg",
+  "/gallery/_MG_6985.jpg",
+  "/gallery/_MG_7033.jpg",
+  "/gallery/_MG_7086.jpg",
+  "/gallery/_MG_7299.jpg",
+  "/gallery/_MG_7305.jpg",
+  "/gallery/_MG_7367.jpg",
+  "/gallery/_MG_7391.jpg",
 ];
 
-const CATEGORIES = ["All", "Panels", "Exhibition", "Networking", "Esports"] as const;
-
 function GalleryPage() {
-  const [activeCategory, setActiveCategory] = useState<typeof CATEGORIES[number]>("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   useEffect(() => {
     document.title = "Gallery — WAGCON 2027 · Event Moments & Highlights";
   }, []);
 
-  const filteredItems = activeCategory === "All"
-    ? GALLERY_ITEMS
-    : GALLERY_ITEMS.filter((item) => item.category === activeCategory);
-
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (lightboxIndex === null) return;
       if (e.key === "Escape") setLightboxIndex(null);
       if (e.key === "ArrowRight") {
-        setLightboxIndex((prev) => (prev !== null ? (prev + 1) % filteredItems.length : null));
+        setLightboxIndex((prev) => (prev !== null ? (prev + 1) % GALLERY_IMAGES.length : null));
       }
       if (e.key === "ArrowLeft") {
-        setLightboxIndex((prev) => (prev !== null ? (prev - 1 + filteredItems.length) % filteredItems.length : null));
+        setLightboxIndex((prev) => (prev !== null ? (prev - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length : null));
       }
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [lightboxIndex, filteredItems.length]);
+  }, [lightboxIndex]);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -92,14 +86,14 @@ function GalleryPage() {
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex + 1) % filteredItems.length);
+      setLightboxIndex((lightboxIndex + 1) % GALLERY_IMAGES.length);
     }
   };
 
   const prevImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (lightboxIndex !== null) {
-      setLightboxIndex((lightboxIndex - 1 + filteredItems.length) % filteredItems.length);
+      setLightboxIndex((lightboxIndex - 1 + GALLERY_IMAGES.length) % GALLERY_IMAGES.length);
     }
   };
 
@@ -118,83 +112,52 @@ function GalleryPage() {
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-black mb-6 tracking-tighter leading-[0.9]">
               WAGCON in <Accent>Action</Accent>.
             </h1>
-            <p className="text-lg text-white/70 font-body max-w-2xl mx-auto leading-relaxed mb-8">
-              Relive the energy from Victoria Island, Lagos. From keynotes and B2B dealmaking to the bustling exhibition floor, tournament brackets, and VIP networking.
+            <p className="text-lg text-white/70 font-body max-w-2xl mx-auto leading-relaxed">
+              Explore the key moments, networking sessions, convention floors, and community energy from past WAGCON editions in Victoria Island, Lagos.
             </p>
-
-            {/* Category Filter Pills */}
-            <div className="flex flex-wrap items-center justify-center gap-2 pt-2">
-              {CATEGORIES.map((cat) => (
-                <button
-                  key={cat}
-                  onClick={() => {
-                    setActiveCategory(cat);
-                    setLightboxIndex(null);
-                  }}
-                  className={`font-button text-xs uppercase tracking-wider px-5 py-2.5 transition-all duration-200 border ${
-                    activeCategory === cat
-                      ? "bg-primary text-primary-foreground border-primary font-bold shadow-lg shadow-primary/20"
-                      : "bg-white/5 text-white/70 border-white/10 hover:border-white/30 hover:text-white"
-                  }`}
-                >
-                  {cat === "All" ? `All Photos (${GALLERY_ITEMS.length})` : cat}
-                </button>
-              ))}
-            </div>
           </div>
         </section>
 
         {/* Gallery Grid */}
         <Section bg="bg">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {filteredItems.map((item, index) => (
+            {GALLERY_IMAGES.map((src, index) => (
               <motion.div
-                key={item.src}
+                key={src}
                 initial={{ opacity: 0, y: 30, scale: 0.95 }}
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.5, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: (index % 4) * 0.08,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 whileHover={{ y: -6, transition: { duration: 0.25 } }}
                 className="group relative cursor-pointer overflow-hidden border border-white/10 bg-wagcon-bg3/20 aspect-[4/3] rounded-sm transition-all duration-300 hover:border-primary/50 shadow-md hover:shadow-2xl hover:shadow-primary/10"
                 onClick={() => openLightbox(index)}
               >
+                {/* Photo */}
                 <img
-                  src={item.src}
-                  alt={item.title}
+                  src={src}
+                  alt={`WAGCON moment ${index + 1}`}
                   loading="lazy"
                   className="w-full h-full object-cover grayscale brightness-90 contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.04] group-hover:brightness-100"
                 />
 
-                {/* Badge */}
-                <div className="absolute top-3 left-3 z-10">
-                  <span className="font-button text-[9px] uppercase tracking-wider px-2 py-1 bg-black/70 backdrop-blur-md text-white/80 border border-white/10 rounded-sm">
-                    {item.category}
-                  </span>
-                </div>
-
-                {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                  <p className="font-heading text-sm font-bold text-white mb-2 leading-tight">
-                    {item.title}
-                  </p>
-                  <div className="flex items-center gap-1.5 text-primary font-button text-[11px] uppercase tracking-widest font-bold">
-                    <Maximize2 size={13} /> View Photo
+                {/* Clean hover overlay with fullscreen view trigger */}
+                <div className="absolute inset-0 bg-black/55 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="transform translate-y-3 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2 px-4 py-2 bg-black/60 backdrop-blur-md border border-white/20 rounded-full text-white text-xs font-button uppercase tracking-wider font-semibold">
+                    <Maximize2 size={14} className="text-primary" /> View Photo
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          {filteredItems.length === 0 && (
-            <div className="text-center py-20 text-white/50">
-              No photos found in this category.
-            </div>
-          )}
         </Section>
       </main>
 
       {/* Lightbox Modal */}
-      {lightboxIndex !== null && filteredItems[lightboxIndex] && (
+      {lightboxIndex !== null && GALLERY_IMAGES[lightboxIndex] && (
         <div
           className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center backdrop-blur-md select-none"
           onClick={closeLightbox}
@@ -220,18 +183,15 @@ function GalleryPage() {
           {/* Image Container */}
           <div className="relative max-w-5xl max-h-[85vh] px-12 flex flex-col items-center justify-center">
             <img
-              src={filteredItems[lightboxIndex].src}
-              alt={filteredItems[lightboxIndex].title}
+              src={GALLERY_IMAGES[lightboxIndex]}
+              alt={`WAGCON event moment ${lightboxIndex + 1}`}
               className="max-w-full max-h-[75vh] object-contain border border-white/10 shadow-2xl rounded-sm"
               onClick={(e) => e.stopPropagation()}
             />
-            {/* Title & Counter */}
+            {/* Clean Counter */}
             <div className="mt-4 text-center">
-              <p className="text-sm font-heading font-bold text-white">
-                {filteredItems[lightboxIndex].title}
-              </p>
-              <p className="text-xs font-button uppercase tracking-widest text-white/50 mt-1">
-                {filteredItems[lightboxIndex].category} · Photo {lightboxIndex + 1} of {filteredItems.length}
+              <p className="text-xs font-button uppercase tracking-widest text-white/60">
+                Photo {lightboxIndex + 1} of {GALLERY_IMAGES.length}
               </p>
             </div>
           </div>
