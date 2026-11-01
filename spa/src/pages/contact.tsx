@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 
 import { useState } from "react";
 import { Nav } from "@/components/wagcon/Nav";
@@ -119,10 +120,15 @@ export default function ContactPage() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {teamMembers.map((member) => (
-              <div 
+            {teamMembers.map((member, index) => (
+              <motion.div 
                 key={member.name}
-                className="group relative border border-white/10 bg-wagcon-bg3/40 hover:border-primary/50 hover:bg-wagcon-bg3/70 transition-all duration-300 p-5 flex flex-col justify-between overflow-hidden rounded-sm"
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.55, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                className="group relative border border-white/10 bg-wagcon-bg3/40 hover:border-primary/50 hover:bg-wagcon-bg3/70 transition-all duration-300 p-5 flex flex-col justify-between overflow-hidden rounded-sm shadow-md hover:shadow-xl hover:shadow-primary/10"
               >
                 {/* Accent glow corner */}
                 <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary/5 rounded-full blur-lg group-hover:bg-primary/20 transition-all pointer-events-none" />
@@ -169,7 +175,7 @@ export default function ContactPage() {
                     <span className="font-medium truncate">{member.phone}</span>
                   </a>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </Section>

@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/motion/ScrollReveal";
 import { useEffect, useState, useRef } from "react";
 import { Link } from "@tanstack/react-router";
 import {
@@ -44,14 +46,18 @@ function getTimeLeft() {
   };
 }
 const CountdownUnit = ({ value, label }: { value: number; label: string }) => (
-  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary flex flex-col items-center justify-center">
+  <motion.div
+    whileHover={{ scale: 1.08 }}
+    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+    className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-primary flex flex-col items-center justify-center shadow-[0_0_25px_rgba(34,197,94,0.3)] cursor-default"
+  >
     <span className="font-heading text-lg sm:text-xl font-black tabular-nums text-primary-foreground leading-none">
       {String(value).padStart(2, "0")}
     </span>
     <span className="font-button text-[8px] uppercase tracking-widest text-primary-foreground/80 mt-0.5">
       {label}
     </span>
-  </div>
+  </motion.div>
 );
 
 export function Hero() {
@@ -72,8 +78,35 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/50" />
         <div className="absolute inset-0 grain opacity-20 mix-blend-overlay" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-float-delayed" />
+        {/* Fluid floating dual-energy ambient orbs */}
+        <motion.div
+          animate={{
+            scale: [1, 1.25, 0.95, 1],
+            opacity: [0.18, 0.32, 0.18],
+            x: [-20, 20, -20],
+            y: [-15, 15, -15],
+          }}
+          transition={{
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[360px] bg-primary/25 blur-[150px] rounded-full pointer-events-none"
+        />
+        <motion.div
+          animate={{
+            scale: [1.1, 0.9, 1.2, 1.1],
+            opacity: [0.12, 0.22, 0.12],
+            x: [25, -25, 25],
+            y: [20, -20, 20],
+          }}
+          transition={{
+            duration: 11,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="absolute bottom-1/4 right-1/4 w-[500px] h-[300px] bg-purple-600/20 blur-[140px] rounded-full pointer-events-none"
+        />
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-4 py-20 text-center">
@@ -111,22 +144,26 @@ export function Hero() {
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-          <a
+          <motion.a
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
             href="https://app.eventpadi.com/wagcon"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/85 transition-all duration-300 active:scale-[0.97] flex items-center justify-center gap-2.5 animate-pulse-glow hover:scale-105"
+            className="font-button text-sm uppercase tracking-wider font-bold bg-primary text-primary-foreground px-6 py-4 sm:px-10 sm:py-5 hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2.5 shadow-[0_0_30px_rgba(34,197,94,0.35)]"
           >
             <Ticket size={18} /> Get Your Pass
-          </a>
-          <a
+          </motion.a>
+          <motion.a
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
             href="https://app.eventpadi.com/wagcon/f/WAGCON"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all duration-200 active:scale-[0.97] flex items-center justify-center gap-2.5"
+            className="font-button text-sm uppercase tracking-wider font-bold border-2 border-white/20 text-white px-10 py-5 hover:border-primary hover:text-primary transition-all duration-300 flex items-center justify-center gap-2.5"
           >
             Exhibit at WAGCON <ArrowRight size={18} />
-          </a>
+          </motion.a>
         </div>
 
         {/* Early Bird badge */}
@@ -245,7 +282,13 @@ export function About() {
     <section className="py-24 bg-background overflow-hidden" id="about">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center gap-16">
-          <div className="lg:w-1/2">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:w-1/2"
+          >
             <Eyebrow>WHAT IS WAGCON?</Eyebrow>
             <h2 className="font-heading text-5xl md:text-7xl font-black text-foreground mb-8 tracking-tighter leading-[0.9]">
               This is where we define<br />gaming's future in Africa.
@@ -277,9 +320,16 @@ export function About() {
             >
               <Ticket size={16} /> Get Your Pass
             </a>
-          </div>
 
-          <div className="lg:w-1/2 relative">
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.92, x: 40 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:w-1/2 relative"
+          >
             <div className="aspect-[4/5] overflow-hidden border border-white/10 relative group bg-card/40">
               <img
                 src="/about-audience.jpg"
@@ -296,7 +346,9 @@ export function About() {
                 </p>
               </div>
             </div>
-          </div>
+            {/* Ambient glow */}
+            <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/20 blur-3xl rounded-full pointer-events-none" />
+          </motion.div>
         </div>
       </div>
     </section>
@@ -487,17 +539,22 @@ export function Lookback() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {previewImages.map((img, i) => (
-            <div
+            <motion.div
               key={i}
-              className="group relative aspect-[4/3] overflow-hidden border border-white/10 bg-card/40 rounded-sm"
+              initial={{ opacity: 0, y: 35 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -6, transition: { duration: 0.25 } }}
+              className="group relative aspect-[4/3] overflow-hidden border border-white/10 hover:border-primary/50 bg-card/40 rounded-sm shadow-md hover:shadow-2xl hover:shadow-primary/10 transition-all"
             >
               <img
                 src={img.src}
                 alt=""
                 loading="lazy"
-                className="w-full h-full object-cover grayscale brightness-90 contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.03] group-hover:brightness-100"
+                className="w-full h-full object-cover grayscale brightness-90 contrast-[1.05] transition-all duration-500 group-hover:grayscale-0 group-hover:scale-[1.05] group-hover:brightness-100"
               />
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -1110,12 +1167,17 @@ export function PassTiers() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {tiers.map((t) => {
+          {tiers.map((t, i) => {
             const c = colorMap[t.color];
             return (
-              <div
+              <motion.div
                 key={t.name}
-                className={`relative bg-card border ${t.popular ? `border-2 ${c.border} shadow-[0_0_25px_rgba(34,197,94,0.18)]` : "border-white/10"} p-8 flex flex-col motion-card`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.65, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -8, transition: { duration: 0.25 } }}
+                className={`relative bg-card border ${t.popular ? `border-2 ${c.border} shadow-[0_0_30px_rgba(34,197,94,0.22)]` : "border-white/10"} p-8 flex flex-col hover:border-primary/50 transition-colors duration-300`}
               >
                 {t.popular && (
                   <div className={`absolute -top-3 left-1/2 -translate-x-1/2 ${c.bg} text-background font-button text-[10px] uppercase tracking-widest font-black px-4 py-1.5`}>
@@ -1162,7 +1224,7 @@ export function PassTiers() {
                 >
                   [ {t.cta} ]
                 </a>
-              </div>
+              </motion.div>
             );
           })}
         </div>

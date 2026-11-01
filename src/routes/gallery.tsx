@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Nav } from "@/components/wagcon/Nav";
@@ -147,9 +148,14 @@ function GalleryPage() {
         <Section bg="bg">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {filteredItems.map((item, index) => (
-              <div
+              <motion.div
                 key={item.src}
-                className="group relative cursor-pointer overflow-hidden border border-white/10 bg-wagcon-bg3/20 aspect-[4/3] rounded-sm transition-all duration-300 hover:border-primary/50 shadow-sm hover:shadow-xl"
+                initial={{ opacity: 0, y: 30, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: (index % 4) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                whileHover={{ y: -6, transition: { duration: 0.25 } }}
+                className="group relative cursor-pointer overflow-hidden border border-white/10 bg-wagcon-bg3/20 aspect-[4/3] rounded-sm transition-all duration-300 hover:border-primary/50 shadow-md hover:shadow-2xl hover:shadow-primary/10"
                 onClick={() => openLightbox(index)}
               >
                 <img
@@ -175,7 +181,7 @@ function GalleryPage() {
                     <Maximize2 size={13} /> View Photo
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 
