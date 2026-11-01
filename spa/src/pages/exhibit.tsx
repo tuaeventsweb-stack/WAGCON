@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 
 import { useState } from "react";
 import { Nav } from "@/components/wagcon/Nav";
@@ -121,6 +122,55 @@ export default function ExhibitPage() {
             </div>
           </div>
 
+        </Section>
+
+        {/* Exhibition Floor Highlights */}
+        <Section bg="bg2" className="border-t border-white/5">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-6">
+            <div>
+              <Eyebrow>EXHIBITION IN ACTION</Eyebrow>
+              <SectionTitle className="mb-2">Experience the WAGCON Expo Floor</SectionTitle>
+              <p className="text-white/60 font-body text-sm max-w-lg">
+                From bustling booth demo stations and publisher lounges to deal-making roundtables and esports stages.
+              </p>
+            </div>
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 font-button text-xs uppercase tracking-widest font-black text-primary hover:underline"
+            >
+              Explore Full Gallery <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <div className="aspect-[4/3] rounded-sm overflow-hidden border border-white/10 group relative">
+              <img
+                src="/gallery/IMG_9143.jpg"
+                alt="Exhibition Booths"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-80" />
+              <p className="absolute bottom-3 left-3 text-xs font-heading font-bold text-white">Exhibitor Booths & Demos</p>
+            </div>
+            <div className="aspect-[4/3] rounded-sm overflow-hidden border border-white/10 group relative">
+              <img
+                src="/gallery/_MG_7033.jpg"
+                alt="Product Showcase"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-80" />
+              <p className="absolute bottom-3 left-3 text-xs font-heading font-bold text-white">Hardware & Game Showcases</p>
+            </div>
+            <div className="aspect-[4/3] rounded-sm overflow-hidden border border-white/10 group relative">
+              <img
+                src="/gallery/_MG_7367.jpg"
+                alt="B2B Networking on Floor"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-80" />
+              <p className="absolute bottom-3 left-3 text-xs font-heading font-bold text-white">B2B Deal-Making Floor</p>
+            </div>
+          </div>
         </Section>
 
         {/* Eventpadi Sponsor Form CTA */}

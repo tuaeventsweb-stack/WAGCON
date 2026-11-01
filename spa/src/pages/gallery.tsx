@@ -5,27 +5,27 @@ import { Eyebrow, SectionTitle, Accent, Section } from "@/components/wagcon/ui/p
 import { X, ChevronLeft, ChevronRight, Maximize2 } from "lucide-react";
 
 const GALLERY_IMAGES = [
-  "gallery/2J6A6809.jpg",
-  "gallery/2J6A6810.jpg",
-  "gallery/IMG_9097.jpg",
-  "gallery/IMG_9114.jpg",
-  "gallery/IMG_9119.jpg",
-  "gallery/IMG_9143.jpg",
-  "gallery/IMG_9186.jpg",
-  "gallery/IMG_9187.jpg",
-  "gallery/IMG_9782.jpg",
-  "gallery/_MG_6767.jpg",
-  "gallery/_MG_6849.jpg",
-  "gallery/_MG_6885.jpg",
-  "gallery/_MG_6954.jpg",
-  "gallery/_MG_6982.jpg",
-  "gallery/_MG_6985.jpg",
-  "gallery/_MG_7033.jpg",
-  "gallery/_MG_7086.jpg",
-  "gallery/_MG_7299.jpg",
-  "gallery/_MG_7305.jpg",
-  "gallery/_MG_7367.jpg",
-  "gallery/_MG_7391.jpg"
+  "/gallery/2J6A6809.jpg",
+  "/gallery/2J6A6810.jpg",
+  "/gallery/IMG_9097.jpg",
+  "/gallery/IMG_9114.jpg",
+  "/gallery/IMG_9119.jpg",
+  "/gallery/IMG_9143.jpg",
+  "/gallery/IMG_9186.jpg",
+  "/gallery/IMG_9187.jpg",
+  "/gallery/IMG_9782.jpg",
+  "/gallery/_MG_6767.jpg",
+  "/gallery/_MG_6849.jpg",
+  "/gallery/_MG_6885.jpg",
+  "/gallery/_MG_6954.jpg",
+  "/gallery/_MG_6982.jpg",
+  "/gallery/_MG_6985.jpg",
+  "/gallery/_MG_7033.jpg",
+  "/gallery/_MG_7086.jpg",
+  "/gallery/_MG_7299.jpg",
+  "/gallery/_MG_7305.jpg",
+  "/gallery/_MG_7367.jpg",
+  "/gallery/_MG_7391.jpg"
 ];
 
 export default function GalleryPage() {

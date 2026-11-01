@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { label: "Home",     href: "/" },
   { label: "Agenda",   href: "/agenda" },
   { label: "Speakers", href: "/speakers" },
+  { label: "Gallery",  href: "/gallery" },
   { label: "Exhibit",  href: "https://app.eventpadi.com/wagcon/f/WAGCON" },
   { label: "Tickets",  href: "https://app.eventpadi.com/wagcon" },
   { label: "Partners", href: "/partners" },

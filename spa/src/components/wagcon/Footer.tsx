@@ -9,6 +9,7 @@ const groups = [
       { label: "Agenda",            to: "/agenda" },
       { label: "Speakers",          to: "/speakers" },
       { label: "Venues",            to: "/venues" },
+      { label: "Event Gallery",     to: "/gallery" },
     ],
   },
   {

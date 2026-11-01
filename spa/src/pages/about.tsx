@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 
 import { Nav } from "@/components/wagcon/Nav";
 import { Footer } from "@/components/wagcon/Footer";
 import { Eyebrow, SectionTitle, Accent, Card, Section } from "@/components/wagcon/ui/primitives";
-import { Gamepad2, Trophy, Building2, ExternalLink } from "lucide-react";
+import { Gamepad2, Trophy, Building2, ExternalLink, ArrowRight } from "lucide-react";
 
 
 
@@ -108,6 +109,50 @@ export default function AboutPage() {
                 Hosting game jams, mentoring panels, and tech masterclasses to upskill the next generation of African digital artists and esports athletes.
               </p>
             </Card>
+          </div>
+        </Section>
+
+        {/* Past Editions Photography Highlights */}
+        <Section bg="bg" className="border-t border-white/5">
+          <div className="flex flex-col md:flex-row items-start md:items-end justify-between mb-10 gap-6">
+            <div>
+              <Eyebrow>EVENT PHOTOGRAPHY</Eyebrow>
+              <SectionTitle className="mb-2">Moments That Defined Past WAGCONs</SectionTitle>
+              <p className="text-white/60 font-body text-sm max-w-lg">
+                Executive keynotes, developer showcases, buzzing expo floor, and VIP deal-making in Lagos.
+              </p>
+            </div>
+            <Link
+              to="/gallery"
+              className="inline-flex items-center gap-2 font-button text-xs uppercase tracking-widest font-black text-primary hover:underline"
+            >
+              View Full 21-Photo Gallery <ArrowRight size={14} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { src: "/gallery/_MG_6767.jpg", label: "Executive Panels" },
+              { src: "/gallery/IMG_9143.jpg", label: "Exhibition Floor" },
+              { src: "/gallery/2J6A6810.jpg", label: "Esports Arena" },
+              { src: "/gallery/_MG_6954.jpg", label: "VIP Networking" },
+            ].map((item, i) => (
+              <Link
+                key={i}
+                to="/gallery"
+                className="group relative aspect-[4/3] rounded-sm overflow-hidden border border-white/10 hover:border-primary/50 transition-all block"
+              >
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-transparent opacity-80" />
+                <span className="absolute bottom-3 left-3 text-xs font-heading font-bold text-white group-hover:text-primary transition-colors">
+                  {item.label}
+                </span>
+              </Link>
+            ))}
           </div>
         </Section>
 

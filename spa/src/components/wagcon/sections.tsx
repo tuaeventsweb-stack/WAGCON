@@ -431,10 +431,14 @@ export function Venues() {
  * â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 export function Lookback() {
   const previewImages = [
-    { src: "gallery/2J6A6809.jpg", title: "Industry Panel Discussions" },
-    { src: "gallery/IMG_9114.jpg", title: "Esports Arena Matches" },
-    { src: "gallery/IMG_9143.jpg", title: "Exhibition Floor Showcase" },
-    { src: "gallery/_MG_7367.jpg", title: "Networking & B2B Lounge" },
+    { src: "/gallery/_MG_6767.jpg", title: "Executive B2B Panel Sessions" },
+    { src: "/gallery/IMG_9143.jpg", title: "Exhibition Floor Showcase & Booths" },
+    { src: "/gallery/2J6A6810.jpg", title: "Arena Gaming Competitions & Crowd" },
+    { src: "/gallery/_MG_6954.jpg", title: "VIP Networking Lounge Exchanges" },
+    { src: "/gallery/2J6A6809.jpg", title: "Convention Hall & Main Stage Discussions" },
+    { src: "/gallery/IMG_9097.jpg", title: "Industry Leaders Networking" },
+    { src: "/gallery/IMG_9114.jpg", title: "Keynote Address & Audience Engagement" },
+    { src: "/gallery/_MG_7033.jpg", title: "Product Booth Showcases" },
   ];
 
   return (
